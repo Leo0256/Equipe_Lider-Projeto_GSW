@@ -9,23 +9,23 @@ do curso de Análise e Desenvolvimento de Sistemas na FATEC de São José dos Ca
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 ## Equipe Líder: Integrantes
 
-- [Daniela dos Santos Meirelles](https://github.com/DanielaMeirelles) - Designer
+- [Daniela dos Santos Meirelles](https://github.com/DanielaMeirelles) - Designer (Scrum Team)
 
-- [Guilherme Leite Silva](https://github.com/Glsilva) - Organizador
+- [Guilherme Leite Silva](https://github.com/Glsilva) - Organizador (Scrum Team)
 
-- [Laroy Bersot Ribeiro do Prado](https://github.com/laroyprado) - Designer
+- [Laroy Bersot Ribeiro do Prado](https://github.com/laroyprado) - Designer (Scrum Team)
 
-- [Leonardo Gustavo Ribeiro](https://github.com/Leo0256) - Programador
+- [Leonardo Gustavo Ribeiro](https://github.com/Leo0256) - Programador (Scrum Master)
 
-- [Letícia Salles Bettoni da Costa](https://github.com/leticiasalles) - Organizadora
+- [Letícia Salles Bettoni da Costa](https://github.com/leticiasalles) - Organizadora (Scrum Team)
 
-- [Matheus Emboaba Mello de Souza](https://github.com/MatheusEmboabaTeteu) - Editor de Vídeo
+- [Matheus Emboaba Mello de Souza](https://github.com/MatheusEmboabaTeteu) - Editor de Vídeo (Scrum Team)
 
-- [Patrícia Oliveira de Souza Ciliato](https://github.com/Ppistache) - Designer
+- [Patrícia Oliveira de Souza Ciliato](https://github.com/Ppistache) - Designer (Product Owner)
 
-- [Sarah da Boa Viagem Santana](https://github.com/Sarah781) - Designer
+- [Sarah da Boa Viagem Santana](https://github.com/Sarah781) - Designer (Scrum Team)
 
-- [Thiago da Silva](https://github.com/Thiago-Thome) - Programador Jr.
+- [Thiago da Silva](https://github.com/Thiago-Thome) - Programador Jr. (Scrum Team)
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
