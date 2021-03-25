@@ -58,39 +58,39 @@ em um único dashboard de forma ágil e simples, integrando os dados de diferent
 - 0	Definição do product backlog
 - 0.1	Definição do planejamento das sprints
 - 1	Estruturação do banco de dados 
- - 1.1	Criação das tabelas
- - 1.2	Criação das storage procedures
- - 1.3	Adição dos dados prévios
- - 1.4	Codificação do banco de dados 
+  - 1.1	Criação das tabelas
+  - 1.2	Criação das storage procedures
+  - 1.3	Adição dos dados prévios
+  - 1.4	Codificação do banco de dados 
 - 2	Dicionário de dados
- - 2.1	Documentação das tabelas 
- - 2.2	Documentação das storages procedures 
+  - 2.1	Documentação das tabelas 
+  - 2.2	Documentação das storages procedures 
 - 3	Modelo de caso de uso 
- - 3.1	Diagrama de caso de uso 
- - 3.2	Documentação do diagrama de caso de uso 
+  - 3.1	Diagrama de caso de uso 
+  - 3.2	Documentação do diagrama de caso de uso 
 - 4	Protótipo visual - Figma
-- 4.1	Tela Menu
- - 4.2	Tela de Login
- - 4.3	Tela de visualização de projeto
- - 4.4	Tela de filtragem e categorias
+  - 4.1	Tela Menu
+  - 4.2	Tela de Login
+  - 4.3	Tela de visualização de projeto
+  - 4.4	Tela de filtragem e categorias
 - 5	Conexão com banco de dados- CRUD 
- - 5.1	Criação da funcionalidade- Criar (Create)
- - 5.2	Criação da funcionalidade- Ler (Read)
- - 5.3	Criação da funcionalidade- Atualizar (Update)
- - 5.4	Criação da funcionalidade- Deletar (Delete)
+  - 5.1	Criação da funcionalidade- Criar (Create)
+  - 5.2	Criação da funcionalidade- Ler (Read)
+  - 5.3	Criação da funcionalidade- Atualizar (Update)
+  - 5.4	Criação da funcionalidade- Deletar (Delete)
 - 6	GIF do protótipo - Figma
- - 6.1	GIF- Tela Menu
- - 6.2	GIF- Tela de Login
- - 6.3	GIF- Tela de visualização de projeto
- - 6.4	GIF- Tela de filtragem e categorias
+  - 6.1	GIF- Tela Menu
+  - 6.2	GIF- Tela de Login
+  - 6.3	GIF- Tela de visualização de projeto
+  - 6.4	GIF- Tela de filtragem e categorias
 - 7	ANÁLISE DOS DADOS
- - 7.1	Quantidade por Status.
- - 7.2	Quantidade de horas por pessoa.
- - 7.3	Quantidade de horas por mês.
- - 7.4	Quantidade de horas por ano.
- - 7.5	Quantidade de horas por projeto.
- - 7.6	Porcentagem de dedicação de cada integrante da equipe por projeto.
- - 7.7	Quantidade de tasks em aberto.
+  - 7.1	Quantidade por Status.
+  - 7.2	Quantidade de horas por pessoa.
+  - 7.3	Quantidade de horas por mês.
+  - 7.4	Quantidade de horas por ano.
+  - 7.5	Quantidade de horas por projeto.
+  - 7.6	Porcentagem de dedicação de cada integrante da equipe por projeto.
+  - 7.7	Quantidade de tasks em aberto.
 
 
 
