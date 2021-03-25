@@ -23,7 +23,7 @@ do curso de Análise e Desenvolvimento de Sistemas na FATEC de São José dos Ca
 
 - [Patrícia Oliveira de Souza Ciliato](https://github.com/Ppistache) - Designer
 
-- [Sarah da Boa Viagem Santana](https://github.com/) - Designer
+- [Sarah da Boa Viagem Santana](https://github.com/Sarah781) - Designer
 
 - [Thiago da Silva](https://github.com/Thiago-Thome) - Programador Jr.
 
