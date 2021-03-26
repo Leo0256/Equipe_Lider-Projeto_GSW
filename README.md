@@ -80,10 +80,10 @@ em um único dashboard de forma ágil e simples, integrando os dados de diferent
 
 
 ### Entregas
-- <a href='https://github.com/Leo0256/Equipe_Lider-Projeto_Integrador/tree/master/Sprint%200'>Sprint 1</a> - 08/03/2021 a 28/03/2021
-- <a href=''>Sprint 2</a> - 29/03/2021 a 18/04/2021
-- <a href=''>Sprint 3</a> - 26/04/2021 a 16/05/2021
-- <a href=''>Sprint 4</a> - 17/05/2021 a 05/06/2021
+- <a href='https://github.com/Leo0256/Equipe_Lider-Projeto_GSW/tree/Sprint_1'>Sprint 1</a> - 08/03/2021 a 28/03/2021
+- <a href='https://github.com/Leo0256/Equipe_Lider-Projeto_GSW/tree/Sprint_2'>Sprint 2</a> - 29/03/2021 a 18/04/2021
+- <a href='https://github.com/Leo0256/Equipe_Lider-Projeto_GSW/tree/Sprint_3'>Sprint 3</a> - 26/04/2021 a 16/05/2021
+- <a href='https://github.com/Leo0256/Equipe_Lider-Projeto_GSW/tree/Sprint_4'>Sprint 4</a> - 17/05/2021 a 05/06/2021
 
  -----------------------------------------------------------------------------------------------------------------------------------------------------------
 
