@@ -31,10 +31,9 @@ do curso de Análise e Desenvolvimento de Sistemas na FATEC de São José dos Ca
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 ## Disciplinas Integradas:
 
-- Engenharia de Software I - Professora Juliana Forin Pasquini Martinez 
 - Sistemas de Informação - Professor Cláudio Etelvino de Lima 
+- Engenharia de Software I - Professora Juliana Forin Pasquini Martinez 
 - Linguagem de Programação - Professor Reinaldo Gen Ichiro Arakaki
-
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 ## Objetivo
