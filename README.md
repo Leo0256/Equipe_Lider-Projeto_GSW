@@ -35,8 +35,4 @@ Contudo, o cliente terá acesso a uma prévia do seu produto, para validação.
 
 ## Gráfico Burndown SPRINT 1
 
-
- 
-
-
-
+![BurnDown](https://github.com/Leo0256/Equipe_Lider-Projeto_GSW/blob/main/Arquivos/Artefatos/BurnDown%20-%20Sprint_1.png)
