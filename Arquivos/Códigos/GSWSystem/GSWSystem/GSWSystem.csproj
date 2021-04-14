@@ -6,4 +6,43 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="config.png" />
+    <None Remove="imagens\back.png" />
+    <None Remove="imagens\config.png" />
+    <None Remove="imagens\filtro.png" />
+    <None Remove="imagens\home.png" />
+    <None Remove="imagens\logo.png" />
+    <None Remove="imagens\lupa.jpg" />
+    <None Remove="imagens\power.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="imagens\back.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="imagens\config.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="imagens\filtro.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="imagens\home.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="imagens\logo.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="imagens\lupa.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="imagens\power.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="bin\Debug\net5.0-windows\imagens\" />
+  </ItemGroup>
+
 </Project>

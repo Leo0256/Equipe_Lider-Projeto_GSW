@@ -5,8 +5,33 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GSWSystem"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" Height="703" Width="1024" WindowState="Normal" WindowStartupLocation="CenterScreen">
 
+    <Grid Margin="0,0,0,0">
+        <Rectangle Height="69" VerticalAlignment="Top" Fill="#FF8AC4D0"/>
+        <Button HorizontalAlignment="Left" Margin="27,10,0,0" VerticalAlignment="Top" Height="50" Width="50" Foreground="Black" BorderBrush="{x:Null}">
+            <Button.Background>
+                <ImageBrush ImageSource="/imagens/home.png" Stretch="Uniform"/>
+            </Button.Background>
+        </Button>
+        <Button HorizontalAlignment="Left" Margin="77,10,0,0" VerticalAlignment="Top" BorderBrush="{x:Null}" Height="50" Width="50">
+            <Button.Background>
+                <ImageBrush ImageSource="/imagens/config.png" Stretch="Uniform"/>
+            </Button.Background>
+        </Button>
+        <Button HorizontalAlignment="Left" Margin="127,10,0,0" VerticalAlignment="Top" BorderBrush="{x:Null}" Width="50" Height="50">
+            <Button.Background>
+                <ImageBrush ImageSource="/imagens/power.png" Stretch="Uniform"/>
+            </Button.Background>
+        </Button>
+        <Button HorizontalAlignment="Right" Margin="0,14,30,0" VerticalAlignment="Top" BorderBrush="{x:Null}" Height="42" Width="70">
+            <Button.Background>
+                <ImageBrush Stretch="Uniform" ImageSource="/imagens/back.png"/>
+            </Button.Background>
+        </Button>
+        <Image HorizontalAlignment="Center" Height="69" Margin="0,0,0,0" VerticalAlignment="Top" Width="166" Source="/imagens/logo.png"/>
+        <TextBox HorizontalAlignment="Right" Margin="0,76,21,0" Text="Pesquisa" TextWrapping="Wrap" VerticalAlignment="Top" Width="443" Background="#FFD9D9D9" BorderBrush="Black" Height="32" FontFamily="Arial" FontSize="24" BorderThickness="1,1,1,1" Padding="10,0,0,0" VerticalContentAlignment="Center" SelectionBrush="#B2919191" SelectionTextBrush="#B2919191" CaretBrush="Black"/>
+        <Image HorizontalAlignment="Right" Height="18" Margin="0,83,37,0" VerticalAlignment="Top" Width="20" Source="/imagens/lupa.jpg"/>
+        <Image HorizontalAlignment="Right" Height="32" Margin="0,76,469,0" VerticalAlignment="Top" Width="98" Source="/imagens/filtro.png" Stretch="Uniform"/>
     </Grid>
 </Window>
