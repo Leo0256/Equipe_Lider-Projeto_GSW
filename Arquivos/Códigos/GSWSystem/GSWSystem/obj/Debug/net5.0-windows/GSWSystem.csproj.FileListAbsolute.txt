@@ -20,3 +20,25 @@ D:\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5
 D:\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\ref\GSWSystem.dll
 D:\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\GSWSystem.pdb
 D:\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\GSWSystem.genruntimeconfig.cache
+D:\Nova pasta\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\bin\Debug\net5.0-windows\GSWSystem.exe
+D:\Nova pasta\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\bin\Debug\net5.0-windows\GSWSystem.deps.json
+D:\Nova pasta\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\bin\Debug\net5.0-windows\GSWSystem.runtimeconfig.json
+D:\Nova pasta\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\bin\Debug\net5.0-windows\GSWSystem.runtimeconfig.dev.json
+D:\Nova pasta\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\bin\Debug\net5.0-windows\GSWSystem.dll
+D:\Nova pasta\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\bin\Debug\net5.0-windows\ref\GSWSystem.dll
+D:\Nova pasta\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\bin\Debug\net5.0-windows\GSWSystem.pdb
+D:\Nova pasta\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\GSWSystem.csprojAssemblyReference.cache
+D:\Nova pasta\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\MainWindow.g.cs
+D:\Nova pasta\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\App.g.cs
+D:\Nova pasta\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\GSWSystem_MarkupCompile.cache
+D:\Nova pasta\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\GSWSystem_MarkupCompile.lref
+D:\Nova pasta\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\MainWindow.baml
+D:\Nova pasta\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\GSWSystem.g.resources
+D:\Nova pasta\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\GSWSystem.GeneratedMSBuildEditorConfig.editorconfig
+D:\Nova pasta\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\GSWSystem.AssemblyInfoInputs.cache
+D:\Nova pasta\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\GSWSystem.AssemblyInfo.cs
+D:\Nova pasta\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\GSWSystem.csproj.CoreCompileInputs.cache
+D:\Nova pasta\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\GSWSystem.dll
+D:\Nova pasta\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\ref\GSWSystem.dll
+D:\Nova pasta\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\GSWSystem.pdb
+D:\Nova pasta\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\GSWSystem.genruntimeconfig.cache

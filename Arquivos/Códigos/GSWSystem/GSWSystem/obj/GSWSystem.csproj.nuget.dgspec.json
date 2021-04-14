@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Equipe_Lider-Projeto_GSW\\Arquivos\\Códigos\\GSWSystem\\GSWSystem\\GSWSystem.csproj": {}
+    "D:\\Nova pasta\\Equipe_Lider-Projeto_GSW\\Arquivos\\Códigos\\GSWSystem\\GSWSystem\\GSWSystem.csproj": {}
   },
   "projects": {
-    "D:\\Equipe_Lider-Projeto_GSW\\Arquivos\\Códigos\\GSWSystem\\GSWSystem\\GSWSystem.csproj": {
+    "D:\\Nova pasta\\Equipe_Lider-Projeto_GSW\\Arquivos\\Códigos\\GSWSystem\\GSWSystem\\GSWSystem.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Equipe_Lider-Projeto_GSW\\Arquivos\\Códigos\\GSWSystem\\GSWSystem\\GSWSystem.csproj",
+        "projectUniqueName": "D:\\Nova pasta\\Equipe_Lider-Projeto_GSW\\Arquivos\\Códigos\\GSWSystem\\GSWSystem\\GSWSystem.csproj",
         "projectName": "GSWSystem",
-        "projectPath": "D:\\Equipe_Lider-Projeto_GSW\\Arquivos\\Códigos\\GSWSystem\\GSWSystem\\GSWSystem.csproj",
+        "projectPath": "D:\\Nova pasta\\Equipe_Lider-Projeto_GSW\\Arquivos\\Códigos\\GSWSystem\\GSWSystem\\GSWSystem.csproj",
         "packagesPath": "C:\\Users\\yggdr\\.nuget\\packages\\",
-        "outputPath": "D:\\Equipe_Lider-Projeto_GSW\\Arquivos\\Códigos\\GSWSystem\\GSWSystem\\obj\\",
+        "outputPath": "D:\\Nova pasta\\Equipe_Lider-Projeto_GSW\\Arquivos\\Códigos\\GSWSystem\\GSWSystem\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\yggdr\\AppData\\Roaming\\NuGet\\NuGet.Config",

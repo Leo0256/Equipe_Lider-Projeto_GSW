@@ -13,7 +13,7 @@
     <None Remove="imagens\filtro.png" />
     <None Remove="imagens\home.png" />
     <None Remove="imagens\logo.png" />
-    <None Remove="imagens\lupa.jpg" />
+    <None Remove="imagens\lupa.png" />
     <None Remove="imagens\power.png" />
   </ItemGroup>
 
@@ -33,7 +33,7 @@
     <Resource Include="imagens\logo.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="imagens\lupa.jpg">
+    <Resource Include="imagens\lupa.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="imagens\power.png">
