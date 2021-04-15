@@ -13,28 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-
 namespace GSWSystem
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interação lógica para Page1.xam
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Page1 : Page
     {
-        public MainWindow()
+        public Page1()
         {
             InitializeComponent();
-            Frame.Content = new Page1();
-        }
-
-        private void HomeClick(object sender, RoutedEventArgs e)
-        {
-            Frame.Content = new Page1();
-        }
-
-        private void BackClick(object sender, RoutedEventArgs e)
-        {
-            Frame.Content = new Page2();
         }
     }
 }

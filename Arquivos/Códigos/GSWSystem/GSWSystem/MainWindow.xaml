@@ -5,72 +5,87 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GSWSystem"
         mc:Ignorable="d"
-        Title="MainWindow" Height="703" Width="1024" WindowState="Normal" WindowStartupLocation="CenterScreen">
+        Title="MainWindow" Height="700" Width="1024" WindowState="Normal" WindowStartupLocation="CenterScreen">
 
+    <Window.Resources>
+        <Style x:Key="ButtonStyle" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+
+                        <Border 
+                            x:Name="border"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="Transparent"
+                            BorderThickness="1"/>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="BorderBrush" TargetName="border" Value="Blue"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                        
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+        </Style>
+    </Window.Resources>
+    
+    
     <Grid Margin="0,0,0,0">
-
-        <Rectangle 
+        <StackPanel 
             Height="69" 
-            VerticalAlignment="Top" 
-            Fill="#FF8AC4D0"/>
+            VerticalAlignment="Top"  
+            Orientation="Horizontal"
+            Background="#FF8AC4D0">
 
-        <Button 
-            HorizontalAlignment="Left" 
-            Margin="27,10,0,0" 
-            VerticalAlignment="Top" 
-            Height="50" 
-            Width="50" 
-            Foreground="Black" 
-            BorderBrush="{x:Null}" Content="">
+            <Button 
+                HorizontalAlignment="Left" 
+                Margin="27,10,0,0" 
+                VerticalAlignment="Top" 
+                Height="50" 
+                Width="50" 
+                Foreground="{x:Null}" 
+                BorderBrush="{x:Null}"
+                Click="HomeClick" 
+                Style="{DynamicResource ButtonStyle}" >
 
-            <Button.Background>
-                <ImageBrush ImageSource="/imagens/home.png" Stretch="Uniform"/>
-            </Button.Background>
+                <Button.Background>
+                    <ImageBrush ImageSource="/imagens/home.png" Stretch="Uniform"/>
+                </Button.Background>
 
-        </Button>
+            </Button>
 
-        <Button 
-            HorizontalAlignment="Left" 
-            Margin="77,10,0,0" 
-            VerticalAlignment="Top" 
-            BorderBrush="{x:Null}" 
-            Height="50" 
-            Width="50">
+            <Button 
+                HorizontalAlignment="Left" 
+                Margin="0,10,0,0" 
+                Height="50" 
+                Width="50" 
+                VerticalAlignment="Top"
+                Style="{DynamicResource ButtonStyle}">
 
-            <Button.Background>
-                <ImageBrush ImageSource="/imagens/config.png" Stretch="Uniform"/>
-            </Button.Background>
+                <Button.Background>
+                    <ImageBrush ImageSource="/imagens/config.png" Stretch="Uniform"/>
+                </Button.Background>
 
-        </Button>
+            </Button>
 
-        <Button 
-            HorizontalAlignment="Left" 
-            Margin="127,10,0,0" 
-            VerticalAlignment="Top" 
-            BorderBrush="{x:Null}" 
-            Width="50" 
-            Height="50">
+            <Button 
+                HorizontalAlignment="Left" 
+                Margin="0,10,0,0" 
+                VerticalAlignment="Top" 
+                Width="50" 
+                Height="50"
+                Style="{DynamicResource ButtonStyle}">
 
-            <Button.Background>
-                <ImageBrush ImageSource="/imagens/power.png" Stretch="Uniform"/>
-            </Button.Background>
+                <Button.Background>
+                    <ImageBrush ImageSource="/imagens/power.png" Stretch="Uniform"/>
+                </Button.Background>
 
-        </Button>
+            </Button>
 
-        <Button 
-            HorizontalAlignment="Right" 
-            Margin="0,14,30,0" 
-            VerticalAlignment="Top" 
-            BorderBrush="{x:Null}" 
-            Height="42" 
-            Width="70" 
-            IsCancel="True">
-
-            <Button.Background>
-                <ImageBrush Stretch="Uniform" ImageSource="/imagens/back.png"/>
-            </Button.Background>
-
-        </Button>
+        </StackPanel>
 
         <Image 
             HorizontalAlignment="Center" 
@@ -79,6 +94,22 @@
             VerticalAlignment="Top" 
             Width="166" 
             Source="/imagens/logo.png"/>
+
+        <Button 
+            HorizontalAlignment="Right" 
+            Margin="0,14,30,0" 
+            VerticalAlignment="Top" 
+            Height="42" 
+            Width="70" 
+            IsCancel="True" 
+            Style="{DynamicResource ButtonStyle}"
+            Click="BackClick">
+
+            <Button.Background>
+                <ImageBrush Stretch="Uniform" ImageSource="/imagens/back.png"/>
+            </Button.Background>
+
+        </Button>
 
         <TextBox 
             HorizontalAlignment="Right" 
@@ -93,13 +124,14 @@
             FontFamily="Arial" 
             FontSize="22" 
             BorderThickness="1,1,1,1"
-            Padding="10,0,32,0" 
+            Padding="10,0,40,0" 
             VerticalContentAlignment="Center"
             SelectionBrush="#B2919191"
             SelectionTextBrush="#B2919191" 
             CaretBrush="Black" MaxLines="1">
 
             <TextBox.Resources>
+                
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="6"/>
                 </Style>
@@ -108,15 +140,33 @@
                     <Setter Property="Template">
                         <Setter.Value>
                             <ControlTemplate TargetType="{x:Type TextBox}">
-                                <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
-                                    <ScrollViewer x:Name="PART_ContentHost" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
+                                <Border 
+                                    x:Name="border" 
+                                    BorderBrush="{TemplateBinding BorderBrush}" 
+                                    BorderThickness="{TemplateBinding BorderThickness}" 
+                                    Background="{TemplateBinding Background}" 
+                                    SnapsToDevicePixels="True">
+                                    
+                                    <ScrollViewer
+                                        x:Name="PART_ContentHost" 
+                                        Focusable="false" 
+                                        HorizontalScrollBarVisibility="Hidden" 
+                                        VerticalScrollBarVisibility="Hidden"/>
+                                    
                                 </Border>
                                 <ControlTemplate.Triggers>
+                                    
                                     <Trigger Property="IsMouseOver" Value="true">
-                                        <Setter Property="BorderBrush" TargetName="border" Value="#FF8AC4D0"/>
+                                        <Setter 
+                                            Property="BorderBrush" 
+                                            TargetName="border" 
+                                            Value="#FF8AC4D0"/>
                                     </Trigger>
                                     <Trigger Property="IsFocused" Value="true">
-                                        <Setter Property="BorderBrush" TargetName="border" Value="Black"/>
+                                        <Setter 
+                                            Property="BorderBrush" 
+                                            TargetName="border" 
+                                            Value="Black"/>
                                     </Trigger>
                                 </ControlTemplate.Triggers>
                             </ControlTemplate>
@@ -136,10 +186,18 @@
             Width="20"
             Source="/imagens/lupa.png"/>
 
-        <Button Content="" HorizontalAlignment="Right" Margin="0,79,474,0" VerticalAlignment="Top" Width="80" BorderBrush="{x:Null}" Height="27">
+        <Button 
+            HorizontalAlignment="Right" 
+            Margin="0,79,474,0" 
+            VerticalAlignment="Top" 
+            Width="80" 
+            Height="27"
+            Style="{DynamicResource ButtonStyle}">
+            
             <Button.Background>
                 <ImageBrush ImageSource="/imagens/filtro.png" Stretch="Uniform"/>
             </Button.Background>
+            
         </Button>
 
         <Label 
@@ -159,7 +217,9 @@
             FontFamily="Arial" 
             FontSize="22" Foreground="#FFFDB827"/>
         
-        
+        <!--/menu-->
+
+        <Frame x:Name="Frame" Margin="0,120,0,0" NavigationUIVisibility="Hidden"/>
 
     </Grid>
 </Window>
