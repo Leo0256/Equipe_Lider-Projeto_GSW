@@ -11,7 +11,7 @@ Contudo, o cliente terá acesso a uma prévia do seu produto, para validação.
 
 ## Valores entregues (Com base nos requisitos):
 
-![CARD1](https://github.com/Leo0256/Equipe_Lider-Projeto_GSW/blob/main/Arquivos/Fotos%20e%20Documentos/CARD1.jpg)
+![1](https://github.com/Leo0256/Equipe_Lider-Projeto_GSW/blob/main/Arquivos/Fotos%20e%20Documentos/1.jpg)
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
 ## GIF do protótipo 
