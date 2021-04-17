@@ -56,24 +56,24 @@ em um único dashboard de forma ágil e simples, integrando os dados de diferent
 
 ### Cards das Sprints
 
-![CARD1](https://github.com/Leo0256/Equipe_Lider-Projeto_GSW/blob/main/Arquivos/Fotos%20e%20Documentos/CARD1.jpg)
+![1](https://github.com/Leo0256/Equipe_Lider-Projeto_GSW/blob/main/Arquivos/Fotos%20e%20Documentos/1.jpg)
 
  -----------------------------------------------------------------------------------------------------------------------------------------------------------
 
-![CARD2](https://github.com/Leo0256/Equipe_Lider-Projeto_GSW/blob/main/Arquivos/Fotos%20e%20Documentos/CARD2.jpg)
+![2](https://github.com/Leo0256/Equipe_Lider-Projeto_GSW/blob/main/Arquivos/Fotos%20e%20Documentos/2.jpg)
 
  -----------------------------------------------------------------------------------------------------------------------------------------------------------
 
-![CARD3](https://github.com/Leo0256/Equipe_Lider-Projeto_GSW/blob/main/Arquivos/Fotos%20e%20Documentos/CARD3.jpg)
+![3](https://github.com/Leo0256/Equipe_Lider-Projeto_GSW/blob/main/Arquivos/Fotos%20e%20Documentos/3.jpg)
 
  -----------------------------------------------------------------------------------------------------------------------------------------------------------
 
-![CARD4](https://github.com/Leo0256/Equipe_Lider-Projeto_GSW/blob/main/Arquivos/Fotos%20e%20Documentos/CARD4.jpg)
+![4](https://github.com/Leo0256/Equipe_Lider-Projeto_GSW/blob/main/Arquivos/Fotos%20e%20Documentos/4.jpg)
 
  -----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ### Linha do Tempo
-![linhadotempo](https://github.com/Leo0256/Equipe_Lider-Projeto_GSW/blob/main/Arquivos/Fotos%20e%20Documentos/linhadotempo.jpg)
+![Linha-do-Tempo-GSW](https://github.com/Leo0256/Equipe_Lider-Projeto_GSW/blob/main/Arquivos/Fotos%20e%20Documentos/Linha-do-Tempo-GSW.jpeg)
 
 
 ### Diagrama de Caso de Uso
