@@ -4,7 +4,7 @@
 
 ## Objetivo
 
-Criação do banco de dados, estruturando o mesmo, além de adicionar dados previamente fornecidos. Realizar entrega de valor ao cliente. 
+Criação e estruturação do banco de dados, e inclusão dos dados fornecidos previamente pelo cliente.
 
 -----------------------------------------------------------------------------------------------------------------------------------------------
 
