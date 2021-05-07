@@ -1,0 +1,122 @@
+<!-- 
+/*
+ *	This content is generated from the PSD File Info.
+ *	(Alt+Shift+Ctrl+I).
+ *
+ *	@desc 		
+ *	@file 		gsw_projeto_2
+ *	@date 		1620393984286
+ *	@title 		Page 1
+ *	@author 	
+ *	@keywords 	
+ *	@generator 	Export Kit v1.3.figma
+ *
+*/
+ -->
+<figma>
+	<layers name="gsw_projeto_2" path=" ek125_301_shape_effects/" >
+
+
+		<layer name="page_home_ek1" type="group" x="0" y="0" width="1440" height="1024" >
+			<layer name="_bg__home_ek2" type="shape" shapeType="rectangle" color="0xFFF48F" x="0" y="0" width="1440" height="1024" />
+			<layer name="rectangle_4" type="shape" shapeType="rectangle" color="0xC4C4C4" x="0" y="113" width="1440" height="552" />
+			<layer name="rectangle_5" type="shape" shapeType="rectangle" color="0x0F3460" x="0" y="0" width="1446" height="113" />
+
+			<layer name="group_4" type="group" x="26" y="32" width="88" height="48" >
+				<layer name="rectangle_6" type="shape" shapeType="round rectangle" color="0xFFFFFF" radius="50" x="0" y="0" width="88" height="12" />
+				<layer name="rectangle_7" type="shape" shapeType="round rectangle" color="0xFFFFFF" radius="50" x="0" y="18" width="88" height="12" />
+				<layer name="rectangle_8" type="shape" shapeType="round rectangle" color="0xFFFFFF" radius="50" x="0" y="36" width="88" height="12" />
+
+			</layer>
+
+			<layer name="group_5" type="group" x="866" y="17" width="550" height="79" >
+				<layer name="rectangle_9" type="shape" shapeType="round rectangle" color="0x0F3460" radius="10" x="0" y="0" width="556" height="85" >
+					<effects>
+						<effect type="frameFX" lineSize="3" color="0xffffff" alpha="1" />
+						<effect type="dropShadow" distance="10" color="0x000000" alpha="25" blur="10" offsetX="0" offsetY="4" />
+					</effects>
+				</layer>
+				<layer name="logo_pesquisa_1" type="image" src="skins/logo_pesquisa_1.png" x="15" y="9" width="64" height="61" />
+
+			</layer>
+
+			<layer name="group_9" type="group" x="971" y="156" width="469" height="469" >
+				<layer name="polygon_5" type="image" src="skins/polygon_5.png" x="0" y="0" width="469" height="469" >
+					<effects>
+						<effect type="dropShadow" distance="4" color="0x000000" alpha="25" blur="4" offsetX="0" offsetY="4" />
+					</effects>
+				</layer>
+				<layer name="status" type="text" font="Nunito" weight="bold" justification="left" color="0xFFFFFF" size="55" x="126" y="199" width="246" height="108.5" >
+					<![CDATA[STATUS]]>
+				</layer>
+
+			</layer>
+
+			<layer name="group_10" type="group" x="486" y="155" width="469" height="469" >
+
+				<layer name="group_8" type="group" x="0" y="0" width="469" height="469" >
+					<layer name="polygon_4" type="image" src="skins/polygon_4.png" x="0" y="0" width="469" height="469" >
+						<effects>
+							<effect type="dropShadow" distance="4" color="0x000000" alpha="25" blur="4" offsetX="0" offsetY="4" />
+						</effects>
+					</layer>
+
+				</layer>
+				<layer name="horas_funcion_rio" type="text" font="Nunito" weight="bold" justification="center" color="0xFFFFFF" size="55" x="-5" y="154" width="488" height="199.5" >
+					<![CDATA[HORAS FUNCIONRIO]]>
+				</layer>
+
+			</layer>
+
+			<layer name="group_7" type="group" x="0" y="155" width="469" height="469" >
+				<layer name="polygon_3" type="image" src="skins/polygon_3.png" x="0" y="0" width="469" height="469" >
+					<effects>
+						<effect type="dropShadow" distance="4" color="0x000000" alpha="25" blur="4" offsetX="0" offsetY="4" />
+					</effects>
+				</layer>
+				<layer name="projetos" type="text" font="Nunito" weight="bold" justification="left" color="0xFFFFFF" size="55" x="92" y="203" width="313" height="101.5" >
+					<![CDATA[PROJETOS]]>
+				</layer>
+
+			</layer>
+			<layer name="polygon_6" type="image" src="skins/polygon_6.png" x="316" y="715" width="306" height="267" >
+				<effects>
+					<effect type="frameFX" lineSize="5" color="0xa2d5f2" alpha="1" />
+				</effects>
+			</layer>
+
+			<layer name="group_11" type="group" x="790" y="715" width="306" height="267" >
+				<layer name="polygon_7" type="image" src="skins/polygon_7.png" x="0" y="0" width="306" height="267" >
+					<effects>
+						<effect type="frameFX" lineSize="5" color="0xa2d5f2" alpha="1" />
+					</effects>
+				</layer>
+				<layer name="logo_ampulheta_1" type="image" src="skins/logo_ampulheta_1.png" x="69" y="55" width="168" height="158" />
+
+			</layer>
+
+			<layer name="group_12" type="group" x="1016" y="916" width="345.03" height="66" >
+				<layer name="line_3" type="shape" shapeType="rectangle" color="0xA2D5F2" x="-14" y="33" width="93.34" height="5" />
+				<layer name="line_4" type="shape" shapeType="rectangle" color="0xA2D5F2" x="66" y="66" width="279.03" height="5" />
+
+			</layer>
+
+			<layer name="group_13" type="group" x="53" y="915.44" width="341.9" height="66.56" >
+				<layer name="line_3_ek1" type="shape" shapeType="rectangle" color="0xA2D5F2" x="262" y="33" width="93.34" height="5" />
+				<layer name="line_4_ek1" type="shape" shapeType="rectangle" color="0xA2D5F2" x="0" y="67" width="279.03" height="5" />
+
+			</layer>
+			<layer name="calend_rio_de_entregas" type="text" font="Nunito" weight="bold" justification="center" color="0x0F3460" size="36" x="47" y="866" width="240" height="123" >
+				<![CDATA[Calendrio de
+Entregas]]>
+			</layer>
+			<layer name="andamento_do_projeto" type="text" font="Nunito" weight="bold" justification="center" color="0x0F3460" size="36" x="1114" y="867" width="259" height="123" >
+				<![CDATA[Andamento do
+Projeto]]>
+			</layer>
+			<layer name="captura_da_web_22_3_2021_162433____copia__2__3" type="image" src="skins/captura_da_web_22_3_2021_162433____copia__2__3.png" x="419" y="665" width="536" height="107" />
+
+		</layer>
+
+	</layers>
+</figma>
