@@ -1,0 +1,77 @@
+<!-- 
+/*
+ *	This content is generated from the PSD File Info.
+ *	(Alt+Shift+Ctrl+I).
+ *
+ *	@desc 		
+ *	@file 		gsw_projeto_2
+ *	@date 		1620393984286
+ *	@title 		Page 1
+ *	@author 	
+ *	@keywords 	
+ *	@generator 	Export Kit v1.3.figma
+ *
+*/
+ -->
+<figma>
+	<layers name="gsw_projeto_2" path=" ek125_301_shape_effects/" >
+
+
+		<layer name="page_login_ek1" type="group" x="0" y="0" width="1440" height="1024" >
+			<layer name="_bg__login_ek2" type="shape" shapeType="rectangle" color="0x" x="0" y="0" width="1440" height="1024" >
+				<effects>
+					<effect type="gradientFill" angle="67.902546221222" gradientType="linear" colors="0x1c5e83,0x126290,0x0c6597,0x07689f,0x07689f" alphas="100,100,100,100,100" ratios="0,89.849332720041,171.44955128431,255,255" />
+				</effects>
+			</layer>
+			<layer name="polygon_1" type="image" src="skins/polygon_1.png" x="323" y="115" width="793" height="793" >
+				<effects>
+					<effect type="dropShadow" distance="4" color="0x000000" alpha="25" blur="4" offsetX="0" offsetY="4" />
+				</effects>
+			</layer>
+			<layer name="polygon_2" type="image" src="skins/polygon_2.png" x="608" y="46" width="222.55" height="211.65" >
+				<effects>
+					<effect type="innerShadow" distance="10" color="0xffffff" alpha="50" blur="10" offsetX="10" offsetY="10" />
+				</effects>
+			</layer>
+			<layer name="rectangle_2" type="shape" shapeType="round rectangle" color="0xFFFFFF" radius="50" x="452" y="556" width="535" height="92" >
+				<effects>
+					<effect type="dropShadow" distance="30" color="0x000000" alpha="25" blur="30" offsetX="20" offsetY="20" />
+				</effects>
+			</layer>
+			<layer name="password" type="text" font="Roboto" justification="left" color="0x000000" size="48" x="613" y="574" width="236" height="90" >
+				<![CDATA[Password]]>
+			</layer>
+
+			<layer name="bot_o_login" type="group" x="507" y="701" width="425" height="73" >
+				<layer name="rectangle_3" type="shape" shapeType="round rectangle" color="0xFFC93C" radius="50" x="0" y="0" width="425" height="73" >
+					<effects>
+						<effect type="dropShadow" distance="10" color="0x000000" alpha="25" blur="10" offsetX="0" offsetY="4" />
+					</effects>
+				</layer>
+				<layer name="login_ek3" type="text" font="Roboto" justification="left" color="0x000000" size="48" x="153" y="9" width="143" height="90" >
+					<![CDATA[Login]]>
+				</layer>
+
+			</layer>
+			<layer name="logo_password_1" type="shape" shapeType="rectangle" color="0x#ffffff" x="-237" y="123" width="920" height="512" />
+			<layer name="logo_username_paint_1" type="image" src="skins/logo_username_paint_1.png" x="669" y="115" width="100" height="112" />
+
+			<layer name="group_1" type="group" x="452" y="435" width="535" height="92" >
+				<layer name="rectangle_1" type="shape" shapeType="round rectangle" color="0xFFFFFF" radius="50" x="0" y="0" width="535" height="92" >
+					<effects>
+						<effect type="dropShadow" distance="30" color="0x000000" alpha="25" blur="30" offsetX="20" offsetY="20" />
+					</effects>
+				</layer>
+				<layer name="username" type="text" font="Roboto" justification="left" color="0x000000" size="48" x="159" y="18" width="242" height="90" >
+					<![CDATA[Username]]>
+				</layer>
+				<layer name="logo_username_paint_2" type="image" src="skins/logo_username_paint_2.png" x="18" y="6" width="75" height="80" />
+
+			</layer>
+			<layer name="logo_password_2" type="image" src="skins/logo_password_2.png" x="470" y="562" width="70" height="80" />
+			<layer name="captura_da_web_22_3_2021_162433____copia__2__2" type="image" src="skins/captura_da_web_22_3_2021_162433____copia__2__2.png" x="526" y="258" width="387" height="177" />
+
+		</layer>
+
+	</layers>
+</figma>
