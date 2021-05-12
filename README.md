@@ -73,7 +73,7 @@ em um único dashboard de forma ágil e simples, integrando os dados de diferent
  -----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ### Linha do Tempo
-![Linha-do-Tempo-GSW](https://github.com/Leo0256/Equipe_Lider-Projeto_GSW/blob/main/Arquivos/Fotos%20e%20Documentos/Linha-do-Tempo-GSW.jpeg)
+![LINHADOTEMPO.SPRINT3](https://github.com/Leo0256/Equipe_Lider-Projeto_GSW/blob/main/Arquivos/Fotos%20e%20Documentos/LINHADOTEMPO.SPRINT3.jpg)
 
 
 ### Diagrama de Caso de Uso
