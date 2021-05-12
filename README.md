@@ -64,7 +64,7 @@ em um único dashboard de forma ágil e simples, integrando os dados de diferent
 
  -----------------------------------------------------------------------------------------------------------------------------------------------------------
 
-![3](https://github.com/Leo0256/Equipe_Lider-Projeto_GSW/blob/main/Arquivos/Fotos%20e%20Documentos/3.jpg)
+![CARD3](https://github.com/Leo0256/Equipe_Lider-Projeto_GSW/blob/main/Arquivos/Fotos%20e%20Documentos/CARD3.jpg)
 
  -----------------------------------------------------------------------------------------------------------------------------------------------------------
 
