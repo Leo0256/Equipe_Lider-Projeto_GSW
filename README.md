@@ -11,13 +11,13 @@ do curso de Análise e Desenvolvimento de Sistemas na FATEC de São José dos Ca
 
 - [Daniela dos Santos Meirelles](https://github.com/DanielaMeirelles) - Designer (Scrum Team)
 
-- [Guilherme Leite Silva](https://github.com/Glsilva) - Organizador (Scrum Team)
+- [Guilherme Leite Silva](https://github.com/Glsilva) - Organizador/Designer (Scrum Team)
 
 - [Laroy Bersot Ribeiro do Prado](https://github.com/laroyprado) - Designer (Scrum Team)
 
-- [Leonardo Gustavo Ribeiro](https://github.com/Leo0256) - Programador (Scrum Master)
+- [Leonardo Gustavo Ribeiro](https://github.com/Leo0256) - Programador (Scrum Team)
 
-- [Letícia Salles Bettoni da Costa](https://github.com/leticiasalles) - Organizadora (Scrum Team)
+- [Letícia Salles Bettoni da Costa](https://github.com/leticiasalles) - Organizadora/Designer (Scrum Master)
 
 - [Matheus Emboaba Mello de Souza](https://github.com/MatheusEmboabaTeteu) - Editor de Vídeo (Scrum Team)
 
