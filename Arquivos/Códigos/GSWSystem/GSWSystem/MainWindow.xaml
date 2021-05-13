@@ -5,9 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GSWSystem"
         mc:Ignorable="d"
-        Title="MainWindow" Height="700" Width="1024" WindowState="Normal" WindowStartupLocation="CenterScreen">
+        Title="MainWindow" Height="1024" Width="1440" WindowState="Normal" WindowStartupLocation="CenterScreen">
 
     <Window.Resources>
+
+
         <Style x:Key="ButtonStyle" TargetType="Button">
             <Setter Property="Template">
                 <Setter.Value>
@@ -24,21 +26,21 @@
                                 <Setter Property="BorderBrush" TargetName="border" Value="Blue"/>
                             </Trigger>
                         </ControlTemplate.Triggers>
-                        
+
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
 
         </Style>
     </Window.Resources>
-    
-    
+
+
     <Grid Margin="0,0,0,0">
         <StackPanel 
-            Height="69" 
+            Height="100" 
             VerticalAlignment="Top"  
             Orientation="Horizontal"
-            Background="#FF8AC4D0">
+            Background="#FF0F3460">
 
             <Button 
                 HorizontalAlignment="Left" 
@@ -52,75 +54,23 @@
                 Style="{DynamicResource ButtonStyle}" >
 
                 <Button.Background>
-                    <ImageBrush ImageSource="/imagens/home.png" Stretch="Uniform"/>
-                </Button.Background>
-
-            </Button>
-
-            <Button 
-                HorizontalAlignment="Left" 
-                Margin="0,10,0,0" 
-                Height="50" 
-                Width="50" 
-                VerticalAlignment="Top"
-                Style="{DynamicResource ButtonStyle}">
-
-                <Button.Background>
-                    <ImageBrush ImageSource="/imagens/config.png" Stretch="Uniform"/>
-                </Button.Background>
-
-            </Button>
-
-            <Button 
-                HorizontalAlignment="Left" 
-                Margin="0,10,0,0" 
-                VerticalAlignment="Top" 
-                Width="50" 
-                Height="50"
-                Style="{DynamicResource ButtonStyle}">
-
-                <Button.Background>
-                    <ImageBrush ImageSource="/imagens/power.png" Stretch="Uniform"/>
+                    <ImageBrush ImageSource="/imagens/icon.png" Stretch="Uniform"/>
                 </Button.Background>
 
             </Button>
 
         </StackPanel>
 
-        <Image 
-            HorizontalAlignment="Center" 
-            Height="69" 
-            Margin="0,0,0,0" 
-            VerticalAlignment="Top" 
-            Width="166" 
-            Source="/imagens/logo.png"/>
-
-        <Button 
-            HorizontalAlignment="Right" 
-            Margin="0,14,30,0" 
-            VerticalAlignment="Top" 
-            Height="42" 
-            Width="70" 
-            IsCancel="True" 
-            Style="{DynamicResource ButtonStyle}"
-            Click="BackClick">
-
-            <Button.Background>
-                <ImageBrush Stretch="Uniform" ImageSource="/imagens/back.png"/>
-            </Button.Background>
-
-        </Button>
-
         <TextBox 
             HorizontalAlignment="Right" 
-            Margin="0,76,25,0" 
+            Margin="0,25,30,0" 
             Text="" 
             TextWrapping="NoWrap" 
             VerticalAlignment="Top"
-            Width="443" 
+            Width="547" 
             Background="#FFD9D9D9"
             BorderBrush="Black" 
-            Height="32" 
+            Height="50" 
             FontFamily="Arial" 
             FontSize="22" 
             BorderThickness="1,1,1,1"
@@ -131,12 +81,24 @@
             CaretBrush="Black" MaxLines="1">
 
             <TextBox.Resources>
-                
+
+                <DropShadowEffect 
+                    x:Key="dropShadow" 
+                    BlurRadius="0" 
+                    Direction="270"
+                    Color="Black"
+                    />
+
+
+
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="6"/>
                 </Style>
 
                 <Style TargetType="TextBox">
+                    <Setter Property="VerticalAlignment" Value="Center" />
+                    <Setter Property="Margin" Value="0,10,0,10" />
+                    <Setter Property="Effect" Value="{StaticResource dropShadow}"/>
                     <Setter Property="Template">
                         <Setter.Value>
                             <ControlTemplate TargetType="{x:Type TextBox}">
@@ -146,21 +108,21 @@
                                     BorderThickness="{TemplateBinding BorderThickness}" 
                                     Background="{TemplateBinding Background}" 
                                     SnapsToDevicePixels="True">
-                                    
+
                                     <ScrollViewer
                                         x:Name="PART_ContentHost" 
                                         Focusable="false" 
                                         HorizontalScrollBarVisibility="Hidden" 
                                         VerticalScrollBarVisibility="Hidden"/>
-                                    
+
                                 </Border>
                                 <ControlTemplate.Triggers>
-                                    
+
                                     <Trigger Property="IsMouseOver" Value="true">
                                         <Setter 
                                             Property="BorderBrush" 
                                             TargetName="border" 
-                                            Value="#FF8AC4D0"/>
+                                            Value="#FF0F3460"/>
                                     </Trigger>
                                     <Trigger Property="IsFocused" Value="true">
                                         <Setter 
@@ -180,43 +142,12 @@
 
         <Image 
             HorizontalAlignment="Right" 
-            Height="18"
-            Margin="0,83,37,0" 
+            Height="39"
+            Margin="0,31,527,0" 
             VerticalAlignment="Top"
-            Width="20"
+            Width="38"
             Source="/imagens/lupa.png"/>
 
-        <Button 
-            HorizontalAlignment="Right" 
-            Margin="0,79,474,0" 
-            VerticalAlignment="Top" 
-            Width="80" 
-            Height="27"
-            Style="{DynamicResource ButtonStyle}">
-            
-            <Button.Background>
-                <ImageBrush ImageSource="/imagens/filtro.png" Stretch="Uniform"/>
-            </Button.Background>
-            
-        </Button>
-
-        <Label 
-            Content="Label"
-            HorizontalAlignment="Left" 
-            Margin="30,73,0,0"
-            VerticalAlignment="Top" 
-            FontFamily="Arial" 
-            FontSize="22" 
-            Foreground="#FFF7E274"/>
-        
-        <Label 
-            Content="Label"
-            HorizontalAlignment="Left" 
-            Margin="105,73,0,0"
-            VerticalAlignment="Top" 
-            FontFamily="Arial" 
-            FontSize="22" Foreground="#FFFDB827"/>
-        
         <!--/menu-->
 
         <Frame x:Name="Frame" Margin="0,120,0,0" NavigationUIVisibility="Hidden"/>

@@ -9,7 +9,7 @@
       Title="Page1" Background="White">
 
     <Grid>
-        <Image HorizontalAlignment="Center" Height="146" VerticalAlignment="Center" Width="351" Source="/imagens/logo.png"/>
+        <Image HorizontalAlignment="Center" Height="146" VerticalAlignment="Center" Width="351" Source="/imagens/lupa.png"/>
         <Label Content="Page 1" HorizontalAlignment="Center" Margin="0,367,0,0" VerticalAlignment="Top" FontSize="36"/>
     </Grid>
 </Page>
