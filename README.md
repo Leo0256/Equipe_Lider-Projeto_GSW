@@ -25,7 +25,7 @@ do curso de Análise e Desenvolvimento de Sistemas na FATEC de São José dos Ca
 
 - [Sarah da Boa Viagem Santana](https://github.com/Sarah781) - Designer (Scrum Team)
 
-- [Thiago da Silva](https://github.com/Thiago-Thome) - Programador Jr. (Scrum Team)
+- [Thiago da Silva](https://github.com/tsilvaBR) - Programador Jr. (Scrum Team)
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
