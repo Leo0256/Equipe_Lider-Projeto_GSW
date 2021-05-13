@@ -15,9 +15,6 @@ using System.Windows.Shapes;
 
 namespace GSWSystem
 {
-    /// <summary>
-    /// Interação lógica para Page2.xam
-    /// </summary>
     public partial class Page2 : Page
     {
         public Page2()

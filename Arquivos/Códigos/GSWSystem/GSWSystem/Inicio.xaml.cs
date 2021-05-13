@@ -12,22 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using GSWSQL;
-
 
 namespace GSWSystem
 {
-    public partial class MainWindow : Window
+    /// <summary>
+    /// Interação lógica para Inicio.xam
+    /// </summary>
+    public partial class Inicio : Page
     {
-        public MainWindow()
+        public Inicio()
         {
             InitializeComponent();
-            //Frame.Content = new Menu();
-        }
-
-        private void HomeClick(object sender, RoutedEventArgs e)
-        {
-            Frame.Content = new Page2();
         }
     }
 }

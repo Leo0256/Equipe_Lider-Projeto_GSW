@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace GSWSystem
 {
     /// <summary>
-    /// Interação lógica para Page1.xam
+    /// Interação lógica para Projeto.xam
     /// </summary>
-    public partial class Page1 : Page
+    public partial class Projeto : Page
     {
-        public Page1()
+        public Projeto()
         {
             InitializeComponent();
         }

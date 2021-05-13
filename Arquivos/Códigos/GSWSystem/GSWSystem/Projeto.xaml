@@ -1,0 +1,20 @@
+﻿<Page x:Class="GSWSystem.Projeto"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:GSWSystem"
+      mc:Ignorable="d" 
+      Width="1240" Height="400"
+      Background="White"
+      Title="Projeto">
+
+    <Grid>
+        <Label Content="Projeto" HorizontalAlignment="Left" Margin="84,40,0,0" VerticalAlignment="Top" Height="86" Width="377" FontFamily="Arial" FontSize="64"/>
+        <Label Content="Status" HorizontalAlignment="Left" Margin="680,40,0,0" VerticalAlignment="Top" Height="86" Width="377" FontFamily="Arial" FontSize="36"/>
+        <Label Content="Descrição" HorizontalAlignment="Left" Margin="84,222,0,0" VerticalAlignment="Top" Height="86" Width="377" FontFamily="Arial" FontSize="36"/>
+        <Label Content="dados" HorizontalAlignment="Left" Margin="680,265,0,0" VerticalAlignment="Top" Height="86" Width="377" FontFamily="Arial" FontSize="36"/>
+
+
+    </Grid>
+</Page>

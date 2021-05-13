@@ -68,7 +68,12 @@ C:\Users\yggdr\Documents\Fatec\2º\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GS
 C:\Users\yggdr\Documents\Fatec\2º\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\ref\GSWSystem.dll
 C:\Users\yggdr\Documents\Fatec\2º\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\GSWSystem.pdb
 C:\Users\yggdr\Documents\Fatec\2º\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\GSWSystem.genruntimeconfig.cache
-D:\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\Page1.g.cs
 D:\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\Page2.g.cs
-D:\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\Page1.baml
 D:\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\Page2.baml
+D:\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\bin\Debug\net5.0-windows\Newtonsoft.Json.dll
+D:\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\bin\Debug\net5.0-windows\Npgsql.dll
+D:\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\GSWSystem.csproj.CopyComplete
+D:\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\Inicio.g.cs
+D:\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\Inicio.baml
+D:\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\Projeto.g.cs
+D:\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\Projeto.baml
