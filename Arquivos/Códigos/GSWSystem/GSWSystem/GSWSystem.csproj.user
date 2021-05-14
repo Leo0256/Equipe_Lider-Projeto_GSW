@@ -27,6 +27,9 @@
     <Compile Update="QuantHoras.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="GraficoTotal.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="Dedicacao.xaml">
@@ -48,6 +51,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="QuantHoras.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="GraficoTotal.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

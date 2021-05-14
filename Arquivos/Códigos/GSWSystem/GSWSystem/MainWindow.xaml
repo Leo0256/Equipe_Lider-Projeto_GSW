@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:GSWSystem"
         mc:Ignorable="d"
         Title="MainWindow" Height="700" Width="1440" WindowState="Maximized" WindowStartupLocation="CenterScreen" Foreground="{x:Null}" MinWidth="1000" MinHeight="500">
@@ -14,6 +15,19 @@
                     Direction="270"
                     Color="Black"
                     />
+
+        <Storyboard x:Key="MenuOpen">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="GridMenu">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="200"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="MenuClose">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="GridMenu">
+                <EasingDoubleKeyFrame KeyTime="0" Value="200"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
 
         <Style x:Key="ButtonStyle" TargetType="Button">
             <Setter Property="Template">
@@ -83,27 +97,49 @@
         </Style>
 
     </Window.Resources>
+
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="ButtonOpenMenu">
+            <BeginStoryboard Storyboard="{StaticResource MenuOpen}"/>
+        </EventTrigger>
+
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="ButtonCloseMenu">
+            <BeginStoryboard Storyboard="{StaticResource MenuClose}"/>
+        </EventTrigger>
+    </Window.Triggers>
+
     <Window.Background>
         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-            <GradientStop Color="#FFFFEC3C"/>
-            <GradientStop Color="#FF1D5E84" Offset="1"/>
-            <GradientStop Color="#8C94A95D" Offset="0.47"/>
-            <GradientStop Color="#9AB9C051" Offset="0.304"/>
-            <GradientStop Color="#A361896D" Offset="0.696"/>
+            <GradientStop Color="#FFFFEE4F" Offset="1"/>
+            <GradientStop Color="Transparent" Offset="0"/>
         </LinearGradientBrush>
     </Window.Background>
 
 
     <Grid Margin="0,0,0,0">
 
+        <Rectangle
+            Width="1440"
+            Height="700"
+            MinWidth="1000" 
+            MinHeight="500"
+            >
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#4C1D5E84" Offset="0"/>
+                    <GradientStop Color="#00000000" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+
         <ScrollViewer VerticalScrollBarVisibility="Hidden">
             <Frame 
-            x:Name="Frame" 
-            Margin="0,80,0,29" 
-            NavigationUIVisibility="Hidden"
-            Background="Transparent" HorizontalAlignment="Center" Width="1440" 
-            ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled" VerticalAlignment="Top"
-        />
+                x:Name="Frame" 
+                Margin="0,80,0,29" 
+                NavigationUIVisibility="Hidden"
+                Background="Transparent" HorizontalAlignment="Center" Width="1440" 
+                ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled" VerticalAlignment="Top"
+                />
         </ScrollViewer>
 
         <StackPanel 
@@ -111,26 +147,98 @@
             VerticalAlignment="Top"  
             Orientation="Horizontal"
             Background="#FF0F3460">
-            <Button 
-                Height="26" 
-                Width="47" 
-                Foreground="{x:Null}" 
-                BorderBrush="{x:Null}"
-                Click="HomeClick" 
-                Style="{DynamicResource ButtonStyle}" Margin="20,0,0,0" Padding="1,1,1,1" >
 
-                <Button.Background>
-                    <ImageBrush ImageSource="/imagens/icon.png" Stretch="Uniform"/>
-                </Button.Background>
+            <Grid Background="Transparent">
+                <Button 
+                        x:Name="ButtonCloseMenu"
+                        Width="75" 
+                        Height="60" 
+                        Background="{x:Null}" 
+                        BorderBrush="{x:Null}" 
+                        VerticalAlignment="Top" 
+                        HorizontalAlignment="Left"
+                        Visibility="Collapsed"
+                        Click="CloseMenu">
 
-            </Button>
+                    <materialDesign:PackIcon  
+                            Width="45"
+                            Height="45"
+                            Foreground="White" 
+                            Kind="ArrowLeft"/>
 
+                </Button>
+
+                <Button 
+                        x:Name="ButtonOpenMenu"
+                        Width="75" 
+                        Height="60" 
+                        Background="{x:Null}" 
+                        BorderBrush="{x:Null}" 
+                        VerticalAlignment="Center" 
+                        HorizontalAlignment="Left"
+                        Click="OpenMenu">
+
+                    <materialDesign:PackIcon  
+                            Width="50"
+                            Height="50"
+                            Foreground="White" 
+                            Kind="Menu"/>
+
+                </Button>
+            </Grid>
         </StackPanel>
 
+        <DockPanel HorizontalAlignment="Right"  VerticalAlignment="Top" Margin="0,11,28,0"  >
+            <Image 
+                Height="27"
+                Width="27"
+                Margin="0,0,10,0"
+                Source="/imagens/lupa.png"/>
+
+            <TextBox 
+                x:Name="Text"
+                Text="" 
+                TextWrapping="NoWrap" 
+                Height="39" 
+                Width="547"
+                FontFamily="Arial" 
+                FontSize="22" 
+                MaxLines="1" 
+                
+                HorizontalAlignment="Right" 
+                VerticalAlignment="Top" 
+                VerticalContentAlignment="Center"
+                Padding="40,0,10,0"
+                
+                Background="{x:Null}"
+                BorderBrush="White" 
+                Foreground="White" 
+                BorderThickness="1,1,1,1"
+                
+                SelectionBrush="White"
+                SelectionTextBrush="White" 
+                CaretBrush="white" 
+                
+                HorizontalScrollBarVisibility="Disabled"
+                
+                Style="{DynamicResource ResourceKey=TextBoxStyle}">
+
+                <TextBox.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="6"/>
+                    </Style>
+                </TextBox.Resources>
+
+            </TextBox>
+
+        </DockPanel>
+        
+        <!--
+        
         <TextBox 
             HorizontalAlignment="Right" 
             Margin="0,11,28,0" 
-            Text="" 
+            Text="teste teste" 
             TextWrapping="NoWrap" 
             VerticalAlignment="Top" 
             Background="{x:Null}"
@@ -139,12 +247,13 @@
             FontFamily="Arial" 
             FontSize="22" 
             BorderThickness="1,1,1,1"
-            Padding="45,0,10,0" 
+            Padding="40,0,10,0"
             VerticalContentAlignment="Center"
             SelectionBrush="White"
             SelectionTextBrush="White" 
             CaretBrush="white" MaxLines="1" Width="547"
-            Style="{DynamicResource ResourceKey=TextBoxStyle}" Foreground="White">
+            Style="{DynamicResource ResourceKey=TextBoxStyle}"
+            Foreground="White" HorizontalScrollBarVisibility="Disabled">
 
             <TextBox.Resources>
                 <Style TargetType="{x:Type Border}">
@@ -153,6 +262,7 @@
             </TextBox.Resources>
 
         </TextBox>
+        
 
         <Image 
             HorizontalAlignment="Right" 
@@ -162,6 +272,233 @@
             Width="27"
             Source="/imagens/lupa.png"/>
 
+        -->
         
+
+        <Grid x:Name="GridMenu" Margin="0,60,0,0" Width="0" Background="#FF0F3460" HorizontalAlignment="Left">
+
+            <StackPanel>
+
+                <ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                    <!--
+                    <ListViewItem Height="60">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon 
+                                Width="25"
+                                Height="25"
+                                Margin="10"
+                                Foreground="White"
+                                Kind="ViewDashboard"
+                                VerticalAlignment="Center" />
+
+                            <TextBlock 
+                                Margin="20,10"
+                                FontFamily="Arial"
+                                FontSize="15" 
+                                Foreground="White" 
+                                VerticalAlignment="Center" 
+                                Text="Menu"/>
+                        </StackPanel>
+                    </ListViewItem>
+
+                    <ListViewItem Height="60">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon 
+                                Width="25"
+                                Height="25"
+                                Margin="10"
+                                Foreground="White"
+                                Kind="FilterList"
+                                VerticalAlignment="Center" />
+
+                            <TextBlock 
+                                Margin="20,10"
+                                FontFamily="Arial"
+                                FontSize="15" 
+                                Foreground="White" 
+                                VerticalAlignment="Center" 
+                                Text="Filtrar Pesquisa"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    -->
+
+                    <ListViewItem Height="60" Selected="ViewProjeto">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon 
+                                Width="25"
+                                Height="25"
+                                Margin="10"
+                                Foreground="White"
+                                Kind="Filter1"
+                                VerticalAlignment="Center" />
+
+                            <TextBlock 
+                                Margin="20,10"
+                                FontFamily="Arial"
+                                FontSize="15" 
+                                Foreground="White" 
+                                VerticalAlignment="Center" 
+                                Text="Projeto"/>
+                        </StackPanel>
+                    </ListViewItem>
+
+                    <ListViewItem Height="60" Selected="ViewHorasFuncionario">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon 
+                                Width="25"
+                                Height="25"
+                                Margin="10"
+                                Foreground="White"
+                                Kind="Filter2"
+                                VerticalAlignment="Center" />
+
+                             <TextBlock 
+                                Margin="20,5"
+                                FontFamily="Arial"
+                                FontSize="15" 
+                                Foreground="White" 
+                                VerticalAlignment="Center" 
+                                Text="Horas Funcionario"
+                                MaxWidth="100"
+                                TextWrapping="Wrap"/>
+                        </StackPanel>
+                    </ListViewItem>
+
+                    <ListViewItem Height="60" Selected="ViewHorasProjeto">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon 
+                                Width="25"
+                                Height="25"
+                                Margin="10"
+                                Foreground="White"
+                                Kind="Filter3"
+                                VerticalAlignment="Center" />
+
+                            <TextBlock 
+                                Margin="20,5"
+                                FontFamily="Arial"
+                                FontSize="15" 
+                                Foreground="White" 
+                                VerticalAlignment="Center" 
+                                Text="Horas por Projeto"
+                                MaxWidth="100"
+                                TextWrapping="Wrap"/>
+                        </StackPanel>
+                    </ListViewItem>
+
+                    <ListViewItem Height="60" Selected="ViewHorasAno">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon 
+                                Width="25"
+                                Height="25"
+                                Margin="10"
+                                Foreground="White"
+                                Kind="Filter3"
+                                VerticalAlignment="Center" />
+
+                            <TextBlock 
+                                Margin="20,5"
+                                FontFamily="Arial"
+                                FontSize="15" 
+                                Foreground="White" 
+                                VerticalAlignment="Center" 
+                                Text="Horas por Ano"
+                                MaxWidth="100"
+                                TextWrapping="Wrap"/>
+                        </StackPanel>
+                    </ListViewItem>
+
+                    <ListViewItem Height="60"  Selected="ViewHorasMes">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon 
+                                Width="25"
+                                Height="25"
+                                Margin="10"
+                                Foreground="White"
+                                Kind="Filter3"
+                                VerticalAlignment="Center" />
+
+                            <TextBlock 
+                                Margin="20,5"
+                                FontFamily="Arial"
+                                FontSize="15" 
+                                Foreground="White" 
+                                VerticalAlignment="Center" 
+                                Text="Horas por Mês"
+                                MaxWidth="100"
+                                TextWrapping="Wrap"/>
+                        </StackPanel>
+                    </ListViewItem>
+
+                    <ListViewItem Height="60"  Selected="ViewDedicacao">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon 
+                                Width="25"
+                                Height="25"
+                                Margin="10"
+                                Foreground="White"
+                                Kind="Filter4"
+                                VerticalAlignment="Center" />
+
+                            <TextBlock 
+                                Margin="20,10"
+                                FontFamily="Arial"
+                                FontSize="15" 
+                                Foreground="White" 
+                                VerticalAlignment="Center" 
+                                Text="% Dedicação"/>
+                        </StackPanel>
+                    </ListViewItem>
+
+                    <ListViewItem Height="60"  Selected="ViewQuantStatus">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon 
+                                Width="25"
+                                Height="25"
+                                Margin="10"
+                                Foreground="White"
+                                Kind="Filter5"
+                                VerticalAlignment="Center" />
+
+                            <TextBlock 
+                                Margin="20,5"
+                                FontFamily="Arial"
+                                FontSize="15" 
+                                Foreground="White" 
+                                VerticalAlignment="Center" 
+                                Text="Quantidade de Status"
+                                MaxWidth="100"
+                                TextWrapping="Wrap"/>
+                        </StackPanel>
+                    </ListViewItem>
+
+                    <ListViewItem Height="60"  Selected="ViewTasksAbertas">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon 
+                                Width="25"
+                                Height="25"
+                                Margin="10"
+                                Foreground="White"
+                                Kind="Filter3"
+                                VerticalAlignment="Center" />
+
+                            <TextBlock 
+                                Margin="20,5"
+                                FontFamily="Arial"
+                                FontSize="15" 
+                                Foreground="White" 
+                                VerticalAlignment="Center" 
+                                Text="Tasks Abertas"
+                                MaxWidth="100"
+                                TextWrapping="Wrap"/>
+                        </StackPanel>
+                    </ListViewItem>
+                </ListView>
+
+
+            </StackPanel>
+
+        </Grid>
+
     </Grid>
 </Window>

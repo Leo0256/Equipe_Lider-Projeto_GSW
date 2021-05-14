@@ -23,6 +23,26 @@
                 </TextBlock.Text>
 
             </TextBlock>
+
+            <Border 
+                Background="GhostWhite" 
+                BorderThickness="2" 
+                BorderBrush="Black"
+                Margin="0,18,27,0"
+                Padding="4"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                CornerRadius="360"
+                Width="404" Height="404">
+
+                <Canvas 
+                    x:Name="mainCanvas"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    />
+
+            </Border>
+
             <Rectangle 
                 Height="3" Margin="0,96,400,0" 
                 Stroke="#7F000000" 
@@ -41,13 +61,7 @@
                 </Grid.ColumnDefinitions>
             </Grid>
 
-            <Rectangle 
-                RadiusX="360"
-                RadiusY="360"
-                HorizontalAlignment="Left" 
-                Height="400" Margin="505,18,0,0" 
-                Stroke="Black" VerticalAlignment="Top"
-                Width="400"/>
+
 
 
         </Grid>

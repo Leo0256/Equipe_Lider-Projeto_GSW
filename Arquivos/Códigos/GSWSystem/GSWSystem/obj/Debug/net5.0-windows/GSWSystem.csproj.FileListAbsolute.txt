@@ -83,3 +83,8 @@ D:\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5
 D:\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\QuantHoras.baml
 D:\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\Dedicacao.g.cs
 D:\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\Dedicacao.baml
+D:\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\GraficoTotal.g.cs
+D:\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\GraficoTotal.baml
+D:\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\bin\Debug\net5.0-windows\MaterialDesignColors.dll
+D:\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\bin\Debug\net5.0-windows\MaterialDesignThemes.Wpf.dll
+D:\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\App.baml

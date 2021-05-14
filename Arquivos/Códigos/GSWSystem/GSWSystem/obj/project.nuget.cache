@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "K126iO+Z96syAm135tj408Y9Koyb7AUEAvY5POrlsWNkjEw+pY8mWb6DEDqyuVRqFmcPxeFe0DUt/RS28nhNhg==",
+  "dgSpecHash": "XwFDTrknHLMXBoNVqQmqioR4iG+30atVmxnQFfCBfO2djGBhlNnZy2OL+h65WK70HdunArAFml1Cx/KyC7HVRA==",
   "success": true,
   "projectFilePath": "D:\\Equipe_Lider-Projeto_GSW\\Arquivos\\Códigos\\GSWSystem\\GSWSystem\\GSWSystem.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\yggdr\\.nuget\\packages\\materialdesigncolors\\2.0.0\\materialdesigncolors.2.0.0.nupkg.sha512",
+    "C:\\Users\\yggdr\\.nuget\\packages\\materialdesignthemes\\4.0.0\\materialdesignthemes.4.0.0.nupkg.sha512",
     "C:\\Users\\yggdr\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\yggdr\\.nuget\\packages\\npgsql\\5.0.5\\npgsql.5.0.5.nupkg.sha512",
     "C:\\Users\\yggdr\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.6.0\\system.runtime.compilerservices.unsafe.4.6.0.nupkg.sha512"
