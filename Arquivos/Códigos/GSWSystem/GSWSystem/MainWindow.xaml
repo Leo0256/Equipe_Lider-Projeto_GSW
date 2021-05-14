@@ -39,8 +39,8 @@
 
         <Style x:Key="TextBoxStyle" TargetType="TextBox">
             <!--Setter Property="VerticalAlignment" Value="Center" />
-                    <Setter Property="Margin" Value="0,10,0,10" />
-                    <Setter Property="Effect" Value="{StaticResource dropShadow}"/-->
+            <Setter Property="Margin" Value="0,10,0,10" />
+            <Setter Property="Effect" Value="{StaticResource dropShadow}"/-->
 
             <Setter Property="Template">
                 <Setter.Value>
@@ -95,6 +95,16 @@
 
 
     <Grid Margin="0,0,0,0">
+
+        <ScrollViewer VerticalScrollBarVisibility="Hidden">
+            <Frame 
+            x:Name="Frame" 
+            Margin="0,80,0,29" 
+            NavigationUIVisibility="Hidden"
+            Background="Transparent" HorizontalAlignment="Center" Width="1440" 
+            ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled" VerticalAlignment="Top"
+        />
+        </ScrollViewer>
 
         <StackPanel 
             Height="60" 
@@ -152,15 +162,6 @@
             Width="27"
             Source="/imagens/lupa.png"/>
 
-        <!--/menu-->
-
-        <Frame 
-            x:Name="Frame" 
-            Margin="0,80,0,0" 
-            NavigationUIVisibility="Hidden" 
-            VerticalAlignment="Top" 
-            Height="594"
-            Background="Transparent" HorizontalAlignment="Center" Width="1440"/>
-
+        
     </Grid>
 </Window>

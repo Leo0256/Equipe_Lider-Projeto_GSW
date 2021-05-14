@@ -9,6 +9,12 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Dedicacao.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Funcionario.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Inicio.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -18,8 +24,17 @@
     <Compile Update="Projeto.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="QuantHoras.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Dedicacao.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Funcionario.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Inicio.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -30,6 +45,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Projeto.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="QuantHoras.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

@@ -15,14 +15,39 @@ using System.Windows.Shapes;
 
 namespace GSWSystem
 {
-    /// <summary>
-    /// Interação lógica para Projeto.xam
-    /// </summary>
     public partial class Projeto : Page
     {
-        public Projeto()
+        public Projeto(string xNome, string xStatus, string xDescricao, string xData, string xFinalizado)
         {
             InitializeComponent();
+            Nome.Text = xNome;
+            Status.Content = xStatus;
+            Desc.Text = xDescricao;
+            Data.Content = xData;
+            Fim.Content = "Finalizado: " + xFinalizado;
+        }
+
+        public string getNome()
+        {
+            return Nome.Text.ToString();
+        }
+
+        public string getStatus()
+        {
+            return Status.Content.ToString();
+        }
+        public string getDescricaoe()
+        {
+            return Desc.Text;
+        }
+        public string getData()
+        {
+            return Data.Content.ToString();
+        }
+
+        public string getFinalizado()
+        {
+            return Fim.Content.ToString()[12..];
         }
     }
 }
