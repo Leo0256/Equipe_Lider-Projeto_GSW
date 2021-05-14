@@ -19,6 +19,6 @@ Entregar a aplicação funcionando, para que o cliente consiga  realizar suas co
 
 -----------------------------------------------------------------------------------------------------------------------------------------------
 
-## Gráfico Burndown SPRINT 2
+## Gráfico Burndown SPRINT 3
 
 
