@@ -4,7 +4,7 @@
 
 ## Objetivo
 
-Entregar a aplicação funcionando, para que o cliente consiga  realizar suas consultas/ analises de forma    rápida e eficiente.
+Entregar a aplicação funcionando, para que o cliente consiga  realizar suas consultas e/ou análises de forma rápida e eficiente.
 
 -----------------------------------------------------------------------------------------------------------------------------------------------
 
