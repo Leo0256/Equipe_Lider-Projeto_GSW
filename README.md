@@ -4,7 +4,7 @@
 
 ## Objetivo
 
-Criação e estruturação do banco de dados, e inclusão dos dados fornecidos previamente pelo cliente.
+Entregar a aplicação funcionando, para que o cliente consiga  realizar suas consultas/ analises de forma    rápida e eficiente.
 
 -----------------------------------------------------------------------------------------------------------------------------------------------
 
