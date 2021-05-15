@@ -34,10 +34,13 @@
                 Foreground="#FF151515"/>
 
             <Rectangle 
-                Height="3" Margin="0,0,0,0" 
+                Height="3" 
+                Width="916"
+                Margin="0" 
                 Stroke="#7F000000" 
                 VerticalAlignment="Bottom"
-                Fill="Black" HorizontalAlignment="Center" Width="916"/>
+                Fill="Black" 
+                HorizontalAlignment="Center"/>
 
         </Grid>
     </Border>

@@ -10,68 +10,78 @@
       MinHeight="100" MaxHeight="400">
 
     <Border Background="white" BorderBrush="Black" BorderThickness="1" CornerRadius="8,8,8,8">
-        <Grid Margin="0,0,0,10">
-        
-            <TextBlock 
-                x:Name="Nome"
-                HorizontalAlignment="Left" 
-                Margin="22,18,0,0" 
-                VerticalAlignment="Top" 
-                FontFamily="Arial" FontSize="55">
-                <TextBlock.Text>
-                    Nome
-                </TextBlock.Text>
-            </TextBlock>
+        <StackPanel Orientation="Vertical">
+            <DockPanel>
+                <Grid Margin="0,0,0,10">
+
+                    <TextBlock 
+                        x:Name="Nome"
+                        HorizontalAlignment="Left" 
+                        Margin="22,18,0,0" 
+                        VerticalAlignment="Top" 
+                        FontFamily="Arial" FontSize="55"
+                        TextWrapping="Wrap"
+                        MaxWidth="600">
+                        <TextBlock.Text>
+                            Nome
+                        </TextBlock.Text>
+                    </TextBlock>
 
 
-            <Label 
-                x:Name="Status"
-                Content="Status" 
-                HorizontalAlignment="Right" 
-                Margin="0,29,30,0" 
-                VerticalAlignment="Top" 
-                FontFamily="Arial" FontSize="36" 
-                Foreground="#FF151515"/>
+                    <Label 
+                        x:Name="Status"
+                        Content="Status" 
+                        HorizontalAlignment="Right" 
+                        Margin="0,29,30,0" 
+                        VerticalAlignment="Top" 
+                        FontFamily="Arial" FontSize="36" 
+                        Foreground="#FF151515"/>
+                </Grid>
+            </DockPanel>
 
-            <TextBlock  
-                x:Name="Desc"
-                HorizontalAlignment="Left" 
-                Margin="40,104,0,0" 
-                VerticalAlignment="Top" 
-                FontFamily="Arial" FontSize="26"
-                Foreground="#FF151515" 
-                MaxWidth="517" Width="517" TextWrapping="Wrap">
-                <TextBlock.Text>
-                    Descrição.
-                </TextBlock.Text>
-            </TextBlock>
+            <DockPanel>
+                <Grid Margin="0,0,0,10">
+                    <TextBlock  
+                        x:Name="Desc"
+                        HorizontalAlignment="Left" 
+                        Margin="40,10" 
+                        VerticalAlignment="Top" 
+                        FontFamily="Arial" FontSize="26"
+                        Foreground="#FF151515" 
+                        MaxWidth="517" Width="517" TextWrapping="Wrap">
+                        <TextBlock.Text>
+                            Descrição.
+                        </TextBlock.Text>
+                    </TextBlock>
 
-            <Label 
-                x:Name="Data"
-                Content="Data" 
-                HorizontalAlignment="Right" 
-                Margin="0,104,30,0" 
-                VerticalAlignment="Top"
-                FontFamily="Arial" FontSize="26" 
-                Foreground="#FF151515" 
-                HorizontalContentAlignment="Right"/>
+                    <Label 
+                        x:Name="Data"
+                        Content="Data" 
+                        HorizontalAlignment="Right" 
+                        Margin="0,10,30,0" 
+                        VerticalAlignment="Top"
+                        FontFamily="Arial" FontSize="26" 
+                        Foreground="#FF151515" 
+                        HorizontalContentAlignment="Right"/>
 
-            <Label 
-                x:Name="Fim"
-                Content="Finalizado" 
-                HorizontalAlignment="Right" 
-                Margin="0,144,30,0" 
-                VerticalAlignment="Top"
-                FontFamily="Arial" FontSize="26" 
-                Foreground="#FF151515" 
-                HorizontalContentAlignment="Right"/>
+                    <Label 
+                        x:Name="Fim"
+                        Content="Finalizado" 
+                        HorizontalAlignment="Right" 
+                        Margin="0,50,30,0" 
+                        VerticalAlignment="Top"
+                        FontFamily="Arial" FontSize="26" 
+                        Foreground="#FF151515" 
+                        HorizontalContentAlignment="Right"/>
 
-            <Rectangle 
-                Height="3" Margin="0,96,0,0" 
-                Stroke="#7F000000" 
-                VerticalAlignment="Top"
-                Fill="Black" HorizontalAlignment="Center" Width="916"/>
+                    <Rectangle 
+                        Height="3" Margin="0" 
+                        Stroke="#7F000000" 
+                        VerticalAlignment="Top"
+                        Fill="Black" HorizontalAlignment="Center" Width="916"/>
 
-        </Grid>
+                </Grid>
+            </DockPanel>
+        </StackPanel>
     </Border>
 </Page>

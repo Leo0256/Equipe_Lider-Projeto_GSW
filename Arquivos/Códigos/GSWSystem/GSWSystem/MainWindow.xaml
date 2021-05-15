@@ -132,14 +132,38 @@
             </Rectangle.Fill>
         </Rectangle>
 
-        <ScrollViewer VerticalScrollBarVisibility="Hidden">
-            <Frame 
-                x:Name="Frame" 
-                Margin="0,80,0,29" 
-                NavigationUIVisibility="Hidden"
-                Background="Transparent" HorizontalAlignment="Center" Width="1440" 
-                ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled" VerticalAlignment="Top"
-                />
+        <ScrollViewer 
+            Background="Transparent"
+            Margin="0,80,0,30" 
+            HorizontalContentAlignment="Center"
+            VerticalScrollBarVisibility="Hidden">
+
+            <StackPanel
+                x:Name="Panel"
+                Orientation="Vertical">
+
+                <StackPanel.Resources>
+                    <Style TargetType="{x:Type Frame}">
+                        <Setter Property="Margin" Value="0,0,0,20"/>
+                    </Style>
+                    
+                </StackPanel.Resources>
+
+                <!--
+                <Frame 
+                    x:Name="Frame" 
+                    Width="1440" 
+                    NavigationUIVisibility="Hidden"
+                    VerticalAlignment="Top"
+                    ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                    ScrollViewer.VerticalScrollBarVisibility="Disabled" 
+                    />
+                -->
+                
+            </StackPanel>
+            
+            
+            
         </ScrollViewer>
 
         <StackPanel 
@@ -220,7 +244,7 @@
                 CaretBrush="white" 
                 
                 HorizontalScrollBarVisibility="Disabled"
-                
+                KeyDown="EntradaTexto"
                 Style="{DynamicResource ResourceKey=TextBoxStyle}">
 
                 <TextBox.Resources>
@@ -280,47 +304,6 @@
             <StackPanel>
 
                 <ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled">
-                    <!--
-                    <ListViewItem Height="60">
-                        <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon 
-                                Width="25"
-                                Height="25"
-                                Margin="10"
-                                Foreground="White"
-                                Kind="ViewDashboard"
-                                VerticalAlignment="Center" />
-
-                            <TextBlock 
-                                Margin="20,10"
-                                FontFamily="Arial"
-                                FontSize="15" 
-                                Foreground="White" 
-                                VerticalAlignment="Center" 
-                                Text="Menu"/>
-                        </StackPanel>
-                    </ListViewItem>
-
-                    <ListViewItem Height="60">
-                        <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon 
-                                Width="25"
-                                Height="25"
-                                Margin="10"
-                                Foreground="White"
-                                Kind="FilterList"
-                                VerticalAlignment="Center" />
-
-                            <TextBlock 
-                                Margin="20,10"
-                                FontFamily="Arial"
-                                FontSize="15" 
-                                Foreground="White" 
-                                VerticalAlignment="Center" 
-                                Text="Filtrar Pesquisa"/>
-                        </StackPanel>
-                    </ListViewItem>
-                    -->
 
                     <ListViewItem Height="60" Selected="ViewProjeto">
                         <StackPanel Orientation="Horizontal">
@@ -329,7 +312,7 @@
                                 Height="25"
                                 Margin="10"
                                 Foreground="White"
-                                Kind="Filter1"
+                                Kind="File"
                                 VerticalAlignment="Center" />
 
                             <TextBlock 
@@ -349,7 +332,7 @@
                                 Height="25"
                                 Margin="10"
                                 Foreground="White"
-                                Kind="Filter2"
+                                Kind="AccountCircle"
                                 VerticalAlignment="Center" />
 
                              <TextBlock 
@@ -371,7 +354,7 @@
                                 Height="25"
                                 Margin="10"
                                 Foreground="White"
-                                Kind="Filter3"
+                                Kind="QueryBuilder"
                                 VerticalAlignment="Center" />
 
                             <TextBlock 
@@ -393,7 +376,7 @@
                                 Height="25"
                                 Margin="10"
                                 Foreground="White"
-                                Kind="Filter3"
+                                Kind="FileChart"
                                 VerticalAlignment="Center" />
 
                             <TextBlock 
@@ -415,7 +398,7 @@
                                 Height="25"
                                 Margin="10"
                                 Foreground="White"
-                                Kind="Filter3"
+                                Kind="FileDocument"
                                 VerticalAlignment="Center" />
 
                             <TextBlock 
@@ -437,7 +420,7 @@
                                 Height="25"
                                 Margin="10"
                                 Foreground="White"
-                                Kind="Filter4"
+                                Kind="ChartPie"
                                 VerticalAlignment="Center" />
 
                             <TextBlock 
@@ -457,7 +440,7 @@
                                 Height="25"
                                 Margin="10"
                                 Foreground="White"
-                                Kind="Filter5"
+                                Kind="Abacus"
                                 VerticalAlignment="Center" />
 
                             <TextBlock 
@@ -479,7 +462,7 @@
                                 Height="25"
                                 Margin="10"
                                 Foreground="White"
-                                Kind="Filter3"
+                                Kind="CalendarTask"
                                 VerticalAlignment="Center" />
 
                             <TextBlock 

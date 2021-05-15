@@ -75,7 +75,7 @@ begin
 					inner join projeto_info
 						on projeto.id_info = projeto_info.id_info
 				where 
-					projeto_info.nome ilike concat(nome_projeto,'%')
+					projeto_info.nome ilike concat('%',nome_projeto,'%')
 
 				group by funcionarios.primeiro_nome,funcionarios.ultimo_nome
 
@@ -86,7 +86,7 @@ begin
 					horas
 				from pesquisa_horas_projeto()
 				where 
-					pesquisa_horas_projeto.projeto ilike concat(nome_projeto,'%')
+					pesquisa_horas_projeto.projeto ilike concat('%',nome_projeto,'%')
 
 			)as proj
 
@@ -178,9 +178,9 @@ begin
 				on projeto.id_info = projeto_info.id_info
 
 		where
-			funcionarios.primeiro_nome ilike concat(func_nome,'%') 
+			funcionarios.primeiro_nome ilike concat('%',func_nome,'%') 
 		or
-			funcionarios.ultimo_nome ilike concat(func_nome,'%')
+			funcionarios.ultimo_nome ilike concat('%',func_nome,'%')
 	
 		group by funcionarios.id_func
 		order by funcionarios.primeiro_nome desc;
@@ -256,11 +256,11 @@ begin
 			projeto.iniciado as iniciado,
 			projeto.status as status,
 			projeto.finalizado as finalizado
-		from projeto, projeto_info
+		from projeto 
+			inner join projeto_info
+				on projeto.id_info = projeto_info.id_info
 		where 
-			projeto.id_info = projeto_info.id_info
-		and
-			projeto_info.nome = concat(nome_x,'%')
+			projeto_info.nome ilike concat('%',nome_x,'%')
 		order by nome desc;
 
 end; $$
@@ -319,8 +319,7 @@ create function pesquisa_tasks_abertas()
 returns table (
 	id varchar,
 	projeto varchar,
-	status varchar,
-	descr varchar
+	status varchar
 ) language plpgsql
 as $$
 begin
@@ -328,15 +327,11 @@ begin
 		select
 			projeto.id,
 			projeto_info.nome,
-			projeto.status,
-			funcionarios.primeiro_nome,
-			funcionarios.ultimo_nome
+			projeto.status
 			
 		from projeto
 			inner join projeto_info
 				on projeto.id_info = projeto_info.id_info
-			inner join funcionarios
-				on projeto.id_func = funcionarios.id_func
 			
 		where
 			projeto.finalizado = 0
@@ -344,9 +339,7 @@ begin
 		group by 
 			projeto.id,
 			projeto_info.nome,
-			projeto.status,
-			funcionarios.primeiro_nome,
-			funcionarios.ultimo_nome
+			projeto.status
 			
 		order by projeto_info.nome desc;
 end; $$

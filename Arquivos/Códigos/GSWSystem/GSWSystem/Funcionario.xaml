@@ -17,7 +17,9 @@
                 HorizontalAlignment="Left" 
                 Margin="22,18,0,0" 
                 VerticalAlignment="Top" 
-                FontFamily="Arial" FontSize="55">
+                FontFamily="Arial" FontSize="55"
+                TextWrapping="Wrap"
+                MaxWidth="650">
                 <TextBlock.Text>
                     Nome
                 </TextBlock.Text>

@@ -7,19 +7,19 @@ using System.Windows;
 
 namespace GSWSQL
 {
-    class PostgresSQLConnection
+    class PostgreSQLConnection
     {
         readonly static string connString = String.Format("Host={0};User id={1};Password={2};Database={3}",
             /* Host */ "127.0.0.1",
             /* User */ "postgres",
             /* Pass */ "0256067Lr@",
-            /*  DB  */ "teste");
+            /*  DB  */ "GSWSystem");
 
         NpgsqlConnection conn;
         //NpgsqlCommand cmd;
 
 
-        public PostgresSQLConnection()
+        public PostgreSQLConnection()
         {
             conn = new NpgsqlConnection(connString);
         }
@@ -39,7 +39,7 @@ namespace GSWSQL
             }
             catch (Exception ex)
             {
-                throw ex.InnerException;
+                MessageBox.Show("Erro na Execução: " + ex.Message);
             }
             finally
             {

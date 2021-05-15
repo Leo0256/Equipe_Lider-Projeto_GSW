@@ -23,7 +23,6 @@ namespace GSWSystem
 
         private string PNome;
         private string UNome;
-        private string AvatarURL;
 
         public Funcionario(string xPNome, string xUNome, string xHoras, string xEmail, string xAvatar)
         {
@@ -34,8 +33,7 @@ namespace GSWSystem
 
             Horas.Content = "Horas: " + xHoras.Replace(".",":");
             Email.Content = "E-mail: " + xEmail;
-            AvatarURL = xAvatar;
-            setAvatar();
+            setAvatar(xAvatar);
         }
 
         private void setNome()
@@ -43,12 +41,12 @@ namespace GSWSystem
             Nome.Text = string.Format("{0} {1}", PNome, UNome);
         }
 
-        private void setAvatar()
+        private void setAvatar(string url)
         {
             BitmapImage bitmap = new();
 
             bitmap.BeginInit();
-            bitmap.UriSource = new Uri(AvatarURL, UriKind.Absolute);
+            bitmap.UriSource = new Uri("http://placeimg.com/210/210/people");
             bitmap.EndInit();
 
             Avatar.Source = bitmap;
@@ -74,9 +72,11 @@ namespace GSWSystem
             return Email.Content.ToString()[8..];
         }
 
+        /*
         public string getAvatar()
         {
-            return AvatarURL;
+            return null;
         }
+        */
     }
 }
