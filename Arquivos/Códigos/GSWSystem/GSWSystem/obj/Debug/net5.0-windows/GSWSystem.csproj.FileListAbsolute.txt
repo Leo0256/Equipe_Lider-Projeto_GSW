@@ -91,14 +91,12 @@ C:\Users\yggdr\Documents\Fatec\2º\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GS
 C:\Users\yggdr\Documents\Fatec\2º\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\Dedicacao.g.cs
 C:\Users\yggdr\Documents\Fatec\2º\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\Funcionario.g.cs
 C:\Users\yggdr\Documents\Fatec\2º\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\GraficoTotal.g.cs
-C:\Users\yggdr\Documents\Fatec\2º\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\Inicio.g.cs
 C:\Users\yggdr\Documents\Fatec\2º\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\Projeto.g.cs
 C:\Users\yggdr\Documents\Fatec\2º\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\QuantHoras.g.cs
 C:\Users\yggdr\Documents\Fatec\2º\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\App.baml
 C:\Users\yggdr\Documents\Fatec\2º\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\Dedicacao.baml
 C:\Users\yggdr\Documents\Fatec\2º\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\Funcionario.baml
 C:\Users\yggdr\Documents\Fatec\2º\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\GraficoTotal.baml
-C:\Users\yggdr\Documents\Fatec\2º\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\Inicio.baml
 C:\Users\yggdr\Documents\Fatec\2º\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\Projeto.baml
 C:\Users\yggdr\Documents\Fatec\2º\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\QuantHoras.baml
 C:\Users\yggdr\Documents\Fatec\2º\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\GSWSystem.csproj.CopyComplete

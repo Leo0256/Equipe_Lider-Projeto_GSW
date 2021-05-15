@@ -26,20 +26,12 @@ namespace GSWSystem
         private string function;
         private string texto;
 
-        // Remover depois
-        private Frame Frame;
-        //
-
         public MainWindow()
         {
             InitializeComponent();
 
             conn = new();
             texto = string.Empty;
-
-            Frame = new();
-            Frame.Content = new Inicio();
-            Panel.Children.Add(Frame);
         }
 
         private void OpenMenu(object sender, RoutedEventArgs e)
@@ -104,8 +96,8 @@ namespace GSWSystem
                         data["primeiro_nome"].ToString(),
                         data["ultimo_nome"].ToString(),
                         data["horas"].ToString(),
-                        data["avatar"].ToString(),
-                        data["email"].ToString()
+                        data["email"].ToString(),
+                        data["avatar"].ToString()
                     ));
             }
 

@@ -15,9 +15,6 @@
     <Compile Update="Funcionario.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Inicio.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="Projeto.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -33,9 +30,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Funcionario.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Inicio.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">

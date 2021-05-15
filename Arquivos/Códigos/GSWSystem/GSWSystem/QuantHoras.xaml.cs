@@ -25,7 +25,7 @@ namespace GSWSystem
         {
             InitializeComponent();
             setNome(Type, xNome);
-            Horas.Content = "Horas: " + xHoras.Replace(".", ":");
+            Horas.Content = "Horas: " + xHoras.Replace(",", ":");
         }
 
         private void setNome(string Type, string xNome)

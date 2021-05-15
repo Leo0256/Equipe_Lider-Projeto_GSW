@@ -31,7 +31,7 @@ namespace GSWSystem
             UNome = xUNome;
             setNome();
 
-            Horas.Content = "Horas: " + xHoras.Replace(".",":");
+            Horas.Content = "Horas: " + xHoras.Replace(",",":");
             Email.Content = "E-mail: " + xEmail;
             setAvatar(xAvatar);
         }
@@ -46,7 +46,7 @@ namespace GSWSystem
             BitmapImage bitmap = new();
 
             bitmap.BeginInit();
-            bitmap.UriSource = new Uri("http://placeimg.com/210/210/people");
+            bitmap.UriSource = new Uri(url,UriKind.Absolute);
             bitmap.EndInit();
 
             Avatar.Source = bitmap;
