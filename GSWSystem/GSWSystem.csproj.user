@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ShowAllFiles>false</ShowAllFiles>
+  </PropertyGroup>
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Dedicacao.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Funcionario.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Projeto.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="QuantHoras.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="GraficoTotal.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Dedicacao.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Funcionario.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Projeto.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="QuantHoras.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="GraficoTotal.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>
