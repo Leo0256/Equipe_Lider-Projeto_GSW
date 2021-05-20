@@ -81,6 +81,7 @@ namespace GSWSystem
 
             Text.Text = string.Empty;
             Panel.Children.Clear();
+            CmdProjeto();
         }
     
         private void CmdHFunc()
@@ -118,11 +119,12 @@ namespace GSWSystem
 
             Text.Text = string.Empty;
             Panel.Children.Clear();
+            CmdHFunc();
         }
 
         private void CmdHProj()
         {
-            string sql = string.Format(@"select * from pesquisa_horas_projeto()");
+            string sql = string.Format(@"select * from pesquisa_horas_projeto('{0}')",texto);
             DataRow[] row = conn.ExecuteCmd(sql).Select();
 
             List<QuantHoras> hProjetos = new();
@@ -132,7 +134,8 @@ namespace GSWSystem
                     new QuantHoras(
                         null,
                         data["projeto"].ToString(),
-                        data["horas"].ToString()
+                        data["horas"].ToString(),
+                        null
                     ));
             }
 
@@ -153,6 +156,7 @@ namespace GSWSystem
 
             Text.Text = string.Empty;
             Panel.Children.Clear();
+            CmdHProj();
         }
 
         private void CmdHAno()
@@ -167,7 +171,8 @@ namespace GSWSystem
                     new QuantHoras(
                         "ano",
                         data["ano"].ToString(),
-                        data["horas"].ToString()
+                        data["horas"].ToString(),
+                        null
                     ));
             }
 
@@ -188,34 +193,48 @@ namespace GSWSystem
 
             Text.Text = string.Empty;
             Panel.Children.Clear();
+            CmdHAno();
         }
 
         private void CmdHMes()
         {
-            int ano = 2021;
-            string sql = string.Format(@"select * from pesquisa_horas_mes({0},{1})", texto, ano);
-            DataRow[] row = conn.ExecuteCmd(sql).Select();
-
-            List<QuantHoras> hMes = new();
-            foreach (DataRow data in row)
-            {
-                hMes.Add(
-                    new QuantHoras(
-                        "mes",
-                        data["mes"].ToString(),
-                        data["horas"].ToString()
-                    ));
-            }
-
+            int ano = DateTime.Now.Year;
             Panel.Children.Clear();
-            foreach (QuantHoras x in hMes)
+
+            for(int i = 0; i < 3; i++)
             {
-                Panel.Children.Add(
-                    new Frame
-                    {
-                        Content = x
-                    });
+                if (texto.Equals(string.Empty))
+                    texto = "0";
+                
+                string sql = string.Format(@"select * from pesquisa_horas_mes({0},{1})", texto, ano);
+                DataRow[] row = conn.ExecuteCmd(sql).Select();
+
+                List<QuantHoras> hMes = new();
+                foreach (DataRow data in row)
+                {
+                    hMes.Add(
+                        new QuantHoras(
+                            "mes",
+                            data["mes"].ToString(),
+                            data["horas"].ToString(),
+                            data["ano"].ToString()
+                        ));
+                }
+
+                foreach (QuantHoras x in hMes)
+                {
+                    Panel.Children.Add(
+                        new Frame
+                        {
+                            Content = x
+                        });
+                }
+
+                ano--;
+                if (texto.Equals("0"))
+                    break;
             }
+            texto = string.Empty;
         }
 
         private void ViewHorasMes(object sender, RoutedEventArgs e)
@@ -224,6 +243,7 @@ namespace GSWSystem
 
             Text.Text = string.Empty;
             Panel.Children.Clear();
+            CmdHMes();
         }
 
         private void CmdPercent()
@@ -231,29 +251,55 @@ namespace GSWSystem
             string sql = string.Format(@"select * from pesquisa_dedicacao_func('{0}')", texto);
             DataRow[] row = conn.ExecuteCmd(sql).Select();
 
+            List<int> xId = new();
+            string xProj = string.Empty;
             List<string> pNome = new(),
                          uNome = new(),
                          xPercent = new();
 
-            foreach(DataRow data in row)
+            foreach (DataRow data in row)
+                xId.Add(int.Parse(data["id"].ToString()));
+
+
+            var index = xId.GroupBy(x => x)
+                .Select(g => new { Value = g.Key, Count = g.Count() })
+                .OrderByDescending(x => x.Count);
+
+            List<Dedicacao> percent = new();
+
+            foreach (var x in index)
             {
-                
-                pNome.Add(data["p_nome"].ToString());
-                uNome.Add(data["u_nome"].ToString());
-                xPercent.Add(data["porcentagem"].ToString());
+                for(int i = 0; i < xId.Count; i++)
+                {
+                    if (x.Value == int.Parse(row[i]["id"].ToString()))
+                    {
+                        xProj = row[i]["projeto"].ToString();
+                        pNome.Add(row[i]["p_nome"].ToString());
+                        uNome.Add(row[i]["u_nome"].ToString());
+                        xPercent.Add(row[i]["porcentagem"].ToString());
+                    }
+                }
+
+                percent.Add(
+                    new(
+                        xProj,
+                        pNome.ToArray(),
+                        uNome.ToArray(),
+                        xPercent.ToArray()
+                    ));
+                xProj = string.Empty;
+                pNome.Clear();
+                uNome.Clear();
+                xPercent.Clear();
             }
 
-            Dedicacao percent = new(
-                    pNome.ToArray(),
-                    uNome.ToArray(),
-                    xPercent.ToArray());
-
             Panel.Children.Clear();
-            Panel.Children.Add(
-                new Frame
-                {
-                    Content = percent
-                });
+            foreach (Dedicacao x in percent)
+                Panel.Children.Add(
+                    new Frame
+                    {
+                        Content = x
+                    });
         }
 
         private void ViewDedicacao(object sender, RoutedEventArgs e)
@@ -262,6 +308,7 @@ namespace GSWSystem
 
             Text.Text = string.Empty;
             Panel.Children.Clear();
+            CmdPercent();
         }
 
         private void CmdQStatus()
@@ -293,14 +340,14 @@ namespace GSWSystem
 
         private void ViewQuantStatus(object sender, RoutedEventArgs e)
         {
-            function = "qstatus";
-
             Text.Text = string.Empty;
             Panel.Children.Clear();
+            CmdQStatus();
         }
 
         private void CmdTask()
         {
+            // precisa concertar a function
             string sql = string.Format(@"select * from pesquisa_tasks_abertas()");
             DataRow[] row = conn.ExecuteCmd(sql).Select();
 
@@ -319,7 +366,7 @@ namespace GSWSystem
             }
 
             GraficoTotal status = new(
-                true,
+                false,
                 xProj.ToArray(),
                 xStatus.ToArray());
 
@@ -369,10 +416,6 @@ namespace GSWSystem
 
                     case "percent":
                         CmdPercent();
-                        break;
-
-                    case "qstatus":
-                        CmdQStatus();
                         break;
 
                     case "task":

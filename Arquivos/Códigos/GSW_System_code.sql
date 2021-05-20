@@ -46,8 +46,9 @@ create table projeto(
 )
 
 
-create function pesquisa_dedicacao_func (nome_projeto varchar) 
+create or replace function pesquisa_dedicacao_func (nome_projeto varchar) 
 returns table (
+	id integer,
 	projeto varchar,
 	p_nome varchar,
 	u_nome varchar,
@@ -57,41 +58,38 @@ as $$
 begin
 	return query 
 		select
-			proj.nome,
-			func.p_nome,
-			func.u_nome,
-			((func.horas/proj.horas::float)*100)::float as valor
+			projeto_info.id_info id,
+			projeto_info.nome as projeto,
+			funcionarios.primeiro_nome as p_nome,
+			funcionarios.ultimo_nome as u_nome,
+			sum(
+				case
+				when
+					projeto_info.id_info = proj.id
+				then
+					((projeto_info.horas/proj.horas)*100)::float
+				end
+			) as valor
 
-		from 
+		from funcionarios 
+			inner join projeto
+				on funcionarios.id_func = projeto.id_func
+			inner join projeto_info
+				on projeto.id_info = projeto_info.id_info,
+
 			(
 				select
-					funcionarios.primeiro_nome as p_nome,
-					funcionarios.ultimo_nome as u_nome,
+					projeto_info.id_info as id,
 					sum(projeto_info.horas) as horas
-
-				from funcionarios 
-					inner join projeto
-						on funcionarios.id_func = projeto.id_func
+				from projeto
 					inner join projeto_info
 						on projeto.id_info = projeto_info.id_info
-				where 
-					projeto_info.nome ilike concat('%',nome_projeto,'%')
-
-				group by funcionarios.primeiro_nome,funcionarios.ultimo_nome
-
-			)as func,
-			(
-				select
-					pesquisa_horas_projeto.projeto as nome,
-					horas
-				from pesquisa_horas_projeto()
-				where 
-					pesquisa_horas_projeto.projeto ilike concat('%',nome_projeto,'%')
-
-			)as proj
-
-		group by proj.nome,func.p_nome,func.u_nome,valor
-		order by proj.nome desc;
+				group by projeto_info.id_info
+				order by projeto_info.id_info asc
+			) proj
+		where nome ilike concat('%',nome_projeto,'%')
+		group by projeto_info.id_info,p_nome,u_nome
+		order by id;
 end; $$
 
 
@@ -214,7 +212,7 @@ begin
 end; $$
 
 
-create function pesquisa_horas_projeto() 
+create function pesquisa_horas_projeto(xnome varchar) 
 returns table (
 	projeto varchar,
 	horas numeric
@@ -229,6 +227,8 @@ begin
 		from projeto_info
 			inner join projeto 
 				on projeto_info.id_info = projeto.id_info
+		
+		where projeto_info.nome ilike concat('%',xnome,'%')
 				
 		group by projeto_info.nome
 		order by projeto_info.nome desc;

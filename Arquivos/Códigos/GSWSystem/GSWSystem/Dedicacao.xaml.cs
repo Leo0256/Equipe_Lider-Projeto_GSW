@@ -18,12 +18,14 @@ namespace GSWSystem
 {
     public partial class Dedicacao : Page
     {
-        public Dedicacao(string[] xPNomes, string[] xUnomes, string[] xPercent)
+        public Dedicacao(string Projeto, string[] xPNomes, string[] xUnomes, string[] xPercent)
         {
             InitializeComponent();
 
+            Nome.Text = Projeto;
             for(int i = 0; i < xPNomes.Length; i++)
             {
+                if (xPercent[i].Equals("100")) xPercent[i] = "99,99";
                 defineGrid(string.Concat(xPNomes[i], " ", xUnomes[i]),xPercent[i], i);
             }
             setChart();

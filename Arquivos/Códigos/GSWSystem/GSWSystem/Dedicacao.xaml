@@ -11,18 +11,49 @@
 
     <Border Background="white" BorderBrush="Black" BorderThickness="1" CornerRadius="8,8,8,8">
         <Grid Margin="0,0,0,10">
-            <TextBlock 
-                x:Name="Nome"
+            <StackPanel 
+                Margin="22,18,0,0"
+                Width="470" 
                 HorizontalAlignment="Left" 
-                Margin="22,18,0,0" 
-                VerticalAlignment="Top" 
-                FontFamily="Arial" FontSize="55"
-                MaxWidth="517" Width="517" TextWrapping="Wrap">
-                <TextBlock.Text>
-                    Projeto
-                </TextBlock.Text>
+                Orientation="Vertical">
+                
+                <DockPanel>
+                    <TextBlock 
+                        x:Name="Nome"
+                        HorizontalAlignment="Left"  
+                        VerticalAlignment="Top" 
+                        FontFamily="Arial" FontSize="55"
+                        MaxWidth="470" Width="470" TextWrapping="Wrap">
+                        <TextBlock.Text>
+                            Projeto
+                        </TextBlock.Text>
+                    </TextBlock>
+                </DockPanel>
 
-            </TextBlock>
+                <DockPanel Margin="0,10">
+                    <Grid>
+                        <Rectangle 
+                            Height="3"
+                            Stroke="#7F000000" 
+                            VerticalAlignment="Top"
+                            Fill="Black" HorizontalAlignment="Center" Width="470"/>
+
+                        <Grid 
+                            x:Name="DataGrid"  
+                            Margin="0,10"
+                            HorizontalAlignment="Left" 
+                            VerticalAlignment="Top">
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="50"/>
+                                <ColumnDefinition Width="400"/>
+                            </Grid.ColumnDefinitions>
+                        </Grid>
+                    </Grid>
+                </DockPanel>
+            </StackPanel>
+            
+
 
             <Border 
                 Background="GhostWhite" 
@@ -43,23 +74,9 @@
 
             </Border>
 
-            <Rectangle 
-                Height="3" Margin="0,96,400,0" 
-                Stroke="#7F000000" 
-                VerticalAlignment="Top"
-                Fill="Black" HorizontalAlignment="Center" Width="505"/>
+            
 
-            <Grid 
-                x:Name="DataGrid"  
-                Margin="40,115,0,0" 
-                HorizontalAlignment="Left" 
-                VerticalAlignment="Top">
-
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="50"/>
-                    <ColumnDefinition Width="400"/>
-                </Grid.ColumnDefinitions>
-            </Grid>
+            
 
 
 

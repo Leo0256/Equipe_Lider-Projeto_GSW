@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,43 +22,29 @@ namespace GSWSystem
     public partial class QuantHoras : Page
     {
         private string tag;
-        public QuantHoras(string Type, string xNome, string xHoras)
+        public QuantHoras(string Type, string xNome, string xHoras, string comp)
         {
             InitializeComponent();
-            setNome(Type, xNome);
-            Horas.Content = "Horas: " + xHoras.Replace(",", ":");
-        }
-
-        private void setNome(string Type, string xNome)
-        {
             tag = string.Empty;
             switch (Type)
             {
                 case "ano":
-                    tag = "Ano: ";
+                    tag = "Ano: " + xNome;
                     break;
 
                 case "mes":
-                    tag = "Mês: ";
+                    var mes = DateTimeFormatInfo.CurrentInfo.GetMonthName(int.Parse(xNome));
+                    tag = char.ToUpper(mes[0]) + mes[1..] + " / " + comp;
                     break;
 
                 default:
+                    tag = xNome;
                     break;
 
             }
-            Nome.Text = tag + xNome;
-        }
-
-        public string getNome()
-        {
-            if (tag != string.Empty)
-            {
-                return Nome.Text.ToString();
-            }
-            else
-            {
-                return Nome.Text.ToString()[5..];
-            }
+            
+            Nome.Text = tag;
+            Horas.Content = "Horas: " + xHoras.Replace(",", ":");
         }
     }
 }
