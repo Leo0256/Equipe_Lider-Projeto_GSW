@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Globalization;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -79,7 +80,8 @@ namespace GSWSystem
         {
             function = "projeto";
 
-            Text.Text = string.Empty;
+            
+
             Panel.Children.Clear();
             CmdProjeto();
         }
@@ -117,7 +119,6 @@ namespace GSWSystem
         {
             function = "hfunc";
 
-            Text.Text = string.Empty;
             Panel.Children.Clear();
             CmdHFunc();
         }
@@ -154,7 +155,6 @@ namespace GSWSystem
         {
             function = "hproj";
 
-            Text.Text = string.Empty;
             Panel.Children.Clear();
             CmdHProj();
         }
@@ -191,7 +191,6 @@ namespace GSWSystem
         {
             function = "hano";
 
-            Text.Text = string.Empty;
             Panel.Children.Clear();
             CmdHAno();
         }
@@ -205,7 +204,20 @@ namespace GSWSystem
             {
                 if (texto.Equals(string.Empty))
                     texto = "0";
-                
+                else
+                {
+                    try
+                    {
+                        texto = DateTime.Parse("1/" + texto + "/2000").Month.ToString();
+
+                    }catch (FormatException)
+                    {
+                        MessageBox.Show("Informe um mês válido.\nEx.: \"fevereiro\", \"fev\" ou \"2\"","",MessageBoxButton.OK);
+                        texto = "0";
+                    }
+                }
+
+
                 string sql = string.Format(@"select * from pesquisa_horas_mes({0},{1})", texto, ano);
                 DataRow[] row = conn.ExecuteCmd(sql).Select();
 
@@ -241,7 +253,6 @@ namespace GSWSystem
         {
             function = "hmes";
 
-            Text.Text = string.Empty;
             Panel.Children.Clear();
             CmdHMes();
         }
@@ -306,7 +317,6 @@ namespace GSWSystem
         {
             function = "percent";
 
-            Text.Text = string.Empty;
             Panel.Children.Clear();
             CmdPercent();
         }
@@ -340,14 +350,12 @@ namespace GSWSystem
 
         private void ViewQuantStatus(object sender, RoutedEventArgs e)
         {
-            Text.Text = string.Empty;
             Panel.Children.Clear();
             CmdQStatus();
         }
 
         private void CmdTask()
         {
-            // precisa concertar a function
             string sql = string.Format(@"select * from pesquisa_tasks_abertas()");
             DataRow[] row = conn.ExecuteCmd(sql).Select();
 
@@ -380,10 +388,8 @@ namespace GSWSystem
 
         private void ViewTasksAbertas(object sender, RoutedEventArgs e)
         {
-            function = "task";
-
-            Text.Text = string.Empty;
             Panel.Children.Clear();
+            CmdTask();
         }
 
         private void EntradaTexto(object sender, KeyEventArgs e)
@@ -391,7 +397,8 @@ namespace GSWSystem
             if(e.Key == Key.Return)
             {
                 texto = Text.Text;
-
+                Text.Text = string.Empty;
+                
                 switch (function)
                 {
                     case "projeto":
@@ -417,11 +424,8 @@ namespace GSWSystem
                     case "percent":
                         CmdPercent();
                         break;
-
-                    case "task":
-                        CmdTask();
-                        break;
-                };
+                }
+                texto = string.Empty;
             }
         }
     }

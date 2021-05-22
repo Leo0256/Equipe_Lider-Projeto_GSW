@@ -24,7 +24,10 @@ namespace GSWSystem
             Status.Content = xStatus;
             Desc.Text = xDescricao;
             Data.Content = xData;
-            Fim.Content = "Finalizado: " + xFinalizado;
+            if (int.Parse(xFinalizado)==1)
+                Fim.Content = "Finalizado: Sim";
+            else
+                Fim.Content = "Finalizado: Não";
         }
 
         public string getNome()
