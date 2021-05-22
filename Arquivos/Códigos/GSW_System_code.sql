@@ -46,7 +46,110 @@ create table projeto(
 )
 
 
-create or replace function pesquisa_dedicacao_func (nome_projeto varchar) 
+create or replace function inserir_dados(
+	func json,
+	projInfo json,
+	git json,
+	projeto json
+) 
+returns void
+as $$
+begin
+	
+	insert into funcionarios(id_func,primeiro_nome,ultimo_nome,email)
+		values('<novo>','<novo>','<novo>','<novo>');
+	
+	insert into projeto_info(nome) values('<novo>');
+	
+	insert into gitmetadata(branch,hash) values('<novo>','<novo>');
+	
+	insert into projeto(id,id_func,id_info,id_git) 
+		select 
+			funcionarios.email,
+			funcionarios.id_func,
+			projeto_info.id_info,
+			gitmetadata.id_git
+		from funcionarios,projeto_info,gitmetadata
+		where 
+			funcionarios.id_func = '<novo>'
+		and
+			projeto_info.nome = '<novo>'
+		and
+			gitmetadata.hash = '<novo>';
+		
+	
+	/*Funcionarios*/
+	with newFunc as (
+		with jsonFunc as (
+			select * from json_populate_recordset(
+				null::funcionarios,
+				func
+			))
+		update funcionarios
+		set 
+			id_func = a.id_func, 
+			primeiro_nome = a.primeiro_nome,
+			ultimo_nome = a.ultimo_nome,
+			avatar = a.avatar,
+			email = a.email
+
+		from jsonFunc as a
+		where funcionarios.id_func = '<novo>'
+		returning a.id_func
+		)
+	update projeto
+	set
+		id_func = newFunc.id_func
+	from newFunc
+	where projeto.id = '<novo>';
+	
+	/*Projeto_info*/
+	with jsonProjInfo as (
+		select * from json_populate_recordset(
+			null::projeto_info,
+			projInfo
+		))
+	update projeto_info
+	set 
+		nome = b.nome, 
+		descr = b.descr,
+		horas = b.horas
+	from jsonProjInfo as b
+	where projeto_info.nome = '<novo>';
+	
+	/*GitMetadata*/
+	with jsonGit as (
+		select * from json_populate_recordset(
+			null::gitmetadata,
+			git
+		))
+	update gitmetadata
+	set 
+		branch = c.branch,
+		hash = c.hash
+	from jsonGit as c
+	where gitmetadata.hash = '<novo>';
+	
+	/*Projeto*/
+	with jsonProj as (
+		select * from json_populate_recordset(
+			null::projeto,
+			projeto
+		))
+	update projeto
+	set 
+		id = x.id,
+		iniciado = x.iniciado::timestamp,
+		status = x.status,
+		finalizado = x.finalizado
+	from jsonProj as x
+	where projeto.id = '<novo>';
+	
+end $$
+language plpgsql;
+
+
+create function pesquisa_dedicacao_func (nome_projeto varchar) 
 returns table (
 	id integer,
 	projeto varchar,
@@ -335,11 +438,6 @@ begin
 			
 		where
 			projeto.finalizado = 0
-			
-		group by 
-			projeto.id,
-			projeto_info.nome,
-			projeto.status
 			
 		order by projeto_info.nome desc;
 end; $$

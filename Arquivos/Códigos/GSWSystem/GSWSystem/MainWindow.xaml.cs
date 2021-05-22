@@ -35,6 +35,11 @@ namespace GSWSystem
             texto = string.Empty;
         }
 
+        private void ReadJson()
+        {
+
+        }
+
         private void OpenMenu(object sender, RoutedEventArgs e)
         {
             ButtonOpenMenu.Visibility = Visibility.Collapsed;
