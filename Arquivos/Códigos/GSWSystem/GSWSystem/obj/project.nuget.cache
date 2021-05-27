@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jWw6MC60fnw5KlN4HPcuwLWLf2RdlynMCAr+PRrndiRP55BIsJJzk7FgNAkzxjgebA1EySYCm/JcAadnUDHSeQ==",
+  "dgSpecHash": "z/qxAXpTjImLArfx9dWwYHPHjl4kmY++/STOfnToM7NQcgwagHF2SgxwvzKbZal0Uskj6TF9I4E+8xbE1E+osQ==",
   "success": true,
-  "projectFilePath": "D:\\Equipe_Lider-Projeto_GSW\\Arquivos\\Códigos\\GSWSystem\\GSWSystem\\GSWSystem.csproj",
+  "projectFilePath": "C:\\Users\\yggdr\\Documents\\Fatec\\2º\\Equipe_Lider-Projeto_GSW\\Arquivos\\Códigos\\GSWSystem\\GSWSystem\\GSWSystem.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\yggdr\\.nuget\\packages\\materialdesigncolors\\2.0.0\\materialdesigncolors.2.0.0.nupkg.sha512",
     "C:\\Users\\yggdr\\.nuget\\packages\\materialdesignthemes\\4.0.0\\materialdesignthemes.4.0.0.nupkg.sha512",

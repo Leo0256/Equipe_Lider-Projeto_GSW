@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -16,11 +17,12 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using GSWSQL;
-
+using Microsoft.Win32;
+using Newtonsoft.Json;
 
 namespace GSWSystem
 {
-    public partial class MainWindow : Window 
+    public partial class MainWindow : Window
     {
 
         private PostgreSQLConnection conn;
@@ -35,9 +37,120 @@ namespace GSWSystem
             texto = string.Empty;
         }
 
-        private void ReadJson()
+        private void Upload(object sender, RoutedEventArgs e)
         {
+            OpenFileDialog openFile = new();
 
+            bool? resp = openFile.ShowDialog();
+            if (resp == true)
+            {
+                string filepath = openFile.FileName;
+                using var reader = new StreamReader(filepath);
+                //MessageBox.Show(reader.ReadToEnd(),"",MessageBoxButton.OK);
+                
+                NormalizarJson json;
+
+                json = new(reader.ReadToEnd());
+
+                MessageBox.Show(json.GetJson());
+
+                /**
+                 * 
+                /*
+                Como deve ficar o Json 
+                [
+	                {
+		                "func":{
+			                "id_func": "8c7d3ba7-9b51-4f78-a863-b3074af5f7a1",
+			                "primeiro_nome": "Cecília",
+			                "ultimo_nome": "Moreira",
+			                "avatar": "http://placeimg.com/640/480/people",
+			                "email": "cecilia.moreira@gsw.com.br"
+		                },
+		                "projInfo":{
+			                "nome": "[Pereira - Barros Comércio] - Mandatory fault-tolerant Graphical User Interface",
+			                "descr": "synthesize mobile protocol",
+			                "horas": 9.71
+		                },
+		                "gitMetadata":{
+			                "branch": "array-synthesize",
+			                "hash": "b16181f46f9318acd5ac50f760f30bf2428a28b4"
+		                },
+	    	            "projeto":{
+			                "id": "0ac33506-5610-418f-9b7b-fe9eaacf4f53",
+			                "iniciado": "2020-04-06T03:42:23.453Z",
+			                "status": "PROD_DEPLOYING",
+			                "finalizado": 1
+		                }
+	                }
+                ]
+                --------------
+                Como ele vai vir do:
+                Trello:
+
+                [
+	                {
+		                "_id": "0ac33506-5610-418f-9b7b-fe9eaacf4f53",
+		                "status": "PROD_DEPLOYING",
+		                "user": {
+			                "_id": "8c7d3ba7-9b51-4f78-a863-b3074af5f7a1",
+			                "avatar": "http://placeimg.com/640/480/people",
+			                "userName": "Cecília",
+			                "userLastName": "Moreira",
+			                "userEmail": "cecilia.moreira@gsw.com.br"
+		                },
+		                "hours": 9.71,
+		                "startedAt": "2020-04-06T03:42:23.453Z",
+		                "isFinished": true,
+		                "project": "[Pereira - Barros Comércio] - Mandatory fault-tolerant Graphical User Interface",
+		                "cardDescription": "synthesize mobile protocol",
+		                "gitMetadata": {
+			                "branch": "array-synthesize",
+			                "hash": "b16181f46f9318acd5ac50f760f30bf2428a28b4"
+		                }
+	                }
+                ]
+
+                Jira:
+
+                [
+	                {
+		                "id": "0db2dfdc-a4b8-4055-b2ad-6655c06a7663",
+		                "status": "PROD_DEPLOYING",
+		                "user": {
+			                "id": "659e4749-0237-4b89-9ad7-7402491b5bb5",
+			                "avatar": "http://placeimg.com/640/480/people",
+			                "first_name": "Gustavo",
+			                "last_name": "Santos",
+			                "email": "gustavo.santos@gsw.com.br"
+		                },
+		                "amountHours": 2.42,
+		                "startedAt": "2020-04-25T21:01:17.288Z",
+		                "finished": true,
+		                "project": "[Souza Comércio e Associados] - Innovative background implementation",
+		                "cardDescription": "index optical capacitor",
+		                "gitMetadata": {
+			                "branch": "microchip-parse",
+			                "hash": "bb84719579164f7c68a171d224ae533c7471cd40"
+		                }
+	                }
+                ]
+                 */
+            }
+        }
+
+        public class Item 
+        {
+            public string id;
+            public string status;
+            public string user;
+            public List<List<string>> user_id;
+            public string horas;
+            public string inicio;
+            public string fim;
+            public string projeto;
+            public string descrip;
+            public List<List<string>> git;
         }
 
         private void OpenMenu(object sender, RoutedEventArgs e)

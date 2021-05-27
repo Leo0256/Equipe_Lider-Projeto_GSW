@@ -174,42 +174,58 @@
 
             <Grid Background="Transparent">
                 <Button 
-                        x:Name="ButtonCloseMenu"
-                        Width="75" 
-                        Height="60" 
-                        Background="{x:Null}" 
-                        BorderBrush="{x:Null}" 
-                        VerticalAlignment="Top" 
-                        HorizontalAlignment="Left"
-                        Visibility="Collapsed"
-                        Click="CloseMenu">
+                    x:Name="ButtonCloseMenu"
+                    Width="75" 
+                    Height="60" 
+                    Background="{x:Null}" 
+                    BorderBrush="{x:Null}" 
+                    VerticalAlignment="Top" 
+                    HorizontalAlignment="Left"
+                    Visibility="Collapsed"
+                    Click="CloseMenu">
 
                     <materialDesign:PackIcon  
-                            Width="45"
-                            Height="45"
-                            Foreground="White" 
-                            Kind="ArrowLeft"/>
+                        Width="45"
+                        Height="45"
+                        Foreground="White" 
+                        Kind="ArrowLeft"/>
 
                 </Button>
 
                 <Button 
-                        x:Name="ButtonOpenMenu"
-                        Width="75" 
-                        Height="60" 
-                        Background="{x:Null}" 
-                        BorderBrush="{x:Null}" 
-                        VerticalAlignment="Center" 
-                        HorizontalAlignment="Left"
-                        Click="OpenMenu">
+                    x:Name="ButtonOpenMenu"
+                    Width="75" 
+                    Height="60" 
+                    Background="{x:Null}" 
+                    BorderBrush="{x:Null}" 
+                    VerticalAlignment="Center" 
+                    HorizontalAlignment="Left"
+                    Click="OpenMenu">
 
                     <materialDesign:PackIcon  
-                            Width="50"
-                            Height="50"
-                            Foreground="White" 
-                            Kind="Menu"/>
+                        Width="50"
+                        Height="50"
+                        Foreground="White" 
+                        Kind="Menu"/>
 
                 </Button>
             </Grid>
+
+            <Button
+                Width="75" 
+                Height="60" 
+                Background="{x:Null}" 
+                BorderBrush="{x:Null}"
+                Click="Upload">
+                
+                <materialDesign:PackIcon  
+                    Width="40"
+                    Height="40"
+                    Foreground="White"
+                    HorizontalAlignment="Center"
+                    Kind="Upload"/>
+            </Button>
+            
         </StackPanel>
 
         <DockPanel HorizontalAlignment="Right"  VerticalAlignment="Top" Margin="0,11,28,0"  >
