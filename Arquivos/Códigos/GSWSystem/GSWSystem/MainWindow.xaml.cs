@@ -18,7 +18,6 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using GSWSQL;
 using Microsoft.Win32;
-using Newtonsoft.Json;
 
 namespace GSWSystem
 {
@@ -52,7 +51,7 @@ namespace GSWSystem
 
                 json = new(reader.ReadToEnd());
 
-                MessageBox.Show(json.GetJson());
+                MessageBox.Show(json.GetJson()[0]);
 
                 /**
                  * 

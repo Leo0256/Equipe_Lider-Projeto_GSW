@@ -10,95 +10,95 @@ namespace GSWSystem
 {
     class NormalizarJson
     {
-        private Funcionario func;
-        private Projeto_Info proj_info;
-        private GitMetadata git;
-        private Projeto projeto;
+        private List<Funcionario> func = new();
+        private List<Projeto_Info> proj_info = new();
+        private List<GitMetadata> git = new();
+        private List<Projeto> projeto = new();
 
         public NormalizarJson(string json)
         {
+
             dynamic array = JsonConvert.DeserializeObject(json);
             foreach(var item in array)
             {
                 // Jira
-                if (item.id != string.Empty)
+                if ((string)item.id != null)
                 {
-                    func =
+                    func.Add(
+                        new (
+                            (string)item.user.id,
+                            (string)item.user.first_name,
+                            (string)item.user.last_name,
+                            (string)item.user.avatar,
+                            (string)item.user.email));
+
+                    proj_info.Add(
                         new(
-                            item.user.id,
-                            item.user.avatar,
-                            item.user.first_name,
-                            item.user.last_name,
-                            item.user.email
-                        );
-                    proj_info =
+                            (string)item.project,
+                            (string)item.cardDescription,
+                            (string)item.amountHours));
+
+                    projeto.Add(
                         new(
-                            item.project,
-                            item.cardDescription,
-                            item.amountHours
-                        );
-                    git =
-                        new(
-                            item.gitMetadata.branch,
-                            item.gitMetadata.hash
-                        );
-                    projeto =
-                        new(
-                            item.id,
-                            item.startedAt,
-                            item.status,
-                            item.finished
-                        );
+                            (string)item.id,
+                            (string)item.startedAt,
+                            (string)item.status,
+                            (string)item.finished));
                 }
                 // Trello
-                else if(item._id != string.Empty)
+                else if((string)item._id != null)
                 {
-                    func =
+                    func.Add(
                         new(
-                            item.user._id,
-                            item.user.avatar,
-                            item.user.userName,
-                            item.user.userLastName,
-                            item.user.userEmail
-                        );
-                    proj_info =
+                            (string)item.user._id,
+                            (string)item.user.userName,
+                            (string)item.user.userLastName,
+                            (string)item.user.avatar,
+                            (string)item.user.userEmail));
+
+                    proj_info.Add(
                         new(
-                            item.project,
-                            item.cardDescription,
-                            item.hours
-                        );
-                    git =
+                            (string)item.project,
+                            (string)item.cardDescription,
+                            (string)item.hours));
+
+                    projeto.Add(
                         new(
-                            item.gitMetadata.branch,
-                            item.gitMetadata.hash
-                        );
-                    projeto =
-                        new(
-                            item._id,
-                            item.startedAt,
-                            item.status,
-                            item.isFinished
-                        );
+                            (string)item._id,
+                            (string)item.startedAt,
+                            (string)item.status,
+                            (string)item.isFinished));
                 }
 
+                git.Add( 
+                    new(
+                        (string)item.gitMetadata.branch,
+                        (string)item.gitMetadata.hash));
             }
         }
-        public string GetJson()
+        public string[] GetJson()
         {
-            
-            
+
             string r = JsonConvert.SerializeObject(func);
 
-            return r;
+            string[] valor = { 
+                JsonConvert.SerializeObject(func), 
+                JsonConvert.SerializeObject(proj_info) ,
+                JsonConvert.SerializeObject(git),
+                JsonConvert.SerializeObject(projeto)
+            };
+
+            return valor;
+
         }
 
         public class Funcionario
         {
-            private string id_func;
-            private string primeiro_nome;
-            private string ultimo_nome;
-            private string avatar;
-            private string email;
+            public string id_func;
+            public string primeiro_nome;
+            public string ultimo_nome;
+            public string avatar;
+            public string email;
 
             public Funcionario(
                 string id_func,
@@ -117,9 +117,9 @@ namespace GSWSystem
 
         public class Projeto_Info
         {
-            private string nome;
-            private string descr;
-            private string horas;
+            public string nome;
+            public string descr;
+            public string horas;
 
             public Projeto_Info(string nome,string descr,string horas)
             {
@@ -131,10 +131,10 @@ namespace GSWSystem
 
         public class GitMetadata
         {
-            private string branch;
-            private string hash;
+            public string branch;
+            public string hash;
 
-            public GitMetadata(string branch, string hash)
+            public GitMetadata(string branch,string hash)
             {
                 this.branch = branch;
                 this.hash = hash;
@@ -143,16 +143,12 @@ namespace GSWSystem
 
         public class Projeto
         {
-            private string id;
-            private string iniciado;
-            private string status;
-            private string finalizado;
+            public string id;
+            public string iniciado;
+            public string status;
+            public string finalizado;
 
-            public Projeto(
-                string id,
-                string iniciado,
-                string status,
-                string finalizado)
+            public Projeto(string id,string iniciado,string status,string finalizado)
             {
                 this.id = id;
                 this.iniciado = iniciado;

@@ -46,6 +46,122 @@ create table projeto(
 )
 
 
+create or replace function inserir_func(func json)
+returns boolean
+language plpgsql
+as $$
+declare
+	refFunc varchar := func::json->>'id_func';
+begin
+	case when 
+		(select (count(id_func)::int)::boolean from funcionarios where id_func like refFunc)
+	then
+		with jsonFunc as (
+			select * from json_populate_recordset(
+				null::funcionarios,
+				func)
+		)
+		update funcionarios
+		set
+			primeiro_nome = a.primeiro_nome,
+			ultimo_nome = a.ultimo_nome,
+			avatar = a.avatar,
+			email = a.email
+		from
+			jsonFunc a
+		where
+			id_func = refFunc;
+		
+	else
+		insert into funcionarios values
+		(
+			refFunc,
+			func::json->>'primeiro_nome',
+			func::json->>'ultimo_nome',
+			func::json->>'avatar',
+			func::json->>'email'
+		);
+		
+	end case;
+	
+	return (select (count(id_func)::int)::boolean from funcionarios where id_func like refFunc);
+end $$;
+
+
+create or replace function inserir_projInfo(projInfo json)
+returns boolean
+language plpgsql
+as $$
+declare
+	refInfo varchar := projInfo::json->>'nome';
+begin
+	case when
+		(select (count(nome)::int)::boolean from projeto_info where nome like refInfo)
+	then
+		with jsonInfo as (
+			select * from json_populate_recordset(
+				null::projeto_info,
+				projInfo)
+		)
+		update projeto_info
+		set
+			descr = a.descr,
+			horas = a.horas
+		from jsonInfo a
+		where
+			nome = refInfo;
+		
+	else
+		insert into projeto_info values
+		(
+			refInfo,
+			projInfo::json->>'descr',
+			projInfo::json->>'horas'
+		);
+	
+	end case;
+	
+	return (select (count(nome)::int)::boolean from projeto_info where nome like refInfo);
+end $$;
+
+
+create or replace function inserir_git(git json)
+returns boolean
+language plpgsql
+as $$
+declare
+	refGit varchar := git::json->>'hash';
+begin
+	case when 
+		(select (count(hash)::int)::boolean from gitmetadata where hash like refGit)
+	then
+		with jsonGit as (
+			select * from json_populate_recordset(
+				null::gitmetadata,
+				func)
+		)
+		update gitmetadata
+		set
+			branch = a.branch
+		from
+			jsonGit a
+		where
+			hash = refGit;
+		
+	else
+		insert into gitmetadata values
+		(
+			git::json->>'branch',
+			refGit
+		);
+		
+	end case;
+	
+	return (select (count(hash)::int)::boolean from gitmetadata where hash like refGit);
+end $$;
+
+
+/*
 create or replace function inserir_dados(
 	func json,
 	projInfo json,
@@ -78,7 +194,7 @@ begin
 			gitmetadata.hash = '<novo>';
 		
 	
-	/*Funcionarios*/
+	/*Funcionarios*
 	with newFunc as (
 		with jsonFunc as (
 			select * from json_populate_recordset(
@@ -103,7 +219,7 @@ begin
 	from newFunc
 	where projeto.id = '<novo>';
 	
-	/*Projeto_info*/
+	/*Projeto_info*
 	with jsonProjInfo as (
 		select * from json_populate_recordset(
 			null::projeto_info,
@@ -117,7 +233,7 @@ begin
 	from jsonProjInfo as b
 	where projeto_info.nome = '<novo>';
 	
-	/*GitMetadata*/
+	/*GitMetadata*
 	with jsonGit as (
 		select * from json_populate_recordset(
 			null::gitmetadata,
@@ -130,7 +246,7 @@ begin
 	from jsonGit as c
 	where gitmetadata.hash = '<novo>';
 	
-	/*Projeto*/
+	/*Projeto*
 	with jsonProj as (
 		select * from json_populate_recordset(
 			null::projeto,
@@ -147,6 +263,7 @@ begin
 	
 end $$
 language plpgsql;
+*/
 
 
 create function pesquisa_dedicacao_func (nome_projeto varchar) 
