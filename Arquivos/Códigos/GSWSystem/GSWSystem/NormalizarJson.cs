@@ -41,6 +41,10 @@ namespace GSWSystem
                     projeto.Add(
                         new(
                             (string)item.id,
+                            (string)item.user.id,
+                            (string)item.project,
+                            (string)item.cardDescription,
+                            (string)item.gitMetadata.hash,
                             (string)item.startedAt,
                             (string)item.status,
                             (string)item.finished));
@@ -65,6 +69,10 @@ namespace GSWSystem
                     projeto.Add(
                         new(
                             (string)item._id,
+                            (string)item.user._id,
+                            (string)item.project,
+                            (string)item.cardDescription,
+                            (string)item.gitMetadata.hash,
                             (string)item.startedAt,
                             (string)item.status,
                             (string)item.isFinished));
@@ -76,20 +84,23 @@ namespace GSWSystem
                         (string)item.gitMetadata.hash));
             }
         }
-        public string[] GetJson()
+        public string[][] GetJson()
         {
+            int count = projeto.Count;
+            List<string[]> retorno = new();
+            List<string> valor = new();
 
-            string r = JsonConvert.SerializeObject(func);
+            for (int i = 0; i < count; i++)
+            {
+                valor.Add(JsonConvert.SerializeObject(func[i]));
+                valor.Add(JsonConvert.SerializeObject(proj_info[i]));
+                valor.Add(JsonConvert.SerializeObject(git[i]));
+                valor.Add(JsonConvert.SerializeObject(projeto[i]));
 
-            string[] valor = { 
-                JsonConvert.SerializeObject(func), 
-                JsonConvert.SerializeObject(proj_info) ,
-                JsonConvert.SerializeObject(git),
-                JsonConvert.SerializeObject(projeto)
-            };
-
-            return valor;
-
+                retorno.Add(valor.ToArray());
+                valor.Clear();
+            }
+            return retorno.ToArray();
         }
 
         public class Funcionario
@@ -144,13 +155,31 @@ namespace GSWSystem
         public class Projeto
         {
             public string id;
+            public string id_func;
+
+            public string nome_info;
+            public string descr_info;
+
+            public string hash_git;
             public string iniciado;
             public string status;
             public string finalizado;
 
-            public Projeto(string id,string iniciado,string status,string finalizado)
+            public Projeto(
+                string id,
+                string id_func,
+                string nome_info,
+                string descr_info,
+                string hash_git,
+                string iniciado,
+                string status,
+                string finalizado)
             {
                 this.id = id;
+                this.id_func = id_func;
+                this.nome_info = nome_info;
+                this.descr_info = descr_info;
+                this.hash_git = hash_git;
                 this.iniciado = iniciado;
                 this.status = status;
                 this.finalizado = finalizado;

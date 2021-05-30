@@ -47,11 +47,27 @@ namespace GSWSystem
                 using var reader = new StreamReader(filepath);
                 //MessageBox.Show(reader.ReadToEnd(),"",MessageBoxButton.OK);
                 
-                NormalizarJson json;
-
-                json = new(reader.ReadToEnd());
-
-                MessageBox.Show(json.GetJson()[0]);
+                var json = new NormalizarJson(reader.ReadToEnd());
+                
+                
+                foreach (var item in json.GetJson())
+                {
+                    //conn.ExecuteCmd(string.Format("select * from inserir_func('{0}'::json)", item[0]));
+                    //conn.ExecuteCmd(string.Format("select * from inserir_projinfo('{0}'::json)", item[1]));
+                    //conn.ExecuteCmd(string.Format("select * from inserir_git('{0}'::json)", item[2]));
+                    conn.ExecuteCmd(string.Format("select * from inserir_projeto('{0}'::json)", item[3]));
+                    
+                    /*
+                    if (foo[0] && foo[1] && foo[2] && foo[3])
+                    {
+                        MessageBox.Show("Dados Adicionados", null, MessageBoxButton.OK);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Erro ao adicionar os dados", null, MessageBoxButton.OK);
+                    }
+                    */
+                }
 
                 /**
                  * 
@@ -136,20 +152,6 @@ namespace GSWSystem
                 ]
                  */
             }
-        }
-
-        public class Item 
-        {
-            public string id;
-            public string status;
-            public string user;
-            public List<List<string>> user_id;
-            public string horas;
-            public string inicio;
-            public string fim;
-            public string projeto;
-            public string descrip;
-            public List<List<string>> git;
         }
 
         private void OpenMenu(object sender, RoutedEventArgs e)

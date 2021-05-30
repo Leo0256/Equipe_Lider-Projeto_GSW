@@ -46,40 +46,33 @@ create table projeto(
 )
 
 
-create or replace function inserir_func(func json)
+create function inserir_func(func json)
 returns boolean
 language plpgsql
 as $$
 declare
-	refFunc varchar := func::json->>'id_func';
+	refFunc varchar := func->>'id_func';
 begin
 	case when 
 		(select (count(id_func)::int)::boolean from funcionarios where id_func like refFunc)
 	then
-		with jsonFunc as (
-			select * from json_populate_recordset(
-				null::funcionarios,
-				func)
-		)
 		update funcionarios
 		set
-			primeiro_nome = a.primeiro_nome,
-			ultimo_nome = a.ultimo_nome,
-			avatar = a.avatar,
-			email = a.email
-		from
-			jsonFunc a
+			primeiro_nome = func->>'primeiro_nome',
+			ultimo_nome = func->>'ultimo_nome',
+			avatar = func->>'avatar',
+			email = func->>'email'
 		where
-			id_func = refFunc;
+			funcionarios.id_func = refFunc;
 		
 	else
 		insert into funcionarios values
 		(
 			refFunc,
-			func::json->>'primeiro_nome',
-			func::json->>'ultimo_nome',
-			func::json->>'avatar',
-			func::json->>'email'
+			func->>'primeiro_nome',
+			func->>'ultimo_nome',
+			func->>'avatar',
+			func->>'email'
 		);
 		
 	end case;
@@ -88,182 +81,94 @@ begin
 end $$;
 
 
-create or replace function inserir_projInfo(projInfo json)
+create function inserir_projInfo(projInfo json)
 returns boolean
 language plpgsql
 as $$
 declare
-	refInfo varchar := projInfo::json->>'nome';
+	refInfo varchar := projInfo->>'descr';
 begin
 	case when
-		(select (count(nome)::int)::boolean from projeto_info where nome like refInfo)
+		(select (count(descr)::int)::boolean from projeto_info where nome like refInfo limit 1) = false
 	then
-		with jsonInfo as (
-			select * from json_populate_recordset(
-				null::projeto_info,
-				projInfo)
-		)
-		update projeto_info
-		set
-			descr = a.descr,
-			horas = a.horas
-		from jsonInfo a
-		where
-			nome = refInfo;
-		
-	else
-		insert into projeto_info values
+		insert into projeto_info(nome,descr,horas) values
 		(
+			projInfo->>'nome',
 			refInfo,
-			projInfo::json->>'descr',
-			projInfo::json->>'horas'
+			projInfo->>'horas'::numeric
 		);
+	else end case;
 	
-	end case;
-	
-	return (select (count(nome)::int)::boolean from projeto_info where nome like refInfo);
+	return (select (count(descr)::int)::boolean from projeto_info where nome like refInfo limit 1) = false;
 end $$;
 
 
-create or replace function inserir_git(git json)
+create function inserir_git(git json)
 returns boolean
 language plpgsql
 as $$
 declare
-	refGit varchar := git::json->>'hash';
+	refGit varchar := git->>'hash';
 begin
 	case when 
-		(select (count(hash)::int)::boolean from gitmetadata where hash like refGit)
+		(select (count(hash)::int)::boolean from gitmetadata where hash like refGit) = false
 	then
-		with jsonGit as (
-			select * from json_populate_recordset(
-				null::gitmetadata,
-				func)
-		)
-		update gitmetadata
-		set
-			branch = a.branch
-		from
-			jsonGit a
-		where
-			hash = refGit;
-		
-	else
-		insert into gitmetadata values
+		insert into gitmetadata(branch,hash) values
 		(
-			git::json->>'branch',
+			git->>'branch',
 			refGit
 		);
 		
-	end case;
+	else end case;
 	
-	return (select (count(hash)::int)::boolean from gitmetadata where hash like refGit);
+	return (select (count(hash)::int)::boolean from gitmetadata where hash like refGit) = false;
 end $$;
 
 
-/*
-create or replace function inserir_dados(
-	func json,
-	projInfo json,
-	git json,
-	projeto json
-) 
-returns void
+create or replace function inserir_projeto(proj json)
+returns boolean
+language plpgsql
 as $$
+declare
+	refProj varchar := proj->>'id';
+	refFunc varchar := proj->>'id_func';
+	refInfo int := (
+		select id_info from projeto_info
+		where nome like proj->>'nome_info'
+		and descr like proj->>'descr_info'
+	);
+	refGit int  := (select id_git from gitmetadata where hash like (proj->>'hash_git'));
 begin
-	
-	insert into funcionarios(id_func,primeiro_nome,ultimo_nome,email)
-		values('<novo>','<novo>','<novo>','<novo>');
-	
-	insert into projeto_info(nome) values('<novo>');
-	
-	insert into gitmetadata(branch,hash) values('<novo>','<novo>');
-	
-	insert into projeto(id,id_func,id_info,id_git) 
-		select 
-			funcionarios.email,
-			funcionarios.id_func,
-			projeto_info.id_info,
-			gitmetadata.id_git
-		from funcionarios,projeto_info,gitmetadata
-		where 
-			funcionarios.id_func = '<novo>'
-		and
-			projeto_info.nome = '<novo>'
-		and
-			gitmetadata.hash = '<novo>';
+	case when 
+		(select (count(id)::int)::boolean from projeto where id like refProj)
+	then
+		update projeto
+		set
+			id_func = refFunc,
+			id_info = refInfo,
+			id_git = refGit,
+			iniciado = to_timestamp(proj->>'iniciado', 'YYYY-MM-DDTHH:MI:SS:MS'),
+			status = proj->>'status',
+			finalizado = ((proj->>'finalizado')::boolean)::integer
+		where
+			id = refProj;
 		
+	else
+		insert into projeto values
+		(
+			refProj,
+			refFunc,
+			refInfo,
+			refGit,
+			(proj->>'iniciado')::timestamp without time zone,
+			proj->>'status',
+			((proj->>'finalizado')::boolean)::integer
+		);
+		
+	end case;
 	
-	/*Funcionarios*
-	with newFunc as (
-		with jsonFunc as (
-			select * from json_populate_recordset(
-				null::funcionarios,
-				func
-			))
-		update funcionarios
-		set 
-			id_func = a.id_func, 
-			primeiro_nome = a.primeiro_nome,
-			ultimo_nome = a.ultimo_nome,
-			avatar = a.avatar,
-			email = a.email
-
-		from jsonFunc as a
-		where funcionarios.id_func = '<novo>'
-		returning a.id_func
-		)
-	update projeto
-	set
-		id_func = newFunc.id_func
-	from newFunc
-	where projeto.id = '<novo>';
-	
-	/*Projeto_info*
-	with jsonProjInfo as (
-		select * from json_populate_recordset(
-			null::projeto_info,
-			projInfo
-		))
-	update projeto_info
-	set 
-		nome = b.nome, 
-		descr = b.descr,
-		horas = b.horas
-	from jsonProjInfo as b
-	where projeto_info.nome = '<novo>';
-	
-	/*GitMetadata*
-	with jsonGit as (
-		select * from json_populate_recordset(
-			null::gitmetadata,
-			git
-		))
-	update gitmetadata
-	set 
-		branch = c.branch,
-		hash = c.hash
-	from jsonGit as c
-	where gitmetadata.hash = '<novo>';
-	
-	/*Projeto*
-	with jsonProj as (
-		select * from json_populate_recordset(
-			null::projeto,
-			projeto
-		))
-	update projeto
-	set 
-		id = x.id,
-		iniciado = x.iniciado::timestamp,
-		status = x.status,
-		finalizado = x.finalizado
-	from jsonProj as x
-	where projeto.id = '<novo>';
-	
-end $$
-language plpgsql;
-*/
+	return (select (count(id)::int)::boolean from projeto where id like refProj);
+end $$;
 
 
 create function pesquisa_dedicacao_func (nome_projeto varchar) 
