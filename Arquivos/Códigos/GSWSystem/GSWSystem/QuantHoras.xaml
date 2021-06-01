@@ -17,7 +17,7 @@
                 HorizontalAlignment="Left" 
                 Margin="22,18,0,10" 
                 VerticalAlignment="Top" 
-                FontFamily="Arial" FontSize="55"
+                FontFamily="Arial" FontSize="45"
                 MaxWidth="650" Width="650" TextWrapping="Wrap">
                 <TextBlock.Text>
                     Ano/Mês/Projeto
@@ -28,7 +28,7 @@
                 x:Name="Horas"
                 Content="Horas: " 
                 HorizontalAlignment="Right" 
-                Margin="0,28,30,0" 
+                Margin="0,18,30,0" 
                 VerticalAlignment="Top" 
                 FontFamily="Arial" FontSize="36" 
                 Foreground="#FF151515"/>

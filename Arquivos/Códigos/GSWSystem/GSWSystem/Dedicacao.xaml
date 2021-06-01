@@ -22,7 +22,7 @@
                         x:Name="Nome"
                         HorizontalAlignment="Left"  
                         VerticalAlignment="Top" 
-                        FontFamily="Arial" FontSize="55"
+                        FontFamily="Arial" FontSize="35"
                         MaxWidth="470" Width="470" TextWrapping="Wrap">
                         <TextBlock.Text>
                             Projeto

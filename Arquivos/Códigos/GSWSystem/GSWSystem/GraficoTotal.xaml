@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:GSWSystem"
       mc:Ignorable="d" 
       Width="936" 
-      MinHeight="200" MaxHeight="700"
+      MinHeight="200" MaxHeight="750"
       Title="TotalStatus">
 
     <Border Background="white" BorderBrush="Black" BorderThickness="1" CornerRadius="8,8,8,8">

@@ -36,15 +36,15 @@ namespace GSWSystem
             for(int i = 0; i < param1.Length; i++)
             {
                 defineGrid(param1[i], param2[i], i);
+                Divisor.Height += 110;
             }
-            Divisor.Height = param1.Length * 50;
         }
 
         private void defineGrid(string status, string total, int i)
         {
             RowDefinition row = new();
             DataGrid.RowDefinitions.Add(row);
-            DataGrid.RowDefinitions[i].Height = new GridLength(50);
+            DataGrid.RowDefinitions[i].Height = new GridLength(120);
 
             Label lbl1 = setData(status);
             Grid.SetColumn(lbl1, 0);
@@ -62,13 +62,8 @@ namespace GSWSystem
         {
             Label lbl = new();
 
-            if (str.Length > 30)
-            {
-                str = str[..24] + "(...)";
-            }
-
             lbl.Content = str;
-            lbl.MaxWidth = 370;
+            lbl.MaxWidth = 390;
             lbl.FontFamily = new FontFamily("Arial");
             lbl.FontSize = 26;
             lbl.Foreground = new SolidColorBrush(Color.FromRgb(21, 21, 21));

@@ -26,6 +26,7 @@ namespace GSWSystem
             for(int i = 0; i < xPNomes.Length; i++)
             {
                 if (xPercent[i].Equals("100")) xPercent[i] = "99,99";
+                else if (xPercent[i].Equals(string.Empty)) xPercent[i] = "0,01";
                 defineGrid(string.Concat(xPNomes[i], " ", xUnomes[i]),xPercent[i], i);
             }
             setChart();

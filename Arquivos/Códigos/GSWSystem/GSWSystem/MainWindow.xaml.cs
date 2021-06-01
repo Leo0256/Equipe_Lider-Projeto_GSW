@@ -45,112 +45,44 @@ namespace GSWSystem
             {
                 string filepath = openFile.FileName;
                 using var reader = new StreamReader(filepath);
-                //MessageBox.Show(reader.ReadToEnd(),"",MessageBoxButton.OK);
                 
                 var json = new NormalizarJson(reader.ReadToEnd());
-                
+                List<DataRow[]> row = new();
+                bool flag = true;
                 
                 foreach (var item in json.GetJson())
                 {
-                    //conn.ExecuteCmd(string.Format("select * from inserir_func('{0}'::json)", item[0]));
-                    //conn.ExecuteCmd(string.Format("select * from inserir_projinfo('{0}'::json)", item[1]));
-                    //conn.ExecuteCmd(string.Format("select * from inserir_git('{0}'::json)", item[2]));
-                    conn.ExecuteCmd(string.Format("select * from inserir_projeto('{0}'::json)", item[3]));
-                    
-                    /*
-                    if (foo[0] && foo[1] && foo[2] && foo[3])
+                    try
                     {
-                        MessageBox.Show("Dados Adicionados", null, MessageBoxButton.OK);
+                        row.Add(conn.ExecuteCmd(
+                            string.Format("select * from inserir_func('{0}'::json)", item[0])).Select());
+                        row.Add(conn.ExecuteCmd(
+                            string.Format("select * from inserir_projinfo('{0}'::json)", item[1])).Select());
+                        row.Add(conn.ExecuteCmd(
+                            string.Format("select * from inserir_git('{0}'::json)", item[2])).Select());
+
+                        if (
+                            bool.Parse(row[0][0]["inserir_func"].ToString()) &&
+                            bool.Parse(row[1][0]["inserir_projinfo"].ToString()) &&
+                            bool.Parse(row[2][0]["inserir_git"].ToString())
+                            )
+                        {
+                            row.Add(conn.ExecuteCmd(string.Format("select * from inserir_projeto('{0}'::json)", item[3])).Select());
+                            if (!bool.Parse(row[3][0]["inserir_projeto"].ToString()))
+                                flag = false;
+                        }
                     }
-                    else
+                    catch(IndexOutOfRangeException ex)
                     {
-                        MessageBox.Show("Erro ao adicionar os dados", null, MessageBoxButton.OK);
+                        MessageBox.Show("Falha ao Adicionaar os dados:\n  " + ex.Message, null, MessageBoxButton.OK);
                     }
-                    */
+                    finally
+                    {
+                        row.Clear();
+                    }
                 }
-
-                /**
-                 * 
-                /*
-                Como deve ficar o Json 
-                [
-	                {
-		                "func":{
-			                "id_func": "8c7d3ba7-9b51-4f78-a863-b3074af5f7a1",
-			                "primeiro_nome": "Cecília",
-			                "ultimo_nome": "Moreira",
-			                "avatar": "http://placeimg.com/640/480/people",
-			                "email": "cecilia.moreira@gsw.com.br"
-		                },
-		                "projInfo":{
-			                "nome": "[Pereira - Barros Comércio] - Mandatory fault-tolerant Graphical User Interface",
-			                "descr": "synthesize mobile protocol",
-			                "horas": 9.71
-		                },
-		                "gitMetadata":{
-			                "branch": "array-synthesize",
-			                "hash": "b16181f46f9318acd5ac50f760f30bf2428a28b4"
-		                },
-	    	            "projeto":{
-			                "id": "0ac33506-5610-418f-9b7b-fe9eaacf4f53",
-			                "iniciado": "2020-04-06T03:42:23.453Z",
-			                "status": "PROD_DEPLOYING",
-			                "finalizado": 1
-		                }
-	                }
-                ]
-                --------------
-                Como ele vai vir do:
-                Trello:
-
-                [
-	                {
-		                "_id": "0ac33506-5610-418f-9b7b-fe9eaacf4f53",
-		                "status": "PROD_DEPLOYING",
-		                "user": {
-			                "_id": "8c7d3ba7-9b51-4f78-a863-b3074af5f7a1",
-			                "avatar": "http://placeimg.com/640/480/people",
-			                "userName": "Cecília",
-			                "userLastName": "Moreira",
-			                "userEmail": "cecilia.moreira@gsw.com.br"
-		                },
-		                "hours": 9.71,
-		                "startedAt": "2020-04-06T03:42:23.453Z",
-		                "isFinished": true,
-		                "project": "[Pereira - Barros Comércio] - Mandatory fault-tolerant Graphical User Interface",
-		                "cardDescription": "synthesize mobile protocol",
-		                "gitMetadata": {
-			                "branch": "array-synthesize",
-			                "hash": "b16181f46f9318acd5ac50f760f30bf2428a28b4"
-		                }
-	                }
-                ]
-
-                Jira:
-
-                [
-	                {
-		                "id": "0db2dfdc-a4b8-4055-b2ad-6655c06a7663",
-		                "status": "PROD_DEPLOYING",
-		                "user": {
-			                "id": "659e4749-0237-4b89-9ad7-7402491b5bb5",
-			                "avatar": "http://placeimg.com/640/480/people",
-			                "first_name": "Gustavo",
-			                "last_name": "Santos",
-			                "email": "gustavo.santos@gsw.com.br"
-		                },
-		                "amountHours": 2.42,
-		                "startedAt": "2020-04-25T21:01:17.288Z",
-		                "finished": true,
-		                "project": "[Souza Comércio e Associados] - Innovative background implementation",
-		                "cardDescription": "index optical capacitor",
-		                "gitMetadata": {
-			                "branch": "microchip-parse",
-			                "hash": "bb84719579164f7c68a171d224ae533c7471cd40"
-		                }
-	                }
-                ]
-                 */
+                if(flag)
+                    MessageBox.Show("Dados Adicionados", "Mensagem", MessageBoxButton.OK);
             }
         }
 
@@ -198,8 +130,6 @@ namespace GSWSystem
         private void ViewProjeto(object sender, RoutedEventArgs e)
         {
             function = "projeto";
-
-            
 
             Panel.Children.Clear();
             CmdProjeto();
@@ -483,11 +413,18 @@ namespace GSWSystem
 
             foreach(DataRow data in row)
             {
+                string foo = data["projeto"].ToString();
+                if (foo.Length > 30)
+                {
+                    foo = foo[..25] + "\n" + foo[25..];
+                    if (foo.Length > 50)
+                        foo = foo[..50] + "(...)";
+                }
                 xProj.Add(
                     string.Concat(
-                        data["id"].ToString(),
-                        " - ",
-                        data["projeto"].ToString()
+                        foo,
+                        "\n    id: ",
+                        data["id"].ToString()
                         ));
                 xStatus.Add(data["status"].ToString());
             }

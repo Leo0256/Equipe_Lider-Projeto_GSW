@@ -46,7 +46,7 @@ create table projeto(
 )
 
 
-create function inserir_func(func json)
+create or replace function inserir_func(func json)
 returns boolean
 language plpgsql
 as $$
@@ -81,29 +81,54 @@ begin
 end $$;
 
 
-create function inserir_projInfo(projInfo json)
+create or replace function inserir_projInfo(projInfo json)
 returns boolean
 language plpgsql
 as $$
 declare
-	refInfo varchar := projInfo->>'descr';
+	refNomeInfo varchar := projInfo->>'nome';
+	refDescrInfo varchar := projInfo->>'descr';
+	refHoras numeric(4,2) := cast(projInfo->>'horas' as numeric(4,2));
 begin
 	case when
-		(select (count(descr)::int)::boolean from projeto_info where nome like refInfo limit 1) = false
+		(
+			select (count(descr)::int)::boolean 
+				from projeto_info 
+			where 
+				nome like refNomeInfo 
+			and
+				descr like refDescrInfo
+		)
 	then
+		update projeto_info
+		set
+			horas = refHoras
+		where
+			nome like refNomeInfo 
+		and
+			descr like refDescrInfo;
+		
+	else 
 		insert into projeto_info(nome,descr,horas) values
 		(
-			projInfo->>'nome',
-			refInfo,
-			projInfo->>'horas'::numeric
+			refNomeInfo,
+			refDescrInfo,
+			refHoras
 		);
-	else end case;
+	end case;
 	
-	return (select (count(descr)::int)::boolean from projeto_info where nome like refInfo limit 1) = false;
+	return (
+		select (count(descr)::int)::boolean 
+			from projeto_info 
+		where 
+			nome like refNomeInfo 
+		and
+			descr like refDescrInfo
+	);
 end $$;
 
 
-create function inserir_git(git json)
+create or replace function inserir_git(git json)
 returns boolean
 language plpgsql
 as $$
@@ -147,7 +172,7 @@ begin
 			id_func = refFunc,
 			id_info = refInfo,
 			id_git = refGit,
-			iniciado = to_timestamp(proj->>'iniciado', 'YYYY-MM-DDTHH:MI:SS:MS'),
+			iniciado = to_timestamp(proj->>'iniciado', 'MM/DD/YYYY HH24:MI:SS'),
 			status = proj->>'status',
 			finalizado = ((proj->>'finalizado')::boolean)::integer
 		where
@@ -160,7 +185,7 @@ begin
 			refFunc,
 			refInfo,
 			refGit,
-			(proj->>'iniciado')::timestamp without time zone,
+			to_timestamp(proj->>'iniciado', 'MM/DD/YYYY HH24:MI:SS'),
 			proj->>'status',
 			((proj->>'finalizado')::boolean)::integer
 		);
@@ -171,7 +196,7 @@ begin
 end $$;
 
 
-create function pesquisa_dedicacao_func (nome_projeto varchar) 
+create or replace function pesquisa_dedicacao_func (nome_projeto varchar) 
 returns table (
 	id integer,
 	projeto varchar,
@@ -183,10 +208,10 @@ as $$
 begin
 	return query 
 		select
-			projeto_info.id_info id,
-			projeto_info.nome as projeto,
-			funcionarios.primeiro_nome as p_nome,
-			funcionarios.ultimo_nome as u_nome,
+			projeto_info.id_info as id,
+			projeto_info.nome,
+			funcionarios.primeiro_nome,
+			funcionarios.ultimo_nome,
 			sum(
 				case
 				when
@@ -218,7 +243,7 @@ begin
 end; $$
 
 
-create function pesquisa_finalizado_projeto (finalizado_x integer) 
+create or replace function pesquisa_finalizado_projeto (finalizado_x integer) 
 returns table (
 	id varchar,
 	id_func varchar,
@@ -249,7 +274,7 @@ begin
 end; $$
 
 
-create function pesquisa_horas_ano (ano_x integer) 
+create or replace function pesquisa_horas_ano (ano_x integer) 
 returns table (
 	ano double precision,
 	horas numeric(4,2)
@@ -274,7 +299,7 @@ begin
 end; $$
 
 
-create function pesquisa_horas_funcionario (func_nome varchar) 
+create or replace function pesquisa_horas_funcionario (func_nome varchar) 
 returns table (
 	id_func varchar,
 	horas numeric(5,2),
@@ -310,7 +335,7 @@ begin
 end; $$
 
 
-create function pesquisa_horas_mes (mes_x integer, ano_x integer) 
+create or replace function pesquisa_horas_mes (mes_x integer, ano_x integer) 
 returns table (
 	mes double precision,
 	horas numeric(4,2)
@@ -337,7 +362,7 @@ begin
 end; $$
 
 
-create function pesquisa_horas_projeto(xnome varchar) 
+create or replace function pesquisa_horas_projeto(xnome varchar) 
 returns table (
 	projeto varchar,
 	horas numeric
@@ -360,7 +385,7 @@ begin
 end; $$
 
 
-create function pesquisa_nome_projeto (nome_x varchar) 
+create or replace function pesquisa_nome_projeto (nome_x varchar) 
 returns table (
 	id varchar,
 	id_func varchar,
@@ -374,24 +399,24 @@ as $$
 begin
 	return query 
 		select
-			projeto.id as id, 
-			projeto.id_func as id_func, 
-			projeto_info.nome as nome,
-			projeto_info.descr as descr,
-			projeto.iniciado as iniciado,
-			projeto.status as status,
-			projeto.finalizado as finalizado
+			projeto.id, 
+			projeto.id_func, 
+			projeto_info.nome,
+			projeto_info.descr,
+			projeto.iniciado as a,
+			projeto.status,
+			projeto.finalizado
 		from projeto 
 			inner join projeto_info
 				on projeto.id_info = projeto_info.id_info
 		where 
 			projeto_info.nome ilike concat('%',nome_x,'%')
-		order by nome desc;
+		order by a desc;
 
 end; $$
 
 
-create function pesquisa_quant_status () 
+create or replace function pesquisa_quant_status () 
 returns table (
 	status varchar,
 	total bigint
@@ -409,7 +434,7 @@ begin
 end; $$
 
 
-create function pesquisa_status_projeto (status_x varchar) 
+create or replace function pesquisa_status_projeto (status_x varchar) 
 returns table (
 	id varchar,
 	id_func varchar,
@@ -440,7 +465,7 @@ begin
 end; $$
 
 
-create function pesquisa_tasks_abertas() 
+create or replace function pesquisa_tasks_abertas() 
 returns table (
 	id varchar,
 	projeto varchar,
@@ -461,5 +486,6 @@ begin
 		where
 			projeto.finalizado = 0
 			
-		order by projeto_info.nome desc;
+		order by projeto.iniciado asc
+		limit 5;
 end; $$

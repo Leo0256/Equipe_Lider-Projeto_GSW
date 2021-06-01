@@ -136,7 +136,7 @@
             Background="Transparent"
             Margin="0,80,0,30" 
             HorizontalContentAlignment="Center"
-            VerticalScrollBarVisibility="Hidden">
+            VerticalScrollBarVisibility="Visible">
 
             <StackPanel
                 x:Name="Panel"

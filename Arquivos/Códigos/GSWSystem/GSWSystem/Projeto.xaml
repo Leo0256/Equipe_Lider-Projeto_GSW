@@ -19,7 +19,7 @@
                         HorizontalAlignment="Left" 
                         Margin="22,18,0,0" 
                         VerticalAlignment="Top" 
-                        FontFamily="Arial" FontSize="55"
+                        FontFamily="Arial" FontSize="45"
                         TextWrapping="Wrap"
                         MaxWidth="600">
                         <TextBlock.Text>
@@ -32,7 +32,7 @@
                         x:Name="Status"
                         Content="Status" 
                         HorizontalAlignment="Right" 
-                        Margin="0,29,30,0" 
+                        Margin="0,18,30,0" 
                         VerticalAlignment="Top" 
                         FontFamily="Arial" FontSize="36" 
                         Foreground="#FF151515"/>
