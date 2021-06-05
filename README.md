@@ -6,7 +6,7 @@
 
 ---
 ### Valores entregues
-![Card4]()
+![Card4](https://github.com/Leo0256/Equipe_Lider-Projeto_GSW/blob/main/Arquivos/Fotos%20e%20Documentos/Card%204.png "Card da Sprint 4")
 
 ---
 ### Gif do Sistema
@@ -256,13 +256,13 @@ namespace NoteSystem
 
 ### Planilha de Teste
 
-![Planilha_Testes]()
+![Planilha_Testes](https://github.com/Leo0256/Equipe_Lider-Projeto_GSW/blob/main/Arquivos/Fotos%20e%20Documentos/Planilha%20de%20Testes.png "Planilha de Testes")
 
 ---
 ### Links
 
-- [Figma](https://google.com)
+- [Figma](https://www.figma.com/file/JNHBHcGorHxBcx50m3nuGg/GSW-projeto-2?node-id=0%3A1 "Protótipo do Sistema")
 - [Heroku](https://www.heroku.com/)
-- [Códigos](https://github.com/Leo0256/Equipe_Lider-Projeto_GSW/)
+- [Código Fonte](https://github.com/Leo0256/Equipe_Lider-Projeto_GSW/tree/sistema "Códigos do 'NoteSystem'")
 
 ---
