@@ -258,6 +258,10 @@ namespace NoteSystem
 
 ![Planilha_Testes](https://github.com/Leo0256/Equipe_Lider-Projeto_GSW/blob/main/Arquivos/Fotos%20e%20Documentos/Planilha%20de%20Testes.png "Planilha de Testes")
 
+
+### Burndown da Sprint 4
+![Burndown 4](https://github.com/Leo0256/Equipe_Lider-Projeto_GSW/blob/main/Arquivos/Artefatos/Burndown%204.png "Gráfico Burndown")
+
 ---
 ### Links
 
