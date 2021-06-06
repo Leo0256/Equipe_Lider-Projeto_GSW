@@ -1,0 +1,98 @@
+D:\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\bin\Debug\net5.0-windows\GSWSystem.exe
+D:\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\bin\Debug\net5.0-windows\GSWSystem.deps.json
+D:\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\bin\Debug\net5.0-windows\GSWSystem.runtimeconfig.json
+D:\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\bin\Debug\net5.0-windows\GSWSystem.runtimeconfig.dev.json
+D:\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\bin\Debug\net5.0-windows\GSWSystem.dll
+D:\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\bin\Debug\net5.0-windows\ref\GSWSystem.dll
+D:\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\bin\Debug\net5.0-windows\GSWSystem.pdb
+D:\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\GSWSystem.csprojAssemblyReference.cache
+D:\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\MainWindow.g.cs
+D:\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\App.g.cs
+D:\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\GSWSystem_MarkupCompile.cache
+D:\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\GSWSystem_MarkupCompile.lref
+D:\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\MainWindow.baml
+D:\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\GSWSystem.g.resources
+D:\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\GSWSystem.GeneratedMSBuildEditorConfig.editorconfig
+D:\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\GSWSystem.AssemblyInfoInputs.cache
+D:\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\GSWSystem.AssemblyInfo.cs
+D:\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\GSWSystem.csproj.CoreCompileInputs.cache
+D:\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\GSWSystem.dll
+D:\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\ref\GSWSystem.dll
+D:\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\GSWSystem.pdb
+D:\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\GSWSystem.genruntimeconfig.cache
+D:\Nova pasta\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\bin\Debug\net5.0-windows\GSWSystem.exe
+D:\Nova pasta\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\bin\Debug\net5.0-windows\GSWSystem.deps.json
+D:\Nova pasta\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\bin\Debug\net5.0-windows\GSWSystem.runtimeconfig.json
+D:\Nova pasta\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\bin\Debug\net5.0-windows\GSWSystem.runtimeconfig.dev.json
+D:\Nova pasta\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\bin\Debug\net5.0-windows\GSWSystem.dll
+D:\Nova pasta\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\bin\Debug\net5.0-windows\ref\GSWSystem.dll
+D:\Nova pasta\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\bin\Debug\net5.0-windows\GSWSystem.pdb
+D:\Nova pasta\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\GSWSystem.csprojAssemblyReference.cache
+D:\Nova pasta\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\MainWindow.g.cs
+D:\Nova pasta\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\App.g.cs
+D:\Nova pasta\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\GSWSystem_MarkupCompile.cache
+D:\Nova pasta\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\GSWSystem_MarkupCompile.lref
+D:\Nova pasta\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\MainWindow.baml
+D:\Nova pasta\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\GSWSystem.g.resources
+D:\Nova pasta\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\GSWSystem.GeneratedMSBuildEditorConfig.editorconfig
+D:\Nova pasta\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\GSWSystem.AssemblyInfoInputs.cache
+D:\Nova pasta\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\GSWSystem.AssemblyInfo.cs
+D:\Nova pasta\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\GSWSystem.csproj.CoreCompileInputs.cache
+D:\Nova pasta\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\GSWSystem.dll
+D:\Nova pasta\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\ref\GSWSystem.dll
+D:\Nova pasta\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\GSWSystem.pdb
+D:\Nova pasta\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\GSWSystem.genruntimeconfig.cache
+C:\Users\yggdr\Documents\Fatec\2º\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\bin\Debug\net5.0-windows\GSWSystem.exe
+C:\Users\yggdr\Documents\Fatec\2º\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\bin\Debug\net5.0-windows\GSWSystem.deps.json
+C:\Users\yggdr\Documents\Fatec\2º\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\bin\Debug\net5.0-windows\GSWSystem.runtimeconfig.json
+C:\Users\yggdr\Documents\Fatec\2º\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\bin\Debug\net5.0-windows\GSWSystem.runtimeconfig.dev.json
+C:\Users\yggdr\Documents\Fatec\2º\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\bin\Debug\net5.0-windows\GSWSystem.dll
+C:\Users\yggdr\Documents\Fatec\2º\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\bin\Debug\net5.0-windows\ref\GSWSystem.dll
+C:\Users\yggdr\Documents\Fatec\2º\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\bin\Debug\net5.0-windows\GSWSystem.pdb
+C:\Users\yggdr\Documents\Fatec\2º\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\GSWSystem.csprojAssemblyReference.cache
+C:\Users\yggdr\Documents\Fatec\2º\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\MainWindow.g.cs
+C:\Users\yggdr\Documents\Fatec\2º\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\App.g.cs
+C:\Users\yggdr\Documents\Fatec\2º\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\GSWSystem_MarkupCompile.cache
+C:\Users\yggdr\Documents\Fatec\2º\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\GSWSystem_MarkupCompile.lref
+C:\Users\yggdr\Documents\Fatec\2º\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\MainWindow.baml
+C:\Users\yggdr\Documents\Fatec\2º\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\GSWSystem.g.resources
+C:\Users\yggdr\Documents\Fatec\2º\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\GSWSystem.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\yggdr\Documents\Fatec\2º\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\GSWSystem.AssemblyInfoInputs.cache
+C:\Users\yggdr\Documents\Fatec\2º\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\GSWSystem.AssemblyInfo.cs
+C:\Users\yggdr\Documents\Fatec\2º\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\GSWSystem.csproj.CoreCompileInputs.cache
+C:\Users\yggdr\Documents\Fatec\2º\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\GSWSystem.dll
+C:\Users\yggdr\Documents\Fatec\2º\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\ref\GSWSystem.dll
+C:\Users\yggdr\Documents\Fatec\2º\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\GSWSystem.pdb
+C:\Users\yggdr\Documents\Fatec\2º\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\GSWSystem.genruntimeconfig.cache
+D:\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\bin\Debug\net5.0-windows\Newtonsoft.Json.dll
+D:\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\bin\Debug\net5.0-windows\Npgsql.dll
+D:\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\GSWSystem.csproj.CopyComplete
+D:\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\Projeto.g.cs
+D:\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\Projeto.baml
+D:\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\Funcionario.g.cs
+D:\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\Funcionario.baml
+D:\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\QuantHoras.g.cs
+D:\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\QuantHoras.baml
+D:\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\Dedicacao.g.cs
+D:\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\Dedicacao.baml
+D:\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\GraficoTotal.g.cs
+D:\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\GraficoTotal.baml
+D:\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\bin\Debug\net5.0-windows\MaterialDesignColors.dll
+D:\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\bin\Debug\net5.0-windows\MaterialDesignThemes.Wpf.dll
+D:\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\App.baml
+C:\Users\yggdr\Documents\Fatec\2º\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\bin\Debug\net5.0-windows\MaterialDesignColors.dll
+C:\Users\yggdr\Documents\Fatec\2º\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\bin\Debug\net5.0-windows\MaterialDesignThemes.Wpf.dll
+C:\Users\yggdr\Documents\Fatec\2º\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\bin\Debug\net5.0-windows\Newtonsoft.Json.dll
+C:\Users\yggdr\Documents\Fatec\2º\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\bin\Debug\net5.0-windows\Npgsql.dll
+C:\Users\yggdr\Documents\Fatec\2º\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\Dedicacao.g.cs
+C:\Users\yggdr\Documents\Fatec\2º\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\Funcionario.g.cs
+C:\Users\yggdr\Documents\Fatec\2º\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\GraficoTotal.g.cs
+C:\Users\yggdr\Documents\Fatec\2º\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\Projeto.g.cs
+C:\Users\yggdr\Documents\Fatec\2º\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\QuantHoras.g.cs
+C:\Users\yggdr\Documents\Fatec\2º\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\App.baml
+C:\Users\yggdr\Documents\Fatec\2º\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\Dedicacao.baml
+C:\Users\yggdr\Documents\Fatec\2º\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\Funcionario.baml
+C:\Users\yggdr\Documents\Fatec\2º\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\GraficoTotal.baml
+C:\Users\yggdr\Documents\Fatec\2º\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\Projeto.baml
+C:\Users\yggdr\Documents\Fatec\2º\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\QuantHoras.baml
+C:\Users\yggdr\Documents\Fatec\2º\Equipe_Lider-Projeto_GSW\Arquivos\Códigos\GSWSystem\GSWSystem\obj\Debug\net5.0-windows\GSWSystem.csproj.CopyComplete

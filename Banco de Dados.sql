@@ -1,4 +1,4 @@
-create database "GSWSystem"
+create database "NoteSystem"
     with 
     owner = postgres
     encoding = 'UTF8'
@@ -208,10 +208,10 @@ as $$
 begin
 	return query 
 		select
-			projeto_info.id_info as id,
-			projeto_info.nome,
-			funcionarios.primeiro_nome,
-			funcionarios.ultimo_nome,
+			projeto_info.id_info id,
+			projeto_info.nome as projeto,
+			funcionarios.primeiro_nome as p_nome,
+			funcionarios.ultimo_nome as u_nome,
 			sum(
 				case
 				when
@@ -344,20 +344,25 @@ as $$
 begin
 	return query 
 		select
-			extract(month from projeto.iniciado),
+			extract(month from projeto.iniciado) as mes,
+			extract(year from projeto.iniciado) as ano,
 			sum(projeto_info.horas)
 
 		from projeto_info
 			inner join projeto 
 				on projeto_info.id_info = projeto.id_info
-				
-		where 
-			extract(month from projeto.iniciado)::integer = mes_x
-		and
-			extract(year from projeto.iniciado)::integer = ano_x
-		
-		group by extract(month from projeto.iniciado)
-		order by mes_x desc;
+
+		where case
+			when mes_x != 0
+			then
+				extract(month from projeto.iniciado)::integer = mes_x
+				and
+				extract(year from projeto.iniciado)::integer = ano_x
+			
+			else end case;
+
+		group by mes, extract(year from projeto.iniciado)
+		order by mes desc;
 
 end; $$
 
