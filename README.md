@@ -10,7 +10,7 @@
 
 ---
 ### Gif do Sistema
-![Gif]()
+![Gif](https://github.com/Leo0256/Equipe_Lider-Projeto_GSW/blob/Sprint_4/gif.gif "Gif")
 
 ### MainWindow - Evento de Upload dos Dados
 ```C#
