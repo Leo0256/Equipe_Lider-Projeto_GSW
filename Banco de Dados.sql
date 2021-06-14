@@ -14,14 +14,14 @@ create table funcionarios(
     ultimo_nome varchar(50) not null,
     avatar varchar(100) default 'http://placeimg.com/210/210/people',
     email varchar(100) not null
-)
+);
 
 
 create table gitmetadata(
     id_git serial primary key,
     branch varchar(50) not null,
     hash varchar(50) unique not null
-)
+);
 
 
 create table projeto_info(
@@ -29,7 +29,7 @@ create table projeto_info(
     nome varchar(100) not null,
     descr varchar(200),
     horas numeric(4,2) default 0.0
-)
+);
 
 
 create table projeto(
@@ -43,7 +43,7 @@ create table projeto(
     foreign key (id_func) references funcionarios (id_func),
     foreign key (id_info) references projeto_info (id_info),
     foreign key (id_git) references gitmetadata (id_git)
-)
+);
 
 
 create or replace function inserir_func(func json)
@@ -146,7 +146,7 @@ begin
 		
 	else end case;
 	
-	return (select (count(hash)::int)::boolean from gitmetadata where hash like refGit) = false;
+	return (select (count(hash)::int)::boolean from gitmetadata where hash like refGit);
 end $$;
 
 
@@ -208,10 +208,10 @@ as $$
 begin
 	return query 
 		select
-			projeto_info.id_info as id,
-			projeto_info.nome,
-			funcionarios.primeiro_nome,
-			funcionarios.ultimo_nome,
+			projeto_info.id_info id,
+			projeto_info.nome as projeto,
+			funcionarios.primeiro_nome as p_nome,
+			funcionarios.ultimo_nome as u_nome,
 			sum(
 				case
 				when
@@ -240,7 +240,7 @@ begin
 		where nome ilike concat('%',nome_projeto,'%')
 		group by projeto_info.id_info,p_nome,u_nome
 		order by id;
-end; $$
+end $$;
 
 
 create or replace function pesquisa_finalizado_projeto (finalizado_x integer) 
@@ -271,8 +271,28 @@ begin
 			projeto.finalizado = finalizado_x
 		order by projeto.finalizado asc;
 
-end; $$
+end $$;
 
+
+create or replace function pesquisa_horas_ano () 
+returns table (
+	ano double precision,
+	horas numeric(4,2)
+) language plpgsql
+as $$
+begin
+	return query 
+		select
+			extract(year from projeto.iniciado),
+			sum(projeto_info.horas)
+
+		from projeto_info
+			inner join projeto 
+				on projeto_info.id_info = projeto.id_info
+				
+		group by extract(year from projeto.iniciado)
+		order by extract(year from projeto.iniciado) desc;
+end $$;
 
 create or replace function pesquisa_horas_ano (ano_x integer) 
 returns table (
@@ -296,7 +316,7 @@ begin
 		group by extract(year from projeto.iniciado)
 		order by ano_x desc;
 
-end; $$
+end $$;
 
 
 create or replace function pesquisa_horas_funcionario (func_nome varchar) 
@@ -332,34 +352,42 @@ begin
 	
 		group by funcionarios.id_func
 		order by funcionarios.primeiro_nome desc;
-end; $$
+end $$;
 
 
 create or replace function pesquisa_horas_mes (mes_x integer, ano_x integer) 
 returns table (
 	mes double precision,
+	ano double precision,
 	horas numeric(4,2)
 ) language plpgsql
 as $$
 begin
 	return query 
 		select
-			extract(month from projeto.iniciado),
+			extract(month from projeto.iniciado) as mes,
+			extract(year from projeto.iniciado) as ano,
 			sum(projeto_info.horas)
 
 		from projeto_info
 			inner join projeto 
 				on projeto_info.id_info = projeto.id_info
-				
-		where 
-			extract(month from projeto.iniciado)::integer = mes_x
-		and
-			extract(year from projeto.iniciado)::integer = ano_x
-		
-		group by extract(month from projeto.iniciado)
-		order by mes_x desc;
 
-end; $$
+		where case
+			when mes_x != 0
+			then
+				extract(month from projeto.iniciado)::integer = mes_x
+				and
+				extract(year from projeto.iniciado)::integer = ano_x
+			
+			else
+				true	
+			end
+
+		group by mes, extract(year from projeto.iniciado)
+		order by mes desc;
+
+end $$;
 
 
 create or replace function pesquisa_horas_projeto(xnome varchar) 
@@ -382,7 +410,7 @@ begin
 				
 		group by projeto_info.nome
 		order by projeto_info.nome desc;
-end; $$
+end $$;
 
 
 create or replace function pesquisa_nome_projeto (nome_x varchar) 
@@ -413,7 +441,7 @@ begin
 			projeto_info.nome ilike concat('%',nome_x,'%')
 		order by a desc;
 
-end; $$
+end $$;
 
 
 create or replace function pesquisa_quant_status () 
@@ -431,7 +459,7 @@ begin
 		group by projeto.status
 		order by projeto.status desc;
 
-end; $$
+end $$;
 
 
 create or replace function pesquisa_status_projeto (status_x varchar) 
@@ -462,7 +490,7 @@ begin
 			projeto.status = concat(status_x,'%')
 		order by projeto_info.nome desc;
 
-end; $$
+end $$;
 
 
 create or replace function pesquisa_tasks_abertas() 
@@ -488,4 +516,4 @@ begin
 			
 		order by projeto.iniciado asc
 		limit 5;
-end; $$
+end $$;
