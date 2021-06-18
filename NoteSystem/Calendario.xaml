@@ -1,0 +1,100 @@
+﻿<Page x:Class="NoteSystem.Calendario"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:NoteSystem"
+      
+      mc:Ignorable="d" 
+      Title="Calendario"
+      Width="936" 
+      MinHeight="250" MaxHeight="400">
+
+    <Page.Resources>
+        <DropShadowEffect 
+                    x:Key="dropShadow" 
+                    BlurRadius="20" 
+                    Direction="270"
+                    Color="Black"
+                    />
+    </Page.Resources>
+
+    <Border Background="white" BorderBrush="Black" BorderThickness="1" CornerRadius="8,8,8,8">
+        <Grid Margin="0,0,0,10">
+            <StackPanel Margin="40" Orientation="Horizontal">
+
+                <Calendar 
+                    x:Name="calendar" 
+                    IsTodayHighlighted="False"
+                    FontFamily="Arial"
+                    Language="pt-BR"
+                    MinWidth="270"
+                    Margin="10"
+                    SelectedDatesChanged="GetDateChange"
+                    DisplayDateChanged="GetDateChange"
+                    Effect="{StaticResource dropShadow}">
+                    
+                    <Calendar.CalendarDayButtonStyle>
+                        <Style TargetType="CalendarDayButton" BasedOn="{StaticResource {x:Type CalendarDayButton}}">
+                            <EventSetter Event="Loaded" Handler="CalendarButton_Loaded" />
+                        </Style>
+                    </Calendar.CalendarDayButtonStyle>
+                </Calendar>
+
+                <Border 
+                    BorderBrush="Black" 
+                    BorderThickness="1" 
+                    CornerRadius="2"
+                    Background="GhostWhite"
+                    Margin="20,15"
+                    Width="500" 
+                    VerticalAlignment="Top"
+                    >
+                    <ScrollViewer 
+                        VerticalScrollBarVisibility="Auto" 
+                        MaxHeight="300" 
+                        MinHeight="50" >
+                        
+                        <Grid 
+                            x:Name="grid" 
+                            Width="Auto"
+                            VerticalAlignment="Top"
+                            >
+                            
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <d:Grid.RowDefinitions>
+                                <d:RowDefinition Height="50"/>
+                                <d:RowDefinition Height="50"/>
+                            </d:Grid.RowDefinitions>
+
+                            <d:Grid Grid.Row="0">
+                                <TextBlock
+                                    Text="texto"
+                                    FontSize="30"
+                                    FontFamily="Arial"
+                                    VerticalAlignment="Center"
+                                    Margin="5"
+                                    />
+                            </d:Grid>
+
+                            <d:Grid Grid.Row="1">
+                                <TextBlock 
+                                    Text="texto"
+                                    FontSize="30"
+                                    FontFamily="Arial"
+                                    VerticalAlignment="Center"
+                                    Margin="5"
+                                    />
+                            </d:Grid>
+
+                        </Grid>
+                    </ScrollViewer>
+                </Border>
+
+            </StackPanel>
+        </Grid>
+    </Border>
+</Page>

@@ -196,6 +196,26 @@ begin
 end $$;
 
 
+create or replace function pesquisa_datas_projeto () 
+returns table (
+	nome varchar,
+	data timestamp
+) language plpgsql
+as $$
+begin
+	return query 
+		select
+			projeto_info.nome,
+			projeto.iniciado as a
+		from projeto 
+			inner join projeto_info
+				on projeto.id_info = projeto_info.id_info
+		
+		order by a asc;
+
+end $$;
+
+
 create or replace function pesquisa_dedicacao_func (nome_projeto varchar) 
 returns table (
 	id integer,

@@ -71,6 +71,11 @@ namespace NoteSystem
             }
         }
 
+        private void foo(object sender, RoutedEventArgs e)
+        {
+
+        }
+
         private void OpenMenu(object sender, RoutedEventArgs e)
         {
             ButtonOpenMenu.Visibility = Visibility.Collapsed;
@@ -431,6 +436,56 @@ namespace NoteSystem
         {
             Panel.Children.Clear();
             CmdTask();
+        }
+
+        private void CmdCalendario()
+        {
+            string sql = string.Format(@"select * from pesquisa_datas_projeto()");
+            DataRow[] row = conn.ExecuteCmd(sql).Select();
+
+            List<string> xData = new(),
+                         xProj = new();
+            foreach(var data in row)
+            {
+                xData.Add(data["data"].ToString()[..10]);
+                xProj.Add(data["nome"].ToString());
+            }
+
+            Panel.Children.Clear();
+            Panel.Children.Add(
+                new Frame
+                {
+                    Content = new Calendario(xData.ToArray(), xProj.ToArray())
+                }
+            );
+        }
+
+        private void ViewCalendarioTasks(object sender, RoutedEventArgs e)
+        {
+            Panel.Children.Clear();
+            CmdCalendario();
+            /*
+            string[] data =
+            {
+                "2020/06/05",
+                "2021/05/18",
+                "2021/06/10"
+            };
+
+            string[] nome =
+            {
+                "Projeto Golden-Eye",
+                "Alteração do Layout X",
+                "Mudar N Linhas de Código"
+            };
+
+            Panel.Children.Add(
+                new Frame
+                {
+                    Content = new Calendario(data, nome)
+                }
+            );
+            */
         }
 
         private void EntradaTexto(object sender, KeyEventArgs e)

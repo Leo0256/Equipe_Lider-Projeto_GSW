@@ -259,7 +259,7 @@
                 SelectionTextBrush="White" 
                 CaretBrush="white" 
                 
-                HorizontalScrollBarVisibility="Disabled"
+                HorizontalScrollBarVisibility="Hidden"
                 KeyDown="EntradaTexto"
                 Style="{DynamicResource ResourceKey=TextBoxStyle}">
 
@@ -274,189 +274,260 @@
         </DockPanel>
 
         
-        <Grid x:Name="GridMenu" Margin="0,60,0,0" Width="0" Background="#FF0F3460" HorizontalAlignment="Left">
+        <Grid x:Name="GridMenu" Margin="0,60,0,0" Width="0" Background="#FF0F3460" HorizontalAlignment="Left"
+              d:Width="200">
 
-            <StackPanel>
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <StackPanel>
 
-                <ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                    <ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled">
 
-                    <ListViewItem Height="60" Selected="ViewProjeto">
-                        <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon 
-                                Width="25"
-                                Height="25"
-                                Margin="10"
-                                Foreground="White"
-                                Kind="File"
-                                VerticalAlignment="Center" />
+                        <ListViewItem Height="60" Selected="ViewProjeto">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon 
+                                    Width="25"
+                                    Height="25"
+                                    Margin="10"
+                                    Foreground="White"
+                                    Kind="File"
+                                    VerticalAlignment="Center" />
 
-                            <TextBlock 
-                                Margin="20,10"
-                                FontFamily="Arial"
-                                FontSize="15" 
-                                Foreground="White" 
-                                VerticalAlignment="Center" 
-                                Text="Projeto"/>
-                        </StackPanel>
+                                <TextBlock 
+                                    Margin="20,10"
+                                    FontFamily="Arial"
+                                    FontSize="15" 
+                                    Foreground="White" 
+                                    VerticalAlignment="Center" 
+                                    Text="Projeto"/>
+                            </StackPanel>
 
-                    </ListViewItem>
+                        </ListViewItem>
 
-                    <ListViewItem Height="60" Selected="ViewHorasFuncionario">
-                        <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon 
-                                Width="25"
-                                Height="25"
-                                Margin="10"
-                                Foreground="White"
-                                Kind="AccountCircle"
-                                VerticalAlignment="Center" />
+                        <ListViewItem Height="60" Selected="ViewHorasFuncionario">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon 
+                                    Width="25"
+                                    Height="25"
+                                    Margin="10"
+                                    Foreground="White"
+                                    Kind="AccountCircle"
+                                    VerticalAlignment="Center" />
 
-                             <TextBlock 
-                                Margin="20,5"
-                                FontFamily="Arial"
-                                FontSize="15" 
-                                Foreground="White" 
-                                VerticalAlignment="Center" 
-                                Text="Horas Funcionario"
-                                MaxWidth="100"
-                                TextWrapping="Wrap"/>
-                        </StackPanel>
-                    </ListViewItem>
+                                <TextBlock 
+                                    Margin="20,5"
+                                    FontFamily="Arial"
+                                    FontSize="15" 
+                                    Foreground="White" 
+                                    VerticalAlignment="Center" 
+                                    Text="Horas Funcionario"
+                                    MaxWidth="100"
+                                    TextWrapping="Wrap"/>
+                            </StackPanel>
+                        </ListViewItem>
+                        
+                        
 
-                    <ListViewItem Height="60" Selected="ViewHorasProjeto">
-                        <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon 
-                                Width="25"
-                                Height="25"
-                                Margin="10"
-                                Foreground="White"
-                                Kind="QueryBuilder"
-                                VerticalAlignment="Center" />
+                        <ListViewItem Height="60" Selected="ViewHorasProjeto">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon 
+                                    Width="25"
+                                    Height="25"
+                                    Margin="10"
+                                    Foreground="White"
+                                    Kind="QueryBuilder"
+                                    VerticalAlignment="Center" />
 
-                            <TextBlock 
-                                Margin="20,5"
-                                FontFamily="Arial"
-                                FontSize="15" 
-                                Foreground="White" 
-                                VerticalAlignment="Center" 
-                                Text="Horas por Projeto"
-                                MaxWidth="100"
-                                TextWrapping="Wrap"/>
-                        </StackPanel>
-                    </ListViewItem>
+                                <TextBlock 
+                                    Margin="20,5"
+                                    FontFamily="Arial"
+                                    FontSize="15" 
+                                    Foreground="White" 
+                                    VerticalAlignment="Center" 
+                                    Text="Horas por Projeto"
+                                    MaxWidth="100"
+                                    TextWrapping="Wrap"/>
+                            </StackPanel>
+                        </ListViewItem>
 
-                    <ListViewItem Height="60" Selected="ViewHorasAno">
-                        <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon 
-                                Width="25"
-                                Height="25"
-                                Margin="10"
-                                Foreground="White"
-                                Kind="FileChart"
-                                VerticalAlignment="Center" />
+                        <ListViewItem Height="60" Selected="ViewHorasAno">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon 
+                                    Width="25"
+                                    Height="25"
+                                    Margin="10"
+                                    Foreground="White"
+                                    Kind="FileChart"
+                                    VerticalAlignment="Center" />
 
-                            <TextBlock 
-                                Margin="20,5"
-                                FontFamily="Arial"
-                                FontSize="15" 
-                                Foreground="White" 
-                                VerticalAlignment="Center" 
-                                Text="Horas por Ano"
-                                MaxWidth="100"
-                                TextWrapping="Wrap"/>
-                        </StackPanel>
-                    </ListViewItem>
+                                <TextBlock 
+                                    Margin="20,5"
+                                    FontFamily="Arial"
+                                    FontSize="15" 
+                                    Foreground="White" 
+                                    VerticalAlignment="Center" 
+                                    Text="Horas por Ano"
+                                    MaxWidth="100"
+                                    TextWrapping="Wrap"/>
+                            </StackPanel>
+                        </ListViewItem>
 
-                    <ListViewItem Height="60"  Selected="ViewHorasMes">
-                        <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon 
-                                Width="25"
-                                Height="25"
-                                Margin="10"
-                                Foreground="White"
-                                Kind="FileDocument"
-                                VerticalAlignment="Center" />
+                        <ListViewItem Height="60"  Selected="ViewHorasMes">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon 
+                                    Width="25"
+                                    Height="25"
+                                    Margin="10"
+                                    Foreground="White"
+                                    Kind="FileDocument"
+                                    VerticalAlignment="Center" />
 
-                            <TextBlock 
-                                Margin="20,5"
-                                FontFamily="Arial"
-                                FontSize="15" 
-                                Foreground="White" 
-                                VerticalAlignment="Center" 
-                                Text="Horas por Mês"
-                                MaxWidth="100"
-                                TextWrapping="Wrap"/>
-                        </StackPanel>
-                    </ListViewItem>
+                                <TextBlock 
+                                    Margin="20,5"
+                                    FontFamily="Arial"
+                                    FontSize="15" 
+                                    Foreground="White" 
+                                    VerticalAlignment="Center" 
+                                    Text="Horas por Mês"
+                                    MaxWidth="100"
+                                    TextWrapping="Wrap"/>
+                            </StackPanel>
+                        </ListViewItem>
 
-                    <ListViewItem Height="60"  Selected="ViewDedicacao">
-                        <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon 
-                                Width="25"
-                                Height="25"
-                                Margin="10"
-                                Foreground="White"
-                                Kind="ChartPie"
-                                VerticalAlignment="Center" />
+                        <ListViewItem Height="60"  Selected="ViewDedicacao">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon 
+                                    Width="25"
+                                    Height="25"
+                                    Margin="10"
+                                    Foreground="White"
+                                    Kind="ChartPie"
+                                    VerticalAlignment="Center" />
 
-                            <TextBlock 
-                                Margin="20,10"
-                                FontFamily="Arial"
-                                FontSize="15" 
-                                Foreground="White" 
-                                VerticalAlignment="Center" 
-                                Text="% Dedicação"/>
-                        </StackPanel>
-                    </ListViewItem>
+                                <TextBlock 
+                                    Margin="20,10"
+                                    FontFamily="Arial"
+                                    FontSize="15" 
+                                    Foreground="White" 
+                                    VerticalAlignment="Center" 
+                                    Text="% Dedicação"/>
+                            </StackPanel>
+                        </ListViewItem>
 
-                    <ListViewItem Height="60"  Selected="ViewQuantStatus">
-                        <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon 
-                                Width="25"
-                                Height="25"
-                                Margin="10"
-                                Foreground="White"
-                                Kind="Abacus"
-                                VerticalAlignment="Center" />
+                        <ListViewItem Height="60"  Selected="ViewQuantStatus">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon 
+                                    Width="25"
+                                    Height="25"
+                                    Margin="10"
+                                    Foreground="White"
+                                    Kind="Abacus"
+                                    VerticalAlignment="Center" />
 
-                            <TextBlock 
-                                Margin="20,5"
-                                FontFamily="Arial"
-                                FontSize="15" 
-                                Foreground="White" 
-                                VerticalAlignment="Center" 
-                                Text="Quantidade de Status"
-                                MaxWidth="100"
-                                TextWrapping="Wrap"/>
-                        </StackPanel>
-                    </ListViewItem>
+                                <TextBlock 
+                                    Margin="20,5"
+                                    FontFamily="Arial"
+                                    FontSize="15" 
+                                    Foreground="White" 
+                                    VerticalAlignment="Center" 
+                                    Text="Quantidade de Status"
+                                    MaxWidth="100"
+                                    TextWrapping="Wrap"/>
+                            </StackPanel>
+                        </ListViewItem>
 
-                    <ListViewItem Height="60"  Selected="ViewTasksAbertas">
-                        <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon 
-                                Width="25"
-                                Height="25"
-                                Margin="10"
-                                Foreground="White"
-                                Kind="CalendarTask"
-                                VerticalAlignment="Center" />
+                        <ListViewItem Height="60"  Selected="ViewTasksAbertas">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon 
+                                    Width="25"
+                                    Height="25"
+                                    Margin="10"
+                                    Foreground="White"
+                                    Kind="CalendarTask"
+                                    VerticalAlignment="Center" />
 
-                            <TextBlock 
-                                Margin="20,5"
-                                FontFamily="Arial"
-                                FontSize="15" 
-                                Foreground="White" 
-                                VerticalAlignment="Center" 
-                                Text="Tasks Abertas"
-                                MaxWidth="100"
-                                TextWrapping="Wrap"/>
-                        </StackPanel>
-                    </ListViewItem>
-                </ListView>
+                                <TextBlock 
+                                    Margin="20,5"
+                                    FontFamily="Arial"
+                                    FontSize="15" 
+                                    Foreground="White" 
+                                    VerticalAlignment="Center" 
+                                    Text="Tasks Abertas"
+                                    MaxWidth="100"
+                                    TextWrapping="Wrap"/>
+                            </StackPanel>
+                        </ListViewItem>
 
+                        <ListViewItem Height="60"  Selected="ViewCalendarioTasks">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon 
+                                    Width="25"
+                                    Height="25"
+                                    Margin="10"
+                                    Foreground="White"
+                                    Kind="Calendar"
+                                    VerticalAlignment="Center" />
 
-            </StackPanel>
+                                <TextBlock 
+                                    Margin="20,5"
+                                    FontFamily="Arial"
+                                    FontSize="15" 
+                                    Foreground="White" 
+                                    VerticalAlignment="Center" 
+                                    Text="Calendário de Tasks"
+                                    MaxWidth="100"
+                                    TextWrapping="Wrap"/>
+                            </StackPanel>
+                        </ListViewItem>
 
+                        <ListViewItem Height="60"  Selected="foo">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon 
+                                    Width="25"
+                                    Height="25"
+                                    Margin="10"
+                                    Foreground="Red"
+                                    Kind="ChartFinance"
+                                    VerticalAlignment="Center" />
+
+                                <TextBlock 
+                                    Margin="20,5"
+                                    FontFamily="Arial"
+                                    FontSize="15" 
+                                    Foreground="White" 
+                                    VerticalAlignment="Center" 
+                                    Text="Rank dos Projetos"
+                                    MaxWidth="100"
+                                    TextWrapping="Wrap"/>
+                            </StackPanel>
+                        </ListViewItem>
+
+                        <ListViewItem Height="60"  Selected="foo">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon 
+                                    Width="25"
+                                    Height="25"
+                                    Margin="10"
+                                    Foreground="Red"
+                                    Kind="ChartBar"
+                                    VerticalAlignment="Center" />
+
+                                <TextBlock 
+                                    Margin="20,5"
+                                    FontFamily="Arial"
+                                    FontSize="15" 
+                                    Foreground="White" 
+                                    VerticalAlignment="Center" 
+                                    Text="Rank dos Funcionarios"
+                                    MaxWidth="100"
+                                    TextWrapping="Wrap"/>
+                            </StackPanel>
+                        </ListViewItem>
+
+                    </ListView>
+
+                </StackPanel>
+            </ScrollViewer>
+            
         </Grid>
 
     </Grid>
