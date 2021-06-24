@@ -6,6 +6,7 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media;
 using Microsoft.Win32;
 
 namespace NoteSystem
@@ -464,28 +465,78 @@ namespace NoteSystem
         {
             Panel.Children.Clear();
             CmdCalendario();
-            /*
-            string[] data =
-            {
-                "2020/06/05",
-                "2021/05/18",
-                "2021/06/10"
-            };
+        }
 
-            string[] nome =
-            {
-                "Projeto Golden-Eye",
-                "Alteração do Layout X",
-                "Mudar N Linhas de Código"
-            };
+        private void CmdRankFunc()
+        {
+            string sql = string.Format(@"select * from pesquisa_rank_func('{0}')",texto);
+            DataRow[] row = conn.ExecuteCmd(sql).Select();
 
+            List<string> Nome = new();
+            List<double> Horas = new();
+
+            foreach (var data in row)
+            {
+                Nome.Add(string.Format("{0}\n{1}",
+                    data["pnome"].ToString(), 
+                    data["unome"].ToString()));
+                
+                Horas.Add(double.Parse(data["horas"].ToString()));
+            }
+            string xProj = texto.Equals(string.Empty) ? 
+                "Rank de Horas dos Funcionarios" :
+                row[0]["proj"].ToString();
+
+            Panel.Children.Clear();
             Panel.Children.Add(
                 new Frame
                 {
-                    Content = new Calendario(data, nome)
+                    Content = new RankHoras(
+                        xProj,
+                        Nome.ToArray(),
+                        Horas.ToArray())
                 }
             );
-            */
+        }
+
+        private void ViewRankFunc(object sender, RoutedEventArgs e)
+        {
+            function = "rank";
+
+            Panel.Children.Clear();
+            CmdRankFunc();
+        }
+        /***/
+        private void CmdRankProj()
+        {
+            string sql = string.Format(@"select * from pesquisa_rank_proj()");
+            DataRow[] row = conn.ExecuteCmd(sql).Select();
+
+            List<string> xProj = new();
+            List<double> Horas = new();
+
+            foreach (var data in row)
+            {
+                xProj.Add(data["nome"].ToString());
+                Horas.Add(double.Parse(data["horas"].ToString()));
+            }
+
+            Panel.Children.Clear();
+            Panel.Children.Add(
+                new Frame
+                {
+                    Content = new RankHoras(
+                        "Rank de Horas dos Projetos",
+                        xProj.ToArray(),
+                        Horas.ToArray())
+                }
+            );
+        } 
+
+        private void ViewRankProj(object sender, RoutedEventArgs e)
+        {
+            Panel.Children.Clear();
+            CmdRankProj();
         }
 
         private void EntradaTexto(object sender, KeyEventArgs e)
@@ -519,6 +570,10 @@ namespace NoteSystem
 
                     case "percent":
                         CmdPercent();
+                        break;
+
+                    case "rank":
+                        CmdRankFunc();
                         break;
                 }
                 texto = string.Empty;

@@ -482,6 +482,57 @@ begin
 end $$;
 
 
+create or replace function pesquisa_rank_func (xproj varchar) 
+returns table (
+	pnome varchar,
+	unome varchar,
+	proj varchar,
+	horas numeric
+) language plpgsql
+as $$
+begin
+	return query 
+		select 
+			funcionarios.primeiro_nome pnome, 
+			funcionarios.ultimo_nome unome,
+			projeto_info.nome nome, 
+			sum(projeto_info.horas) thoras 
+		from funcionarios
+			inner join projeto
+				on funcionarios.id_func = projeto.id_func
+			inner join projeto_info
+				on projeto_info.id_info = projeto.id_info
+		where 
+			projeto_info.horas is not null
+		and 
+			nome ilike concat('%',xproj,'%')
+		group by pnome, unome, nome
+		order by 
+		(
+			case when xproj not like '' 
+			then 
+				nome
+			else null
+			end 
+		) asc, thoras desc
+		limit 10;
+end $$;
+
+
+create or replace function pesquisa_rank_proj () 
+returns table (
+	nome varchar,
+	horas numeric
+) language plpgsql
+as $$
+begin
+	return query 
+		select * from pesquisa_horas_projeto('')
+		order by horas desc
+		limit 8;
+end $$;
+
+
 create or replace function pesquisa_status_projeto (status_x varchar) 
 returns table (
 	id varchar,

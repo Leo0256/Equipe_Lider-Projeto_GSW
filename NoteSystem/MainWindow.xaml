@@ -479,13 +479,13 @@
                             </StackPanel>
                         </ListViewItem>
 
-                        <ListViewItem Height="60"  Selected="foo">
+                        <ListViewItem Height="60"  Selected="ViewRankProj">
                             <StackPanel Orientation="Horizontal">
                                 <materialDesign:PackIcon 
                                     Width="25"
                                     Height="25"
                                     Margin="10"
-                                    Foreground="Red"
+                                    Foreground="White"
                                     Kind="ChartFinance"
                                     VerticalAlignment="Center" />
 
@@ -501,13 +501,13 @@
                             </StackPanel>
                         </ListViewItem>
 
-                        <ListViewItem Height="60"  Selected="foo">
+                        <ListViewItem Height="60"  Selected="ViewRankFunc">
                             <StackPanel Orientation="Horizontal">
                                 <materialDesign:PackIcon 
                                     Width="25"
                                     Height="25"
                                     Margin="10"
-                                    Foreground="Red"
+                                    Foreground="White"
                                     Kind="ChartBar"
                                     VerticalAlignment="Center" />
 
