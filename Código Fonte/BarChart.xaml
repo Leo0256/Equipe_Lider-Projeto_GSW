@@ -1,0 +1,38 @@
+﻿<UserControl x:Class="NoteSystem.BarChart"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    
+    mc:Ignorable="d" 
+    MinWidth="20"
+    Width="auto"
+    Loaded="UserControl_Loaded">
+
+    <Grid SizeChanged="Grid_SizeChange">
+
+        <Border 
+            x:Name="border" 
+            Background="{Binding Color}" 
+            VerticalAlignment="Bottom" 
+            Height="{Binding BarHeight}"
+            CornerRadius="5,5,0,0"
+            BorderThickness="1"
+            BorderBrush="Black"
+            
+            d:Height="50"
+            d:Background="YellowGreen"/>
+
+        <TextBlock
+            Text="{Binding Value}"
+            VerticalAlignment="Bottom"
+            HorizontalAlignment="Center"
+            Background="GhostWhite"
+            Padding="1,0"
+            Margin="3"
+            FontSize="10"
+            FontWeight="Bold"
+            
+            d:Text="0.0" />
+    </Grid>
+</UserControl>

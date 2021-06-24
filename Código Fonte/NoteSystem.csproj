@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <Configurations>Debug;Release;NoteSystem_;NoteSystem;Test</Configurations>
+    <Platforms>AnyCPU;x64</Platforms>
+    <Authors>Equipe Líder</Authors>
+    <Company>Fatec SJC</Company>
+    <Version>1.1</Version>
+    <NeutralLanguage>pt-BR</NeutralLanguage>
+    <StartupObject>NoteSystem.App</StartupObject>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!--None Remove="config.png" /-->
+    <None Remove="imagens\icon.png" />
+    <None Remove="imagens\lupa.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="imagens\icon.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="imagens\lupa.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="bin\Debug\net5.0-windows\imagens\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MaterialDesignThemes" Version="4.1.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="Npgsql" Version="5.0.7" />
+    <PackageReference Include="Syncfusion.SfChart.WPF" Version="19.1.0.69" />
+  </ItemGroup>
+
+</Project>
