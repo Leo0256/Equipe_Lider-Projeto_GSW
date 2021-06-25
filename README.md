@@ -12,7 +12,7 @@
 ## Gif das Funcionalidades Implementadas :movie_camera:
 <p align="center">
     <img width="625.6" height="351.4" src="https://github.com/Leo0256/Equipe_Lider-Projeto_GSW/blob/Sprint_Rec/gif/calendario.gif"><br>
-    <img width="625.6" height="351.4" src="http://placeimg.com/625/351/arch">
+    <img width="625.6" height="351.4" src="https://github.com/Leo0256/Equipe_Lider-Projeto_GSW/blob/Sprint_Rec/gif/rank_proj-func.gif">
 </p>
 
 ## Sistema :scroll:
@@ -202,56 +202,95 @@ public partial class Calendario : Page
 ```c#
 public partial class RankHoras : Page
 {
+    private List<double> graphHeight = new();
+
     public RankHoras(string titulo, string[] nome, double[] horas)
     {
         InitializeComponent();
 
         this.titulo.Content = titulo;
 
+        foreach(var val in horas)
+            graphHeight.Add(val * 100 / horas[0]);
+
+        Random r = new();
+        Brush brush;
         for (int x = 0; x < nome.Length; x++)
         {
-            defineGrid(
-                nome[x],
-                horas[x],
-                x
-            );
+            brush = new SolidColorBrush(Color.FromRgb((byte)r.Next(1, 255), 
+                (byte)r.Next(1, 255), (byte)r.Next(1, 255)));
+
+            SetGrafico(graphHeight[x], horas[x], brush);
+            SetLegenda(nome[x], brush, x);
         }
     }
 
-    private void defineGrid(string txt, double value, int i)
+    private void SetGrafico(double tamanho, double valor , Brush brush)
     {
-        ColumnDefinition col = new();
-        grafico.ColumnDefinitions.Add(col);
-        grafico.ColumnDefinitions[i].Width = new GridLength(1, GridUnitType.Star);
+        grafico.Children.Add(
+            new BarChart() {
+                Color = brush,
+                Value = tamanho,
+                MaxValue = 100,
+                ValueBar = valor,
+                Height = 250,
+                Margin = new Thickness(5)
+            });
+    }
 
-        BarChart chart = new()
+    private void SetValor(double valor, double y)
+    {
+        y = y < -12 ? 
+            -12 : y;
+
+        valores.Children.Add(
+            new Label() {
+                Content = valor,
+                HorizontalAlignment = HorizontalAlignment.Right,
+                Foreground = Brushes.White,
+                FontSize = 10,
+                Margin = new Thickness(0,0,0,y)
+            });
+    }
+
+    private void SetLegenda(string txt, Brush brush, int i)
+    {
+        RowDefinition row = new();
+        legenda.RowDefinitions.Add(row);
+        legenda.RowDefinitions[i].Height = new GridLength(1, GridUnitType.Auto);
+
+        Border border = new()
         {
-            Color = (SolidColorBrush) new BrushConverter().ConvertFrom("#FF0F3460"),
-            Value = value,
-            Margin = new Thickness(5),
-            VerticalAlignment = VerticalAlignment.Bottom,
-            Height = 200,
-            Width = 35
+            Background = brush,
+            BorderBrush = Brushes.Black,
+            BorderThickness = new Thickness(1),
+            CornerRadius = new CornerRadius(8),
+            Margin = new Thickness(8),
+            Height = 20,
+            Width = 20
         };
 
         TextBlock block = new()
         {
             Text = txt,
             Foreground = Brushes.White,
-            HorizontalAlignment = HorizontalAlignment.Center,
-            FontSize = 16,
+            HorizontalAlignment = HorizontalAlignment.Left,
+            VerticalAlignment = VerticalAlignment.Center,
+            FontSize = 20,
+            MaxWidth = 360,
+            Width = 360,
             TextWrapping = TextWrapping.Wrap,
-            Margin = new Thickness(8,5,8,5)
+            Margin = new Thickness(8, 10, 8, 10)
         };
 
-        Grid.SetColumn(chart, i);
-        Grid.SetRow(chart, 0);
+        Grid.SetColumn(border, 0);
+        Grid.SetRow(border, i);
 
-        Grid.SetColumn(block, i);
-        Grid.SetRow(block, 1);
+        Grid.SetColumn(block, 1);
+        Grid.SetRow(block, i);
 
-        grafico.Children.Add(chart);
-        grafico.Children.Add(block);
+        legenda.Children.Add(border);
+        legenda.Children.Add(block);
     }
 }
 ```
@@ -264,7 +303,7 @@ public partial class RankHoras : Page
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:NoteSystem"
       mc:Ignorable="d" 
-      Title="RankFunc"
+      Title="RankHoras"
       Width="936" 
       MinHeight="250" MaxHeight="800">
 
@@ -305,20 +344,51 @@ public partial class RankHoras : Page
 
                     </Rectangle>
 
-                    <Grid x:Name="grafico" VerticalAlignment="Top" Margin="5" d:Height="300">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
-                        </Grid.RowDefinitions>
-                    </Grid>
+                    <StackPanel Orientation="Horizontal">
+                        <DockPanel 
+                            VerticalAlignment="Top" 
+                            HorizontalAlignment="Left"
+                            Margin="5" 
+                            LastChildFill="False">
 
+                            <StackPanel 
+                                x:Name="valores"
+                                DockPanel.Dock="Left"/>
+
+                            <Rectangle Fill="Black" DockPanel.Dock="Left" Width="2"/>
+                            <Rectangle Fill="Black" DockPanel.Dock="Bottom" Height="2" />
+
+                            <StackPanel
+                                x:Name="grafico"
+                                Orientation="Horizontal"/>
+
+                        </DockPanel>
+
+                        <ScrollViewer 
+                            VerticalScrollBarVisibility="Visible"
+                            MinHeight="260"
+                            Height="260"
+                            MaxWidth="490"
+                            Width="490"
+                            VerticalAlignment="Top" 
+                            Margin="5" >
+
+                            <Grid x:Name="legenda" >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                            </Grid>
+                        </ScrollViewer>
+                    </StackPanel>
                 </StackPanel>
             </Border>
         </Grid>
     </Border>
 </Page>
+
 ```
-### MainWindow.xaml.cs [442 - 540]
+### MainWindow.xaml.cs [444 - 547]
 ```c#
 private void CmdCalendario()
 {
@@ -326,7 +396,7 @@ private void CmdCalendario()
     DataRow[] row = conn.ExecuteCmd(sql).Select();
 
     List<string> xData = new(),
-                 xProj = new();
+                    xProj = new();
     foreach(var data in row)
     {
         xData.Add(data["data"].ToString()[..10]);
@@ -344,6 +414,7 @@ private void CmdCalendario()
 
 private void ViewCalendarioTasks(object sender, RoutedEventArgs e)
 {
+    Text.IsReadOnly = true;
     Panel.Children.Clear();
     CmdCalendario();
 }
@@ -356,17 +427,19 @@ private void CmdRankFunc()
     List<string> Nome = new();
     List<double> Horas = new();
 
+    string xProj = "";
+
     foreach (var data in row)
     {
-        Nome.Add(string.Format("{0}\n{1}",
-            data["pnome"].ToString(), 
+        xProj = !(!texto.Equals(string.Empty) || data["proj"].ToString().Equals(null)) ?
+            "Rank de Horas dos Funcionarios" : row[0]["proj"].ToString();
+
+        Nome.Add(string.Format("{0} {1}",
+            data["pnome"].ToString(),
             data["unome"].ToString()));
 
         Horas.Add(double.Parse(data["horas"].ToString()));
     }
-    string xProj = texto.Equals(string.Empty) ? 
-        "Rank de Horas dos Funcionarios" :
-        row[0]["proj"].ToString();
 
     Panel.Children.Clear();
     Panel.Children.Add(
@@ -378,12 +451,13 @@ private void CmdRankFunc()
                 Horas.ToArray())
         }
     );
+    
 }
 
 private void ViewRankFunc(object sender, RoutedEventArgs e)
 {
     function = "rank";
-
+    Text.IsReadOnly = false;
     Panel.Children.Clear();
     CmdRankFunc();
 }
@@ -416,6 +490,7 @@ private void CmdRankProj()
 
 private void ViewRankProj(object sender, RoutedEventArgs e)
 {
+    Text.IsReadOnly = true;
     Panel.Children.Clear();
     CmdRankProj();
 }
@@ -428,13 +503,13 @@ public partial class BarChart : UserControl, INotifyPropertyChanged
     private void NotifyPropertyChanged(string info) =>
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(info));
 
-    private double _value;
+    private double value;
     public double Value
     {
-        get { return _value; }
+        get => value;
         set
         {
-            _value = value;
+            this.value = value;
             UpdateBarHeight();
             NotifyPropertyChanged("Value");
         }
@@ -443,7 +518,7 @@ public partial class BarChart : UserControl, INotifyPropertyChanged
     private double maxValue;
     public double MaxValue
     {
-        get { return maxValue; }
+        get => maxValue; 
         set
         {
             maxValue = value;
@@ -455,7 +530,7 @@ public partial class BarChart : UserControl, INotifyPropertyChanged
     private double barHeight;
     public double BarHeight
     {
-        get { return barHeight; }
+        get => barHeight;
         private set
         {
             barHeight = value;
@@ -466,7 +541,7 @@ public partial class BarChart : UserControl, INotifyPropertyChanged
     private Brush color;
     public Brush Color
     {
-        get { return color; }
+        get => color; 
         set
         {
             color = value;
@@ -474,9 +549,21 @@ public partial class BarChart : UserControl, INotifyPropertyChanged
         }
     }
 
+    private double valueBar;
+    public double ValueBar
+    {
+        get => valueBar;
+        set => valueBar = value;
+    }
+
     private void UpdateBarHeight()
     {
-        BarHeight = _value < 100 ? _value * 8 : _value;
+        if (maxValue > 0)
+        {
+            var percent = value * 100 / maxValue;
+            BarHeight = percent * ActualHeight / 100;
+        }
+        
     }
 
     public BarChart()
@@ -511,21 +598,22 @@ public partial class BarChart : UserControl, INotifyPropertyChanged
     Loaded="UserControl_Loaded">
 
     <Grid SizeChanged="Grid_SizeChange">
-
         <Border 
             x:Name="border" 
             Background="{Binding Color}" 
             VerticalAlignment="Bottom" 
             Height="{Binding BarHeight}"
-            CornerRadius="5,5,0,0"
+            Width="40"
+            CornerRadius="2,2,0,0"
             BorderThickness="1"
             BorderBrush="Black"
             
             d:Height="50"
             d:Background="YellowGreen"/>
 
+        
         <TextBlock
-            Text="{Binding Value}"
+            Text="{Binding ValueBar}"
             VerticalAlignment="Bottom"
             HorizontalAlignment="Center"
             Background="GhostWhite"
@@ -537,6 +625,7 @@ public partial class BarChart : UserControl, INotifyPropertyChanged
             d:Text="0.0" />
     </Grid>
 </UserControl>
+
 ```
 ### Banco de Dados.sql
 #### [199 - 216]
@@ -627,7 +716,7 @@ end $$;
 
 ## Burndown :chart_with_downwards_trend:
 <p align="center">
-  <img width="800" height="343" src="http://placeimg.com/800/343/arch">
+  <img src="https://github.com/Leo0256/Equipe_Lider-Projeto_GSW/blob/Sprint_Rec/burndown_rec.png">
 </p>
 
 ## Links

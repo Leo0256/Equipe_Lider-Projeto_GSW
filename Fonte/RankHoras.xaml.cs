@@ -17,56 +17,95 @@ namespace NoteSystem
 {
     public partial class RankHoras : Page
     {
+        private List<double> graphHeight = new();
+
         public RankHoras(string titulo, string[] nome, double[] horas)
         {
             InitializeComponent();
 
             this.titulo.Content = titulo;
 
+            foreach(var val in horas)
+                graphHeight.Add(val * 100 / horas[0]);
+
+            Random r = new();
+            Brush brush;
             for (int x = 0; x < nome.Length; x++)
             {
-                defineGrid(
-                    nome[x],
-                    horas[x],
-                    x
-                );
+                brush = new SolidColorBrush(Color.FromRgb((byte)r.Next(1, 255), 
+                    (byte)r.Next(1, 255), (byte)r.Next(1, 255)));
+
+                SetGrafico(graphHeight[x], horas[x], brush);
+                SetLegenda(nome[x], brush, x);
             }
         }
 
-        private void defineGrid(string txt, double value, int i)
+        private void SetGrafico(double tamanho, double valor , Brush brush)
         {
-            ColumnDefinition col = new();
-            grafico.ColumnDefinitions.Add(col);
-            grafico.ColumnDefinitions[i].Width = new GridLength(1, GridUnitType.Star);
+            grafico.Children.Add(
+                new BarChart() {
+                    Color = brush,
+                    Value = tamanho,
+                    MaxValue = 100,
+                    ValueBar = valor,
+                    Height = 250,
+                    Margin = new Thickness(5)
+                });
+        }
 
-            BarChart chart = new()
+        private void SetValor(double valor, double y)
+        {
+            y = y < -12 ? 
+                -12 : y;
+
+            valores.Children.Add(
+                new Label() {
+                    Content = valor,
+                    HorizontalAlignment = HorizontalAlignment.Right,
+                    Foreground = Brushes.White,
+                    FontSize = 10,
+                    Margin = new Thickness(0,0,0,y)
+                });
+        }
+
+        private void SetLegenda(string txt, Brush brush, int i)
+        {
+            RowDefinition row = new();
+            legenda.RowDefinitions.Add(row);
+            legenda.RowDefinitions[i].Height = new GridLength(1, GridUnitType.Auto);
+
+            Border border = new()
             {
-                Color = (SolidColorBrush) new BrushConverter().ConvertFrom("#FF0F3460"),
-                Value = value,
-                Margin = new Thickness(5),
-                VerticalAlignment = VerticalAlignment.Bottom,
-                Height = 200,
-                Width = 35
+                Background = brush,
+                BorderBrush = Brushes.Black,
+                BorderThickness = new Thickness(1),
+                CornerRadius = new CornerRadius(8),
+                Margin = new Thickness(8),
+                Height = 20,
+                Width = 20
             };
 
             TextBlock block = new()
             {
                 Text = txt,
                 Foreground = Brushes.White,
-                HorizontalAlignment = HorizontalAlignment.Center,
-                FontSize = 16,
+                HorizontalAlignment = HorizontalAlignment.Left,
+                VerticalAlignment = VerticalAlignment.Center,
+                FontSize = 20,
+                MaxWidth = 360,
+                Width = 360,
                 TextWrapping = TextWrapping.Wrap,
-                Margin = new Thickness(8,5,8,5)
+                Margin = new Thickness(8, 10, 8, 10)
             };
 
-            Grid.SetColumn(chart, i);
-            Grid.SetRow(chart, 0);
+            Grid.SetColumn(border, 0);
+            Grid.SetRow(border, i);
 
-            Grid.SetColumn(block, i);
-            Grid.SetRow(block, 1);
+            Grid.SetColumn(block, 1);
+            Grid.SetRow(block, i);
 
-            grafico.Children.Add(chart);
-            grafico.Children.Add(block);
+            legenda.Children.Add(border);
+            legenda.Children.Add(block);
         }
     }
 }

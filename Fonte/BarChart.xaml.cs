@@ -22,13 +22,13 @@ namespace NoteSystem
         private void NotifyPropertyChanged(string info) =>
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(info));
 
-        private double _value;
+        private double value;
         public double Value
         {
-            get { return _value; }
+            get => value;
             set
             {
-                _value = value;
+                this.value = value;
                 UpdateBarHeight();
                 NotifyPropertyChanged("Value");
             }
@@ -37,7 +37,7 @@ namespace NoteSystem
         private double maxValue;
         public double MaxValue
         {
-            get { return maxValue; }
+            get => maxValue; 
             set
             {
                 maxValue = value;
@@ -49,7 +49,7 @@ namespace NoteSystem
         private double barHeight;
         public double BarHeight
         {
-            get { return barHeight; }
+            get => barHeight;
             private set
             {
                 barHeight = value;
@@ -60,7 +60,7 @@ namespace NoteSystem
         private Brush color;
         public Brush Color
         {
-            get { return color; }
+            get => color; 
             set
             {
                 color = value;
@@ -68,16 +68,23 @@ namespace NoteSystem
             }
         }
 
+        private double valueBar;
+        public double ValueBar
+        {
+            get => valueBar;
+            set => valueBar = value;
+        }
+
         private void UpdateBarHeight()
         {
-            BarHeight = _value < 100 ? _value * 8 : _value;
-            /*
+            //BarHeight = _value < 100 ? _value * 8 : _value;
+            
             if (maxValue > 0)
             {
-                var percent = _value * 100 / maxValue;
+                var percent = value * 100 / maxValue;
                 BarHeight = percent * ActualHeight / 100;
             }
-            */
+            
         }
 
         public BarChart()

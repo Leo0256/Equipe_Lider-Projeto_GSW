@@ -11,20 +11,23 @@
 
     <Grid SizeChanged="Grid_SizeChange">
 
+        
         <Border 
             x:Name="border" 
             Background="{Binding Color}" 
             VerticalAlignment="Bottom" 
             Height="{Binding BarHeight}"
-            CornerRadius="5,5,0,0"
+            Width="40"
+            CornerRadius="2,2,0,0"
             BorderThickness="1"
             BorderBrush="Black"
             
             d:Height="50"
             d:Background="YellowGreen"/>
 
+        
         <TextBlock
-            Text="{Binding Value}"
+            Text="{Binding ValueBar}"
             VerticalAlignment="Bottom"
             HorizontalAlignment="Center"
             Background="GhostWhite"
