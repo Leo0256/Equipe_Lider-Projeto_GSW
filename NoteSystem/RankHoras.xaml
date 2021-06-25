@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:NoteSystem"
       mc:Ignorable="d" 
-      Title="RankFunc"
+      Title="RankHoras"
       Width="936" 
       MinHeight="250" MaxHeight="800">
 
@@ -46,13 +46,61 @@
 
                     </Rectangle>
 
-                    <Grid x:Name="grafico" VerticalAlignment="Top" Margin="5" d:Height="300">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
-                        </Grid.RowDefinitions>
-                    </Grid>
+                    <StackPanel Orientation="Horizontal">
+                        <DockPanel 
+                            VerticalAlignment="Top" 
+                            HorizontalAlignment="Left"
+                            Margin="5" 
+                            LastChildFill="False">
 
+                            <StackPanel 
+                                x:Name="valores"
+                                DockPanel.Dock="Left"/>
+
+                            <Rectangle Fill="Black" DockPanel.Dock="Left" Width="2"/>
+                            <Rectangle Fill="Black" DockPanel.Dock="Bottom" Height="2" />
+
+                            <StackPanel
+                                x:Name="grafico"
+                                Orientation="Horizontal">
+
+                                
+
+                            </StackPanel>
+
+                        </DockPanel>
+
+                        <ScrollViewer 
+                            VerticalScrollBarVisibility="Visible"
+                            MinHeight="260"
+                            Height="260"
+                            MaxWidth="490"
+                            Width="490"
+                            VerticalAlignment="Top" 
+                            Margin="5" >
+
+                            <Grid x:Name="legenda" >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <d:Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </d:Grid.RowDefinitions>
+
+                                <d:Border
+                                    Grid.Row="0"
+                                    Grid.Column="0"
+                                    Background="Navy"
+                                    Height="20"
+                                    Width="20"
+                                    Margin="10"/>
+
+                            </Grid>
+                        </ScrollViewer>
+                    </StackPanel>
                 </StackPanel>
             </Border>
         </Grid>

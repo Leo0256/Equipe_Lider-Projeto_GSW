@@ -121,7 +121,7 @@ namespace NoteSystem
         private void ViewProjeto(object sender, RoutedEventArgs e)
         {
             function = "projeto";
-
+            Text.IsReadOnly = false;
             Panel.Children.Clear();
             CmdProjeto();
         }
@@ -158,7 +158,7 @@ namespace NoteSystem
         private void ViewHorasFuncionario(object sender, RoutedEventArgs e)
         {
             function = "hfunc";
-
+            Text.IsReadOnly = false;
             Panel.Children.Clear();
             CmdHFunc();
         }
@@ -194,7 +194,7 @@ namespace NoteSystem
         private void ViewHorasProjeto(object sender, RoutedEventArgs e)
         {
             function = "hproj";
-
+            Text.IsReadOnly = false;
             Panel.Children.Clear();
             CmdHProj();
         }
@@ -230,7 +230,7 @@ namespace NoteSystem
         private void ViewHorasAno(object sender, RoutedEventArgs e)
         {
             function = "hano";
-
+            Text.IsReadOnly = false;
             Panel.Children.Clear();
             CmdHAno();
         }
@@ -292,7 +292,7 @@ namespace NoteSystem
         private void ViewHorasMes(object sender, RoutedEventArgs e)
         {
             function = "hmes";
-
+            Text.IsReadOnly = false;
             Panel.Children.Clear();
             CmdHMes();
         }
@@ -356,7 +356,7 @@ namespace NoteSystem
         private void ViewDedicacao(object sender, RoutedEventArgs e)
         {
             function = "percent";
-
+            Text.IsReadOnly = false;
             Panel.Children.Clear();
             CmdPercent();
         }
@@ -390,6 +390,7 @@ namespace NoteSystem
 
         private void ViewQuantStatus(object sender, RoutedEventArgs e)
         {
+            Text.IsReadOnly = true;
             Panel.Children.Clear();
             CmdQStatus();
         }
@@ -435,6 +436,7 @@ namespace NoteSystem
 
         private void ViewTasksAbertas(object sender, RoutedEventArgs e)
         {
+            Text.IsReadOnly = true;
             Panel.Children.Clear();
             CmdTask();
         }
@@ -463,6 +465,7 @@ namespace NoteSystem
 
         private void ViewCalendarioTasks(object sender, RoutedEventArgs e)
         {
+            Text.IsReadOnly = true;
             Panel.Children.Clear();
             CmdCalendario();
         }
@@ -475,17 +478,19 @@ namespace NoteSystem
             List<string> Nome = new();
             List<double> Horas = new();
 
+            string xProj = "";
+
             foreach (var data in row)
             {
-                Nome.Add(string.Format("{0}\n{1}",
-                    data["pnome"].ToString(), 
+                xProj = !(!texto.Equals(string.Empty) || data["proj"].ToString().Equals(null)) ?
+                    "Rank de Horas dos Funcionarios" : row[0]["proj"].ToString();
+
+                Nome.Add(string.Format("{0} {1}",
+                    data["pnome"].ToString(),
                     data["unome"].ToString()));
-                
+
                 Horas.Add(double.Parse(data["horas"].ToString()));
             }
-            string xProj = texto.Equals(string.Empty) ? 
-                "Rank de Horas dos Funcionarios" :
-                row[0]["proj"].ToString();
 
             Panel.Children.Clear();
             Panel.Children.Add(
@@ -497,16 +502,17 @@ namespace NoteSystem
                         Horas.ToArray())
                 }
             );
+            
         }
 
         private void ViewRankFunc(object sender, RoutedEventArgs e)
         {
             function = "rank";
-
+            Text.IsReadOnly = false;
             Panel.Children.Clear();
             CmdRankFunc();
         }
-        /***/
+        
         private void CmdRankProj()
         {
             string sql = string.Format(@"select * from pesquisa_rank_proj()");
@@ -535,6 +541,7 @@ namespace NoteSystem
 
         private void ViewRankProj(object sender, RoutedEventArgs e)
         {
+            Text.IsReadOnly = true;
             Panel.Children.Clear();
             CmdRankProj();
         }

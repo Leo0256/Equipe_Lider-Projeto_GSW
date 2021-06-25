@@ -52,9 +52,6 @@
         </Style>
 
         <Style x:Key="TextBoxStyle" TargetType="TextBox">
-            <!--Setter Property="VerticalAlignment" Value="Center" />
-            <Setter Property="Margin" Value="0,10,0,10" />
-            <Setter Property="Effect" Value="{StaticResource dropShadow}"/-->
 
             <Setter Property="Template">
                 <Setter.Value>
@@ -89,6 +86,12 @@
                                 <Setter 
                                     Property="Effect" 
                                     Value="{StaticResource dropShadow}"/>
+                            </Trigger>
+                            <Trigger Property="IsReadOnly" Value="True">
+                                <Setter
+                                    Property="BorderBrush"
+                                    TargetName="border"
+                                    Value="#FF252525"/>
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
